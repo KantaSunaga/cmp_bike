@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bikes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Maker</th>
+      <th>Bike series</th>
+      <th>Bike name</th>
+      <th>Frame type</th>
+      <th>Component</th>
+      <th>Rear derailleur</th>
+      <th>Front derailleur</th>
+      <th>Crank</th>
+      <th>Brake</th>
+      <th>Chain</th>
+      <th>Sprocket</th>
+      <th>Sti lever</th>
+      <th>Bb</th>
+      <th>Bb</th>
+      <th>Wheel</th>
+      <th>Color</th>
+      <th>Saddle</th>
+      <th>Seat pillar</th>
+      <th>Handle</th>
+      <th>Stem</th>
+      <th>Tire</th>
+      <th>Pedal</th>
+      <th>Valve</th>
+      <th>Accessory</th>
+      <th>Maker url</th>
+      <th>Shop url</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bikes.each do |bike| %>
+      <tr>
+        <td><%= bike.maker_id %></td>
+        <td><%= bike.bike_series %></td>
+        <td><%= bike.bike_name %></td>
+        <td><%= bike.frame_type %></td>
+        <td><%= bike.component %></td>
+        <td><%= bike.rear_derailleur %></td>
+        <td><%= bike.front_derailleur %></td>
+        <td><%= bike.crank %></td>
+        <td><%= bike.brake %></td>
+        <td><%= bike.chain %></td>
+        <td><%= bike.sprocket %></td>
+        <td><%= bike.sti_lever %></td>
+        <td><%= bike.bb %></td>
+        <td><%= bike.bb %></td>
+        <td><%= bike.wheel %></td>
+        <td><%= bike.color %></td>
+        <td><%= bike.saddle %></td>
+        <td><%= bike.seat_pillar %></td>
+        <td><%= bike.handle %></td>
+        <td><%= bike.stem %></td>
+        <td><%= bike.tire %></td>
+        <td><%= bike.pedal %></td>
+        <td><%= bike.valve %></td>
+        <td><%= bike.accessory %></td>
+        <td><%= bike.maker_url %></td>
+        <td><%= bike.shop_url %></td>
+        <td><%= bike.picture %></td>
+        <td><%= link_to 'Show', bike %></td>
+        <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
+        <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bike', new_bike_path %>
