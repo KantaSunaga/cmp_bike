@@ -1,0 +1,127 @@
+<%= form_for(bike) do |f| %>
+  <% if bike.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
+
+      <ul>
+      <% bike.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :frame_type %>
+    <%= f.text_field :frame_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :component %>
+    <%= f.text_field :component %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rear_derailleur %>
+    <%= f.text_field :rear_derailleur %>
+  </div>
+
+  <div class="field">
+    <%= f.label :front_derailleur %>
+    <%= f.text_field :front_derailleur %>
+  </div>
+
+  <div class="field">
+    <%= f.label :crank %>
+    <%= f.text_field :crank %>
+  </div>
+
+  <div class="field">
+    <%= f.label :brake %>
+    <%= f.text_field :brake %>
+  </div>
+
+  <div class="field">
+    <%= f.label :chain %>
+    <%= f.text_field :chain %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sprocket %>
+    <%= f.text_field :sprocket %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sti_lever %>
+    <%= f.text_field :sti_lever %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bb %>
+    <%= f.text_field :bb %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wheel %>
+    <%= f.text_field :wheel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :saddle %>
+    <%= f.text_field :saddle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :seat_pillar %>
+    <%= f.text_field :seat_pillar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stem %>
+    <%= f.text_field :stem %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tire %>
+    <%= f.text_field :tire %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pedal %>
+    <%= f.text_field :pedal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valve %>
+    <%= f.text_field :valve %>
+  </div>
+
+  <div class="field">
+    <%= f.label :accessory %>
+    <%= f.text_field :accessory %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shop_url %>
+    <%= f.text_field :shop_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maker_url %>
+    <%= f.text_field :maker_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  frame_type: 
+  component: MyString
+  rear_derailleur: MyString
+  front_derailleur: MyString
+  crank: MyString
+  brake: MyString
+  chain: MyString
+  sprocket: MyString
+  sti_lever: MyString
+  bb: MyString
+  wheel: MyString
+  color: MyString
+  saddle: MyString
+  seat_pillar: MyString
+  stem: MyString
+  tire: MyString
+  pedal: MyString
+  valve: MyString
+  accessory: MyString
+  shop_url: MyString
+  maker_url: MyString
+  picture: 
+
+two:
+  frame_type: 
+  component: MyString
+  rear_derailleur: MyString
+  front_derailleur: MyString
+  crank: MyString
+  brake: MyString
+  chain: MyString
+  sprocket: MyString
+  sti_lever: MyString
+  bb: MyString
+  wheel: MyString
+  color: MyString
+  saddle: MyString
+  seat_pillar: MyString
+  stem: MyString
+  tire: MyString
+  pedal: MyString
+  valve: MyString
+  accessory: MyString
+  shop_url: MyString
+  maker_url: MyString
+  picture: 
