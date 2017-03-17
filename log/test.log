@@ -4,3 +4,291 @@
   [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-03-17 00:01:41 UTC], ["key", "environment"]]
   [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 00:21:22 UTC], ["updated_at", 2017-03-17 00:21:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 00:21:35 UTC], ["updated_at", 2017-03-17 00:21:35 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSizeToBike (20170317005838)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "bikes" ADD "size" integer[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317005838"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveWeightFromBike (20170317010331)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abikes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maker_id" integer, "bike_series" varchar, "bike_name" varchar, "frame_type" varchar, "component" varchar, "rear_derailleur" varchar, "front_derailleur" varchar, "crank" varchar, "brake" varchar, "chain" varchar, "sprocket" varchar, "sti_lever" varchar, "bb" varchar, "wheel" varchar, "color" varchar, "saddle" varchar, "seat_pillar" varchar, "handle" varchar, "stem" varchar, "tire" varchar, "pedal" varchar, "valve" varchar, "accessory" varchar, "maker_url" varchar, "shop_url" varchar, "picture" blob, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "size" integer)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "abikes" ("id","maker_id","bike_series","bike_name","frame_type","component","rear_derailleur","front_derailleur","crank","brake","chain","sprocket","sti_lever","bb","wheel","color","saddle","seat_pillar","handle","stem","tire","pedal","valve","accessory","maker_url","shop_url","picture","created_at","updated_at","size")
+                     SELECT "id","maker_id","bike_series","bike_name","frame_type","component","rear_derailleur","front_derailleur","crank","brake","chain","sprocket","sti_lever","bb","wheel","color","saddle","seat_pillar","handle","stem","tire","pedal","valve","accessory","maker_url","shop_url","picture","created_at","updated_at","size" FROM "bikes"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "bikes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "bikes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maker_id" integer, "bike_series" varchar, "bike_name" varchar, "frame_type" varchar, "component" varchar, "rear_derailleur" varchar, "front_derailleur" varchar, "crank" varchar, "brake" varchar, "chain" varchar, "sprocket" varchar, "sti_lever" varchar, "bb" varchar, "wheel" varchar, "color" varchar, "saddle" varchar, "seat_pillar" varchar, "handle" varchar, "stem" varchar, "tire" varchar, "pedal" varchar, "valve" varchar, "accessory" varchar, "maker_url" varchar, "shop_url" varchar, "picture" blob, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "size" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "bikes" ("id","maker_id","bike_series","bike_name","frame_type","component","rear_derailleur","front_derailleur","crank","brake","chain","sprocket","sti_lever","bb","wheel","color","saddle","seat_pillar","handle","stem","tire","pedal","valve","accessory","maker_url","shop_url","picture","created_at","updated_at","size")
+                     SELECT "id","maker_id","bike_series","bike_name","frame_type","component","rear_derailleur","front_derailleur","crank","brake","chain","sprocket","sti_lever","bb","wheel","color","saddle","seat_pillar","handle","stem","tire","pedal","valve","accessory","maker_url","shop_url","picture","created_at","updated_at","size" FROM "abikes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "abikes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317010331"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddWeightToBike (20170317010547)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bikes" ADD "weight" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317010547"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-03-17 01:31:30 UTC], ["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPriceToBike (20170317013649)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "bikes" ADD "price" integer[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317013649"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."maler_id" = ? LIMIT ?[0m  [["maler_id", 1], ["LIMIT", 1]]
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."maker_id" = ? LIMIT ?[0m  [["maker_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.0ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.1ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["maker_name", "Treck"], ["created_at", 2017-03-17 02:07:12 UTC], ["updated_at", 2017-03-17 02:07:12 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "component", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "size", "weight", "price") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["component", "105ミックス"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "キー,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-17 02:07:20 UTC], ["updated_at", 2017-03-17 02:07:20 UTC], ["size", 50], ["weight", 8], ["price", 150000]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["maker_name", "Treck"], ["created_at", 2017-03-17 02:08:26 UTC], ["updated_at", 2017-03-17 02:08:26 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:24:47 UTC], ["updated_at", 2017-03-17 02:24:47 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:27:07 UTC], ["updated_at", 2017-03-17 02:27:07 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.3ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:28:13 UTC], ["updated_at", 2017-03-17 02:28:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.6ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:31:12 UTC], ["updated_at", 2017-03-17 02:31:12 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:31:32 UTC], ["updated_at", 2017-03-17 02:31:32 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:31:53 UTC], ["updated_at", 2017-03-17 02:31:53 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:33:20 UTC], ["updated_at", 2017-03-17 02:33:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "Trek"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:33:37 UTC], ["updated_at", 2017-03-17 02:33:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "Trek"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:33:43 UTC], ["updated_at", 2017-03-17 02:33:43 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.3ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "Trek"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:34:03 UTC], ["updated_at", 2017-03-17 02:34:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "Trek"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:34:40 UTC], ["updated_at", 2017-03-17 02:34:40 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "Trek"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:36:52 UTC], ["updated_at", 2017-03-17 02:36:52 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "Trek"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:43:38 UTC], ["updated_at", 2017-03-17 02:43:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "Trek"], ["year", 2017], ["created_at", 2017-03-17 02:43:55 UTC], ["updated_at", 2017-03-17 02:43:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "makers"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
