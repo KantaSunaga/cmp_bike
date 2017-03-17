@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317013649) do
+ActiveRecord::Schema.define(version: 20170317055630) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "maker_id"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170317013649) do
     t.integer  "size"
     t.integer  "weight"
     t.integer  "price"
+    t.integer  "gear"
+    t.string   "fork"
   end
 
   create_table "makers", force: :cascade do |t|
