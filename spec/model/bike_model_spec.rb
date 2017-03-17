@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Bike, type: :model do
   describe "Bike.creating_bike_need_argument_is" do
     it '引数が以下の場合しっかり保存できているか' do
-      maker_id = 1
-      bike_series = "Ride"
+      maker_name = "merida"
+      year = 2017
       bike_series = "Ride"
       bike_name = "Ride3000"
       frame_type = "カーボン"
@@ -26,18 +26,18 @@ RSpec.describe Bike, type: :model do
       tire = "Panareser/ほげ"
       pedal = "有"
       valve = "仏式"
-      accessory = "キー,リフレクター"
+      accessory = "鍵,リフレクター"
       maker_url = "http://www.merida.jp/lineup/road_bike/ride_3000.html"
       shop_url  = "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"
       picture = nil
       size = 50
       weight = 8.3
-      price= 150000
+      price = 150000
 
-      Bike.creating_bike_need_argument_is(maker_id, bike_series, bike_name, frame_type, component, rear_derailleur, front_derailleur,
+      Bike.creating_bike_need_argument_is(maker_name, year ,bike_series, bike_name, frame_type, component, rear_derailleur, front_derailleur,
             crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
             maker_url, shop_url, picture, size, weight, price)
-      expect(Bike.find_by(id: 1).count).to eq 1
+      expect(Bike.all.count).to eq 1
     end
   end
 end
