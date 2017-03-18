@@ -9,7 +9,6 @@
       <th>Bike series</th>
       <th>Bike name</th>
       <th>Frame type</th>
-      <th>Component</th>
       <th>Rear derailleur</th>
       <th>Front derailleur</th>
       <th>Crank</th>
@@ -32,6 +31,11 @@
       <th>Maker url</th>
       <th>Shop url</th>
       <th>Picture</th>
+      <th>size</th>
+      <th>weight</th>
+      <th>price</th>
+      <th>gear</th>
+      <th>fork</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -43,7 +47,6 @@
         <td><%= bike.bike_series %></td>
         <td><%= bike.bike_name %></td>
         <td><%= bike.frame_type %></td>
-        <td><%= bike.component %></td>
         <td><%= bike.rear_derailleur %></td>
         <td><%= bike.front_derailleur %></td>
         <td><%= bike.crank %></td>
@@ -66,6 +69,11 @@
         <td><%= bike.maker_url %></td>
         <td><%= bike.shop_url %></td>
         <td><%= bike.picture %></td>
+        <td><%= bike.size %></td>
+        <td><%= bike.weight %></td>
+        <td><%= bike.price%></td>
+        <td><%= bike.gear %></td>
+        <td><%= bike.fork %></td>
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>

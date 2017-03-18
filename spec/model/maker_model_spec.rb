@@ -10,7 +10,6 @@ RSpec.describe Maker, type: :model do
     #  Maker.find_by(maker_name:"Trek")
     #  m.count
      expect(Maker.all.count).to eq 1
-     binding.pry
    end
   end
 

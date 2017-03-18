@@ -8,7 +8,6 @@ RSpec.describe Bike, type: :model do
       bike_series = "Ride"
       bike_name = "Ride3000"
       frame_type = "カーボン"
-      component = "105ミックス"
       rear_derailleur = "105"
       front_derailleur = "105"
       crank = "オリジナル"
@@ -34,7 +33,7 @@ RSpec.describe Bike, type: :model do
       weight = 8.3
       price = 150000
 
-      Bike.creating_bike_need_argument_is(maker_name, year ,bike_series, bike_name, frame_type, component, rear_derailleur, front_derailleur,
+      Bike.creating_bike_need_argument_is(maker_name, year ,bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
             crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
             maker_url, shop_url, picture, size, weight, price)
       expect(Bike.all.count).to eq 1
@@ -47,7 +46,6 @@ RSpec.describe Bike, type: :model do
       bike_series = "Ride"
       bike_name = "Ride3000"
       frame_type = "カーボン"
-      component = "105ミックス"
       rear_derailleur = "105"
       front_derailleur = "105"
       crank = "オリジナル"
@@ -74,7 +72,7 @@ RSpec.describe Bike, type: :model do
       price = 150000
       gear = 22
       fork = "FACT carbon fiber, full carbon monocoque, Zertz inserts"
-      Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, component, rear_derailleur, front_derailleur,
+      Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
            maker_url, shop_url, picture, size_list, weight_list, price, gear, fork)
       expect(Bike.where(bike_name:"Ride3000").length).to eq 3
@@ -86,7 +84,6 @@ RSpec.describe Bike, type: :model do
       bike_series = "Ride"
       bike_name = "Ride3000"
       frame_type = "カーボン"
-      component = "105ミックス"
       rear_derailleur = "105"
       front_derailleur = "105"
       crank = "オリジナル"
@@ -113,7 +110,7 @@ RSpec.describe Bike, type: :model do
       price = 150000
       gear = 22
       fork = "FACT carbon fiber, full carbon monocoque, Zertz inserts"
-      Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, component, rear_derailleur, front_derailleur,
+      result = Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
            maker_url, shop_url, picture, size_list, weight_list, price, gear, fork)
       expect(Bike.where(bike_name:"Ride3000").length).to eq 3

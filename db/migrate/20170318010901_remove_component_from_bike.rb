@@ -1,0 +1,5 @@
+class RemoveComponentFromBike < ActiveRecord::Migration[5.0]
+  def change
+    remove_column :bikes, :component, :string
+  end
+end
