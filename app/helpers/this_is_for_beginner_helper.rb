@@ -1,0 +1,2 @@
+module ThisIsForBeginnerHelper
+end

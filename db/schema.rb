@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318080008) do
+ActiveRecord::Schema.define(version: 20170318233652) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "maker_id"
@@ -38,13 +38,14 @@ ActiveRecord::Schema.define(version: 20170318080008) do
     t.string   "maker_url"
     t.string   "shop_url"
     t.binary   "picture"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "size"
     t.integer  "price"
     t.integer  "gear"
     t.string   "fork"
     t.float    "weight"
+    t.boolean  "beginer_flag",     default: false, null: false
   end
 
   create_table "makers", force: :cascade do |t|

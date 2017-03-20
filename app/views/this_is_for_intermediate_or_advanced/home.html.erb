@@ -1,0 +1,57 @@
+<h1>ThisIsForIntermediateOrAdvanced#home</h1>
+<p>Find me in app/views/this_is_for_intermediate_or_advanced/home.html.erb</p>
+
+<div>
+<%= select_tag :maker_id, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+<%= select_tag :bike_id, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+</div>
+
+<div>
+<%= select_tag :maker_id_1, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+<%= select_tag :bike_id_1, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+</div>
+
+<div>
+<%= select_tag :maker_id_2, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+<%= select_tag :bike_id_2, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+</div>
+
+<div>
+<%= select_tag :maker_id_3, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+<%= select_tag :bike_id_3, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    $('#maker_id').change(function() {
+      $.get({
+        url: "get_bike_name",
+        data: { maker_id: $('#maker_id').has('option:selected').val() }
+      });
+    });
+  });
+  $(function() {
+      $('#maker_id_1').change(function() {
+        $.get({
+          url: "get_bike_name_1",
+          data: { maker_id: $('#maker_id_1').has('option:selected').val() }
+        });
+      });
+    });
+    $(function() {
+        $('#maker_id_2').change(function() {
+          $.get({
+            url: "get_bike_name_2",
+            data: { maker_id: $('#maker_id_2').has('option:selected').val() }
+          });
+        });
+      });
+      $(function() {
+          $('#maker_id_3').change(function() {
+            $.get({
+              url: "get_bike_name_3",
+              data: { maker_id: $('#maker_id_3').has('option:selected').val() }
+            });
+          });
+        });
+</script>
