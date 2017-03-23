@@ -20,7 +20,9 @@ class ThisIsForIntermediateOrAdvancedController < ApplicationController
   end
 
   def cmp_result
-    p "///////////////////////////////"
-   p params[:maker_id]
+    @bike_info_from_params = Bike.new
+    result_check_params = Bike.check_params(params[:bike_id],params[:bike_id_1],
+                                            params[:bike_id_2],params[:bike_id_3])
+      @bike_info_from_params = Bike.get_bike_info_from(result_check_params)
   end
 end

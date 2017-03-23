@@ -43,31 +43,29 @@ class Bike < ApplicationRecord
        end
   end
 
-  def self.check_params(makera_id,bike_id,makera_id_1,bike_id_1,
-                        makera_id_2,bike_id_2,makera_id_3,bike_id_3)
-     all_params_set = []
+  def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)
+     cheking_params = [bike_id,bike_id_1,bike_id_2,bike_id_3]
 
-     params_set_from_view_1 =[makera_id,bike_id]
-     all_params_set << params_set_from_view_1
+     checked_bike_id_params = []
 
-     params_set_from_view_2 =[makera_id_1,bike_id_1]
-     all_params_set << params_set_from_view_2
-
-     params_set_from_view_3 =[makera_id_2,bike_id_2]
-     all_params_set << params_set_from_view_3
-
-     params_set_from_view_4 =[makera_id_3,bike_id_3]
-     all_params_set << params_set_from_view_4
-
-     checked_params = []
-
-     all_params_set.each do |params|
-       if params.include?(1)
+      cheking_params.each do |params|
+       if params == 1
          next
        else
-         checked_params << params
+         checked_bike_id_params << params
        end
      end
-    return checked_params
+    return checked_bike_id_params
+  end
+
+  def self.get_bike_info_from(params_array)
+
+    result_get_bike_info_from = []
+    
+    params_array.each do |bike_id|
+        result_each = Bike.find_by(id: bike_id)
+        result_get_bike_info_from << result_each
+    end
+    return result_get_bike_info_from
   end
 end
