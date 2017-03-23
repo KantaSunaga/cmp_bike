@@ -72,9 +72,13 @@ RSpec.describe Bike, type: :model do
       price = 150000
       gear = 22
       fork = "FACT carbon fiber, full carbon monocoque, Zertz inserts"
+      frame_name = "ABC,merida"
+      fork_type = "カーボン"
+      kc_or_cb ="クリンチャー"
+      component ="105ミックス"
       Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork)
+           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork,frame_name, fork_type, kc_or_cb, component)
       expect(Bike.where(bike_name:"Ride3000").length).to eq 3
     end
     it "すでにメーカーが存在していた場合" do
@@ -110,10 +114,21 @@ RSpec.describe Bike, type: :model do
       price = 150000
       gear = 22
       fork = "FACT carbon fiber, full carbon monocoque, Zertz inserts"
+      frame_name = "ABC,merida"
+      fork_type = "カーボン"
+      kc_or_cb ="クリンチャー"
+      component ="105ミックス"
       result = Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork)
+           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component)
       expect(Bike.where(bike_name:"Ride3000").length).to eq 3
+    end
+  end
+  describe "self.check_params" do
+    it "メーカーID＝1、バイクID＝１が４番目に含まれていた場合" do
+      result = Bike.check_params(2, 4,4 ,7 ,10 ,3 ,1 ,1)
+      expect(result).to eq [[2, 4],[4 ,7],[10 ,3]]
+
     end
   end
 end

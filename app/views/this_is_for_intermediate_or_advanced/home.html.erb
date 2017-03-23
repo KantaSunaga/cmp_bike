@@ -1,29 +1,47 @@
 <h1>ThisIsForIntermediateOrAdvanced#home</h1>
 <p>Find me in app/views/this_is_for_intermediate_or_advanced/home.html.erb</p>
 
+<%= form_tag({
+                :controller => 'this_is_for_intermediate_or_advanced',
+                :action => 'cmp_result',
+                :method => "post"
+               },
+                {
+                :maker_id => :maker_id,
+                :bike_id => :bike_id,
+                :maker_id_1 => :maker_id_1,
+                :bike_id_1 => :bike_id_1,
+                :maker_id_2 => :maker_id_2,
+                :bike_id_2 => :bike_id_2,
+                :maker_id_3 => :maker_id_3,
+                :bike_id_3 => :bike_id_3}) do %>
+
 <div>
   <strong>1台目</strong>
-<%= select_tag :maker_id, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-<%= select_tag :bike_id, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :maker_id, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+  <%= select_tag :bike_id, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
 </div>
 
 <div>
   <strong>2台目</strong>
-<%= select_tag :maker_id_1, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-<%= select_tag :bike_id_1, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :maker_id_1, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+  <%= select_tag :bike_id_1, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
 </div>
 
 <div>
   <strong>３台目</strong>
-<%= select_tag :maker_id_2, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-<%= select_tag :bike_id_2, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :maker_id_2, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+  <%= select_tag :bike_id_2, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
 </div>
 
 <div>
   <strong>４台目</strong>
-<%= select_tag :maker_id_3, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-<%= select_tag :bike_id_3, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :maker_id_3, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
+  <%= select_tag :bike_id_3, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
 </div>
+
+<%= submit_tag("Search") %>
+<% end %>
 
 <script type="text/javascript">
 $(function() {

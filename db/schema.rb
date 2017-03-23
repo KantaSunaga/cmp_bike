@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318233652) do
+ActiveRecord::Schema.define(version: 20170321011925) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "maker_id"
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 20170318233652) do
     t.string   "fork"
     t.float    "weight"
     t.boolean  "beginer_flag",     default: false, null: false
+    t.string   "frame_name"
+    t.string   "fork_type"
+    t.string   "kc_or_cb"
+    t.string   "component"
   end
 
   create_table "makers", force: :cascade do |t|
