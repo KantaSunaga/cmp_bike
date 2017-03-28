@@ -1,20 +1,6 @@
 class Bike < ApplicationRecord
   belongs_to :maker
-  has_many :size, dependent: :destroy
-  def self.creating_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
-       crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-       maker_url, shop_url, picture, size, weight, price)
-
-       maker_info = Maker.create(maker_name:maker_name, year:year)
-
-       bike_info =  Bike.create( bike_series: bike_series, bike_name: bike_name, frame_type:frame_type,
-                rear_derailleur: rear_derailleur, front_derailleur:front_derailleur,
-                crank: crank, brake: brake, chain: chain, sprocket:sprocket, sti_lever: sti_lever, bb: bb,
-                wheel: wheel, color: color,saddle: saddle, seat_pillar: seat_pillar, handle: handle, stem: stem,
-                tire: tire, pedal: pedal, valve: pedal, accessory: accessory, maker_url: maker_url, shop_url: shop_url,
-                picture: picture, size: size, weight: weight, price: price)
-       maker_info.bikes << bike_info
-  end
+  has_many :sizes, dependent: :destroy
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
@@ -28,21 +14,22 @@ class Bike < ApplicationRecord
          maker_info = Maker.create(maker_name:maker_name, year: year)
        end
 
-       roupe_end_time = size_list.length
-       roupe_time = 0
-       while roupe_time < roupe_end_time do
-          name = "#{bike_name}(#{size_list[roupe_time]}cm)"
-         bike_info = Bike.create( bike_series: bike_series, bike_name: name, frame_type:frame_type,
+        bike_info = Bike.create( bike_series: bike_series, bike_name: bike_name, frame_type:frame_type,
                   rear_derailleur: rear_derailleur, front_derailleur:front_derailleur,
                   crank: crank, brake: brake, chain: chain, sprocket:sprocket, sti_lever: sti_lever, bb: bb,
                   wheel: wheel, color: color,saddle: saddle, seat_pillar: seat_pillar, handle: handle, stem: stem,
                   tire: tire, pedal: pedal, valve: pedal, accessory: accessory, maker_url: maker_url, shop_url: shop_url,
-                  picture: picture, size: size_list[roupe_time], weight: weight_list[roupe_time], price: price,
-                  gear: gear, fork: fork, frame_name: frame_name, fork_type: fork_type, kc_or_cb: kc_or_cb, component: component ,
-                  min_height: height_list[roupe_time][0], max_hight: height_list[roupe_time][1],sex:sex , road_bike_type:road_bike_type)
-         maker_info.bikes << bike_info
-         roupe_time += 1
-       end
+                  picture: picture,  price: price, gear: gear, fork: fork, frame_name: frame_name, fork_type: fork_type,
+                   kc_or_cb: kc_or_cb, component: component, sex:sex, road_bike_type:road_bike_type )
+        maker_info.bikes << bike_info
+
+        roupe_end_time = size_list.length
+        roupe_time = 0
+        while roupe_time < roupe_end_time do
+          bike_info.sizes.create(size: size_list[roupe_time], min_height: height_list[roupe_time][0],
+                                max_height: height_list[roupe_time][1], weight: weight_list[roupe_time])
+          roupe_time += 1
+        end
   end
 
   def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)

@@ -1,44 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Bike, type: :model do
-  describe "Bike.creating_bike_need_argument_is" do
-    it '引数が以下の場合しっかり保存できているか' do
-      maker_name = "merida"
-      year = 2017
-      bike_series = "Ride"
-      bike_name = "Ride3000"
-      frame_type = "カーボン"
-      rear_derailleur = "105"
-      front_derailleur = "105"
-      crank = "オリジナル"
-      brake = "105"
-      chain = "105"
-      sprocket = "105"
-      sti_lever = "105ミックス"
-      bb = "105ミックス"
-      wheel = "FULCRUM/RACING 3"
-      color ="red"
-      saddle = nil
-      seat_pillar =nil
-      handle = "オリジナル"
-      stem = "オリジナル"
-      tire = "Panareser/ほげ"
-      pedal = "有"
-      valve = "仏式"
-      accessory = "鍵,リフレクター"
-      maker_url = "http://www.merida.jp/lineup/road_bike/ride_3000.html"
-      shop_url  = "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"
-      picture = nil
-      size = 50
-      weight = 8.3
-      price = 150000
 
-      Bike.creating_bike_need_argument_is(maker_name, year ,bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
-            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-            maker_url, shop_url, picture, size, weight, price)
-      expect(Bike.all.count).to eq 1
-    end
-  end
   describe "self.creating_maker_and_all_size_bike_need_argument_is" do
     it "サイズが、3個あった時、bikeテーブルにレコードが１つsizeコンントローラーには３つレコードがあること" do
       maker_name = "merida"
@@ -82,7 +45,7 @@ RSpec.describe Bike, type: :model do
       Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
            maker_url, shop_url, picture, size_list, weight_list, price, gear, fork,frame_name, fork_type, kc_or_cb, component,height_list, sex,roade_bike_type)
-      expect(Bike.all.length).to eq 3
+      expect(Bike.all.length).to eq 1
     end
     it "すでにメーカーが存在していた場合" do
       Maker.create(maker_name: "merida", year: 2017)
@@ -127,7 +90,7 @@ RSpec.describe Bike, type: :model do
       result = Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
            maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component,height_list,sex,roade_bike_type)
-      expect(Bike.all.length).to eq 3
+      expect(Bike.all.length).to eq 1
     end
   end
   describe "self.check_params" do

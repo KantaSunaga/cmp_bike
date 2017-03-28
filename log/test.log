@@ -3447,3 +3447,488 @@ Completed 200 OK in 82ms (Views: 28.4ms | ActiveRecord: 0.8ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
 Processing by ThisIsForBeginnerController#result as HTML
+  [1m[36mBike Load (4.8ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."sex" IS NULL AND ("bikes"."max_hight" BETWEEN ? AND ?) AND ("bikes"."min_height" BETWEEN ? AND ?) AND ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."color" IS NULL AND "bikes"."frame_type" IS NULL AND "bikes"."road_bike_type" IS NULL AND (component like '%%')[0m  [["max_hight", 0], ["max_hight", 0], ["min_height", 0], ["min_height", 0], ["price", 0], ["price", 0]]
+  Rendering this_is_for_beginner/result.html.erb within layouts/application
+  Rendered this_is_for_beginner/result.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 246293959ms (Views: 6.8ms | ActiveRecord: 4.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-03-28 22:33:56 UTC], ["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-03-28 22:39:06 UTC], ["key", "environment"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:43:38 UTC], ["updated_at", 2017-03-28 22:43:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.3ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:43:38 UTC], ["updated_at", 2017-03-28 22:43:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:43:38 UTC], ["updated_at", 2017-03-28 22:43:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:43:38 UTC], ["updated_at", 2017-03-28 22:43:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:45:03 UTC], ["updated_at", 2017-03-28 22:45:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:45:03 UTC], ["updated_at", 2017-03-28 22:45:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:45:03 UTC], ["updated_at", 2017-03-28 22:45:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.6ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:46:20 UTC], ["updated_at", 2017-03-28 22:46:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:46:20 UTC], ["updated_at", 2017-03-28 22:46:20 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:46:20 UTC], ["updated_at", 2017-03-28 22:46:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:46:20 UTC], ["updated_at", 2017-03-28 22:46:20 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:46:20 UTC], ["updated_at", 2017-03-28 22:46:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (4.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:46:20 UTC], ["updated_at", 2017-03-28 22:46:20 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:47:11 UTC], ["updated_at", 2017-03-28 22:47:11 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:47:11 UTC], ["updated_at", 2017-03-28 22:47:11 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:47:11 UTC], ["updated_at", 2017-03-28 22:47:11 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:47:11 UTC], ["updated_at", 2017-03-28 22:47:11 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:47:11 UTC], ["updated_at", 2017-03-28 22:47:11 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:47:11 UTC], ["updated_at", 2017-03-28 22:47:11 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:47:55 UTC], ["updated_at", 2017-03-28 22:47:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:47:55 UTC], ["updated_at", 2017-03-28 22:47:55 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:47:55 UTC], ["updated_at", 2017-03-28 22:47:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:47:55 UTC], ["updated_at", 2017-03-28 22:47:55 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:47:55 UTC], ["updated_at", 2017-03-28 22:47:55 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:47:55 UTC], ["updated_at", 2017-03-28 22:47:55 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mSize Load (0.4ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.4ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.3ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.4ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.3ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."bike_id" = ?[0m  [["bike_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:49:37 UTC], ["updated_at", 2017-03-28 22:49:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:49:37 UTC], ["updated_at", 2017-03-28 22:49:37 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:49:37 UTC], ["updated_at", 2017-03-28 22:49:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:49:37 UTC], ["updated_at", 2017-03-28 22:49:37 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:49:37 UTC], ["updated_at", 2017-03-28 22:49:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:49:37 UTC], ["updated_at", 2017-03-28 22:49:37 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.6ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:50:56 UTC], ["updated_at", 2017-03-28 22:50:56 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:50:56 UTC], ["updated_at", 2017-03-28 22:50:56 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:50:56 UTC], ["updated_at", 2017-03-28 22:50:56 UTC]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:50:56 UTC], ["updated_at", 2017-03-28 22:50:56 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:50:56 UTC], ["updated_at", 2017-03-28 22:50:56 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:50:56 UTC], ["updated_at", 2017-03-28 22:50:56 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:51:38 UTC], ["updated_at", 2017-03-28 22:51:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:51:38 UTC], ["updated_at", 2017-03-28 22:51:38 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:51:38 UTC], ["updated_at", 2017-03-28 22:51:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:51:38 UTC], ["updated_at", 2017-03-28 22:51:38 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:51:38 UTC], ["updated_at", 2017-03-28 22:51:38 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:51:38 UTC], ["updated_at", 2017-03-28 22:51:38 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-03-28 22:52:20 UTC], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:52:53 UTC], ["updated_at", 2017-03-28 22:52:53 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:52:53 UTC], ["updated_at", 2017-03-28 22:52:53 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:52:53 UTC], ["updated_at", 2017-03-28 22:52:53 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:52:53 UTC], ["updated_at", 2017-03-28 22:52:53 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:52:53 UTC], ["updated_at", 2017-03-28 22:52:53 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:52:53 UTC], ["updated_at", 2017-03-28 22:52:53 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.6ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:55:29 UTC], ["updated_at", 2017-03-28 22:55:29 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:55:29 UTC], ["updated_at", 2017-03-28 22:55:29 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:55:29 UTC], ["updated_at", 2017-03-28 22:55:29 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:55:29 UTC], ["updated_at", 2017-03-28 22:55:29 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:55:29 UTC], ["updated_at", 2017-03-28 22:55:29 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:55:29 UTC], ["updated_at", 2017-03-28 22:55:29 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-03-28 22:59:21 UTC], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 160], ["max_height", 170], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 165], ["max_height", 175], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 170], ["max_height", 185], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (2.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 160], ["max_height", 171], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 165], ["max_height", 171], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 170], ["max_height", 181], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.0ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["maker_name", "merida"], ["year", 2017], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "merida"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 1], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", "カーボン"], ["rear_derailleur", "105"], ["front_derailleur", "105"], ["crank", "オリジナル"], ["brake", "105"], ["chain", "105"], ["sprocket", "105"], ["sti_lever", "105ミックス"], ["bb", "105ミックス"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "ABC,merida"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 160], ["max_height", 170], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (5.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 165], ["max_height", 175], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 170], ["max_height", 185], ["weight", 8], ["created_at", 2017-03-28 22:59:39 UTC], ["updated_at", 2017-03-28 22:59:39 UTC], ["bike_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
