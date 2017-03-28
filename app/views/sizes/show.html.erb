@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @size.size %>
+</p>
+
+<p>
+  <strong>Min height:</strong>
+  <%= @size.min_height %>
+</p>
+
+<p>
+  <strong>Max height:</strong>
+  <%= @size.max_height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @size.weight %>
+</p>
+
+<%= link_to 'Edit', edit_size_path(@size) %> |
+<%= link_to 'Back', sizes_path %>

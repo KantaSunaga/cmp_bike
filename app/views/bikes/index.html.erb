@@ -2,13 +2,15 @@
 
 <h1>Bikes</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>Maker</th>
       <th>Bike series</th>
       <th>Bike name</th>
       <th>Frame type</th>
+      <th>Frame name</th>
+      <th>component</th>
       <th>Rear derailleur</th>
       <th>Front derailleur</th>
       <th>Crank</th>
@@ -36,6 +38,9 @@
       <th>price</th>
       <th>gear</th>
       <th>fork</th>
+      <th>fotk_type</th>
+      <th>cd or kc</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -47,6 +52,8 @@
         <td><%= bike.bike_series %></td>
         <td><%= bike.bike_name %></td>
         <td><%= bike.frame_type %></td>
+        <td><%= bike.frame_name %></td>
+        <td><%= bike.component %></td>
         <td><%= bike.rear_derailleur %></td>
         <td><%= bike.front_derailleur %></td>
         <td><%= bike.crank %></td>
@@ -74,6 +81,8 @@
         <td><%= bike.price%></td>
         <td><%= bike.gear %></td>
         <td><%= bike.fork %></td>
+        <td><%= bike.fork_type%></td>
+        <td><%= bike.kc_or_cb%></td>
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -83,5 +92,4 @@
 </table>
 
 <br>
-
 <%= link_to 'New Bike', new_bike_path %>

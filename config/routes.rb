@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-
-
-  get 'this_is_for_beginner/home'
-
-  get 'this_is_for_beginner/result'
-
+  resources :sizes
   post 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#cmp_result'
-
-  get 'this_is_for_intermediate_or_advanced/home'
-
+  get "/this_is_for_beginner/home"
+  post "this_is_for_beginner/result"
   get 'this_is_for_intermediate_or_advanced/result'
 
   get 'home/top' => 'home#top'

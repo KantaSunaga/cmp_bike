@@ -1,1 +1,201 @@
-<h1>2</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>画像</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= image_tag "#{bike.picture}" , :size =>"200x200"%></td>
+      <% end %>
+    </tr>
+      <td>メーカー</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= get_maker_id_from_bike bike.maker_id %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>バイク名</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= bike.bike_name %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>価格</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= bike.price %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>重量</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= bike.weight %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>カラー</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= bike.color %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>サイズ</td>
+      <% @bike_info_from_params.each do |bike| %>
+      <td><%= bike.size%></td>
+      <% end %>
+    </tr>
+      <tr>
+      <td>フレーム素材</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.frame_type %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>フォーク素材</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.fork_type %></td>
+        <% end %>
+      </tr>
+      <td>コンポーネント</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.component %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>ホイール</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.wheel %></td>
+        <% end %>
+      </tr>
+
+      <tr>
+      <td>Frame name</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.fork_type %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Rear derailleur</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.rear_derailleur %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Front derailleur</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.front_derailleur %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Crank</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.crank %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Brake</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.brake %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Chain</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.chain %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Sprocket</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.sprocket %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Sti lever</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.sti_lever %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Bb</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.bb %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Saddle</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.saddle %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Seat pillar</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.seat_pillar %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Handle</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.handle%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Stem</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.stem%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Tire</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.tire%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Pedal</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.pedal%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Valve</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.valve%></td>
+        <% end %>
+      </tr>
+      <tr>
+      <td>Accessory</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.accessory%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Maker url</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.maker_url%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Shop url</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.maker_url%></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>gear</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.gear %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>fork</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.fork %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>cd or kc</td>
+        <% @bike_info_from_params.each do |bike| %>
+        <td><%= bike.kc_or_cb %></td>
+        <% end %>
+      </tr>
+</table>

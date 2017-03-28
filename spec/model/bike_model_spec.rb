@@ -40,7 +40,7 @@ RSpec.describe Bike, type: :model do
     end
   end
   describe "self.creating_maker_and_all_size_bike_need_argument_is" do
-    it "サイズが、3個あった時、3っこレコードが存在しているか" do
+    it "サイズが、3個あった時、bikeテーブルにレコードが１つsizeコンントローラーには３つレコードがあること" do
       maker_name = "merida"
       year = 2017
       bike_series = "Ride"
@@ -76,10 +76,13 @@ RSpec.describe Bike, type: :model do
       fork_type = "カーボン"
       kc_or_cb ="クリンチャー"
       component ="105ミックス"
+      height_list = [[160,170],[165,175],[170,185]]
+      sex = false
+      roade_bike_type = 1
       Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork,frame_name, fork_type, kc_or_cb, component)
-      expect(Bike.where(bike_name:"Ride3000").length).to eq 3
+           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork,frame_name, fork_type, kc_or_cb, component,height_list, sex,roade_bike_type)
+      expect(Bike.all.length).to eq 3
     end
     it "すでにメーカーが存在していた場合" do
       Maker.create(maker_name: "merida", year: 2017)
@@ -118,10 +121,13 @@ RSpec.describe Bike, type: :model do
       fork_type = "カーボン"
       kc_or_cb ="クリンチャー"
       component ="105ミックス"
+      height_list = [[160,171],[165,171],[170,181]]
+      sex = false
+      roade_bike_type = 1
       result = Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component)
-      expect(Bike.where(bike_name:"Ride3000").length).to eq 3
+           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component,height_list,sex,roade_bike_type)
+      expect(Bike.all.length).to eq 3
     end
   end
   describe "self.check_params" do
@@ -169,9 +175,12 @@ RSpec.describe Bike, type: :model do
       fork_type = "カーボン"
       kc_or_cb ="クリンチャー"
       component ="105ミックス"
+      height_list = [[160,170],[165,175],[170,185]]
+      sex = false
+      roade_bike_type = 1
       result = Bike.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
            crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component)
+           maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component,height_list,sex,roade_bike_type)
       expect(Bike.get_bike_info_from([1]).length).to eq 1
     end
   end

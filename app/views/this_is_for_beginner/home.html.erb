@@ -1,2 +1,99 @@
 <h1>ThisIsForBeginner#home</h1>
 <p>Find me in app/views/this_is_for_beginner/home.html.erb</p>
+
+<%= form_tag({
+                :controller => 'this_is_for_beginner',
+                :action => 'result',
+                :method => "post"
+               },
+                {
+                :bike_type => "bike_type"
+                }) do %>
+<div>
+  <strong>自転車のタイプ</strong>
+  <div>
+    <%= select_tag :bike_type, options_for_select( [["", nil],["ロードバイク", 1]])%>
+  </div>
+</div>
+
+<div id="detaile">
+  <div id = "detail_frame">
+    <strong>フレーム</strong>
+    <br>
+      <%= select_tag :detail_frame, options_for_select( [["",nil],["カーボン", "カーボン"],["アルミ","アルミ"],["クロモリ","アルミ"]])%>
+    </div>
+    <div id = "detail_bike_type">
+    <strong>ロードバイクのタイプ</strong>
+      <br>
+      <%= select_tag :detail_bike_type, options_for_select( [["",nil],["エアロバイク",1],["ロングライド", 2],["オールラウンド", 3]])%>
+    </div>
+    <div id = "detail_component">
+    <strong>コンポーネントランク</strong>
+    <br>
+      <%= select_tag :detail_component, options_for_select( [["",nil],["105", "105"]])%>
+    </div>
+</div>
+  <div>
+    <strong>予算</strong>
+    <div>
+      <%= select_tag :price_down, options_for_select([["下限を設定しない", 0],["5万円",50000],["15万円",150000],["25万円",250000],
+                                                ["35万円",350000],["45万円",450000],["55万円",550000],["65万円",650000],
+                                                ["75万円",750000],["85万円",850000],["95万円",950000]])%>
+                                                〜
+      <%= select_tag :price_up, options_for_select([["10万円まで",100000 ],["20万円まで",200000],["30万円まで",300000],["40万円まで",400000],
+                                                ["50万円まで",500000],["60万円まで",600000],["70万円まで",700000],["80万円まで",800000],
+                                                ["90万円まで",900000],["100万円まで",10000],["上限を設定しない",10000000]])%>
+
+    </div>
+  </div>
+<div>
+  <strong>カラー</strong>
+    <div>
+      <%= select_tag :color, options_for_select([["",nil],["red","red"],["blue", "blue"],["green","green"],["black","black"],
+                                              ["white","white"],["celeste", "celeste"]])%>
+    </div>
+</div>
+
+<div>
+  <strong>性別モデル</strong>
+    <div>
+      <%= select_tag :sex, options_for_select([["どちらでも良い",nil],["男性モデル","men"],["女性モデル", "woman"]])%>
+    </div>
+</div>
+<div>
+  <strong>身長</strong>
+  <div>
+    <%= select_tag :user_size_down, options_for_select([["",nil],["130",130],["135",135],["140",140],
+                                              ["145",145],["150",150],["155",155],["160",160],
+                                              ["165",165],["170",170],["175",175],
+                                              ["180",180],["185",185],["190",190],["195",195]])%>
+                                              cm〜
+    <%= select_tag :user_size_up, options_for_select([["",nil],["135",135],["140",140],
+                                              ["145",145],["150",150],["155",155],["160",160],
+                                              ["165",165],["170",170],["175",175],
+                                              ["180",180],["185",185],["190",190],["195",195],["200",200]]), :include_blank => true%>cm
+
+  </div>
+</div>
+<p>
+　<%=submit_tag "探す"%>
+</p>
+<% end %>
+
+<script type="text/javascript">
+$("#detail_frame").hide();
+$("#detail_bike_type").hide();
+$("#detail_component").hide();
+$("#bike_type").change(function(){
+  var bike_type_value = $("#bike_type").val();
+  if (bike_type_value == 1){
+    $("#detail_frame").show(500);
+    $("#detail_bike_type").show(500);
+    $("#detail_component").show(500);
+  }else{
+    $("#detail_frame").hide(500);
+    $("#detail_bike_type").hide(500);
+    $("#detail_component").hide(500);
+  };
+});
+</script>
