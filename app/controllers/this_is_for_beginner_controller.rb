@@ -21,8 +21,6 @@ class ThisIsForBeginnerController < ApplicationController
        :price_up,
        :color,
        :sex,
-       :user_size_up,
-       :user_size_down)
-
+       :user_size)
     end
 end

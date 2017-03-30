@@ -5,7 +5,6 @@ class Bike < ApplicationRecord
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
        maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component,height_list,sex,road_bike_type)
-
        maker_created_authenticity = Maker.find_by(maker_name: maker_name)
 
        if maker_created_authenticity
@@ -26,10 +25,13 @@ class Bike < ApplicationRecord
         roupe_end_time = size_list.length
         roupe_time = 0
         while roupe_time < roupe_end_time do
-          bike_info.sizes.create(size: size_list[roupe_time], min_height: height_list[roupe_time][0],
-                                max_height: height_list[roupe_time][1], weight: weight_list[roupe_time])
+          size = Size.create(size: size_list[roupe_time], min_height: height_list[roupe_time][0],
+                            max_height: height_list[roupe_time][1], weight: weight_list[roupe_time])
+                bike_info.sizes << size
           roupe_time += 1
         end
+        p "リレーション確認ーーーーーーーーー"
+        p bike_info.sizes
   end
 
   def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)
@@ -58,38 +60,21 @@ class Bike < ApplicationRecord
     return result_get_bike_info_from
   end
 
-  # def self.serch_bike_from_user_params(bike_type, frame_type,road_bike_type, component,
-  #                                 price_down,price_up,color,sex,user_size_up,user_size_down)
-  #
-  # if sex == "men"
-  #   sex_info = false
-  # elsif sex == "women"
-  #   sex_info = true
-  # else
-  #   sex_info = nil
-  # end
-  # result_serch_bike = Bike.where(sex: sex_info,max_hight: user_size_down.to_i..user_size_up.to_i, min_height: user_size_down.to_i..user_size_up.to_i,
-  #                                price: price_down.to_i..price_up.to_i, color: color, frame_type: frame_type, road_bike_type: road_bike_type
-  #                                 ).where("component like '%#{component}%'")
-  #  return result_serch_bike
-  # end
-    def self.find_bik_from_size_param(user_size_up,user_size_down)
-     if user_size_up == true && user_size_down == true
-       result = Bike.where(max_hight: user_size_down.to_i..user_size_up.to_i, min_height: user_size_down.to_i..user_size_up.to_i)
-     elsif user_size_up == true && user_size_down == nil
-       result = Bike.where(max_hight: 130..user_size_up.to_i)
-     elsif user_size_up == false && user_size_down == true
-       result = Bike.where(min_hight: user_size_down.to_i..200)
-     else
-     end
+    def self.find_bike_from_default_param(user_size, price_up, price_down)
+        bike_info = Bike.where(price: price_down.to_i..price_up.to_i)
+        binding.pry
+        p "bike-----------------------"
+        p bike_info
+        p "ーー ---------------------size"
+        p Size.all
+        bike_info.sizes.where(min_height: 1..user_size.to_i, max_height: user_size.to_i..1000)
     end
 
-    def self.find_bik_from_sex_param(sex)
+    def self.find_bike_from_sex_param(sex)
       if sex == "men"
         result = Bike.where(sex: false)
       elsif sex == "women"
           result = Bike.where(sex: true)
-      else
       end
     end
 end

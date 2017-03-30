@@ -40,6 +40,7 @@ group :development, :test do
   gem 'guard-rspec', require: false # guardでrspecを動かす
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'  # デスクトップ通知を行う
+  gem "factory_girl_rails"
 end
 
 group :development do

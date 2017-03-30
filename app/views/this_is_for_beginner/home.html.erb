@@ -16,6 +16,11 @@
   </div>
 </div>
 
+<div id = "use_check_box">
+  <strong>詳細条件を追加する<strong>
+  <%= check_box_tag :detail_check_box%>
+</div>
+
 <div id="detaile">
   <div id = "detail_frame">
     <strong>フレーム</strong>
@@ -57,22 +62,14 @@
 <div>
   <strong>性別モデル</strong>
     <div>
-      <%= select_tag :sex, options_for_select([["どちらでも良い",nil],["男性モデル","men"],["女性モデル", "woman"]])%>
+      <%= select_tag :sex, options_for_select([["男性モデル","men"],["女性モデル", "woman"]])%>
     </div>
 </div>
 <div>
   <strong>身長</strong>
   <div>
-    <%= select_tag :user_size_down, options_for_select([["",nil],["130",130],["135",135],["140",140],
-                                              ["145",145],["150",150],["155",155],["160",160],
-                                              ["165",165],["170",170],["175",175],
-                                              ["180",180],["185",185],["190",190],["195",195]])%>
-                                              cm〜
-    <%= select_tag :user_size_up, options_for_select([["",nil],["135",135],["140",140],
-                                              ["145",145],["150",150],["155",155],["160",160],
-                                              ["165",165],["170",170],["175",175],
-                                              ["180",180],["185",185],["190",190],["195",195],["200",200]]), :include_blank => true%>cm
-
+    <%= number_field_tag :user_size , in: 100...300%>
+                                              cm
   </div>
 </div>
 <p>
@@ -84,16 +81,29 @@
 $("#detail_frame").hide();
 $("#detail_bike_type").hide();
 $("#detail_component").hide();
+$("#use_check_box").hide();
+
 $("#bike_type").change(function(){
   var bike_type_value = $("#bike_type").val();
-  if (bike_type_value == 1){
+  if ($("#bike_type").val() == 1){
+    $("#use_check_box").show(500);
+  }else if (bike_type_value != 1) {
+    $("#use_check_box").hide(500);
+    $("#detail_frame").hide();
+    $("#detail_bike_type").hide();
+    $("#detail_component").hide();
+  }
+});
+
+$("#detail_check_box").click(function(){
+  if($("#detail_check_box").prop('checked')){
     $("#detail_frame").show(500);
     $("#detail_bike_type").show(500);
     $("#detail_component").show(500);
-  }else{
-    $("#detail_frame").hide(500);
-    $("#detail_bike_type").hide(500);
-    $("#detail_component").hide(500);
-  };
+  }else {
+     $("#detail_frame").hide(500);
+     $("#detail_bike_type").hide(500);
+     $("#detail_component").hide(500);
+  }
 });
 </script>
