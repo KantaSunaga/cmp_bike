@@ -23,14 +23,26 @@
 
 <div id="detaile">
   <div id = "detail_frame">
+
+
+
+
+
     <strong>フレーム</strong>
     <br>
       <%= select_tag :detail_frame, options_for_select( [["",nil],["カーボン", "カーボン"],["アルミ","アルミ"],["クロモリ","アルミ"]])%>
     </div>
+
+
+
+
+
+
+
     <div id = "detail_bike_type">
     <strong>ロードバイクのタイプ</strong>
       <br>
-      <%= select_tag :detail_bike_type, options_for_select( [["",nil],["エアロバイク",1],["ロングライド", 2],["オールラウンド", 3]])%>
+      <%= select_tag :detail_bike_type, options_for_select( [["",nil],["エアロバイク",1],["ロングライド", 2],["オールラウンド", 3],["シクロクロス", 4]])%>
     </div>
     <div id = "detail_component">
     <strong>コンポーネントランク</strong>
@@ -89,9 +101,12 @@ $("#bike_type").change(function(){
     $("#use_check_box").show(500);
   }else if (bike_type_value != 1) {
     $("#use_check_box").hide(500);
-    $("#detail_frame").hide();
-    $("#detail_bike_type").hide();
-    $("#detail_component").hide();
+    $("#detail_frame").hide(500);
+    $("#detail_bike_type").hide(500);
+    $("#detail_component").hide(500);
+    $("#detail_frame").val(null);
+    $("#detail_bike_type").val(null);
+    $("#detail_component").val(null);
   }
 });
 
@@ -104,6 +119,10 @@ $("#detail_check_box").click(function(){
      $("#detail_frame").hide(500);
      $("#detail_bike_type").hide(500);
      $("#detail_component").hide(500);
+     $("#detail_frame").val(null);
+     $("#detail_bike_type").val(null);
+     $("#detail_component").val(null);
+
   }
 });
 </script>

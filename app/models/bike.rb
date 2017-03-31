@@ -30,9 +30,6 @@ class Bike < ApplicationRecord
                 bike_info.sizes << size
           roupe_time += 1
         end
-        p "リレーション確認ーーーーーーーーー"
-        p bike_info.sizes
-  end
 
   def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)
      cheking_params = [bike_id,bike_id_1,bike_id_2,bike_id_3]
@@ -60,21 +57,28 @@ class Bike < ApplicationRecord
     return result_get_bike_info_from
   end
 
-    def self.find_bike_from_default_param(user_size, price_up, price_down)
-        bike_info = Bike.where(price: price_down.to_i..price_up.to_i)
-        binding.pry
-        p "bike-----------------------"
-        p bike_info
-        p "ーー ---------------------size"
-        p Size.all
-        bike_info.sizes.where(min_height: 1..user_size.to_i, max_height: user_size.to_i..1000)
+  def self.find_bike_frame_param(frame_type)
+    if self == true
+      if frame_type == true
+        Bike.where(frame_type: frame_type.to_i)
+      end
     end
+  end
+
+  def self.find_bike_price_param(price_up, price_down)
+    Bike.where(price: price_down.to_i..price_up.to_i)
+  end
 
     def self.find_bike_from_sex_param(sex)
       if sex == "men"
-        result = Bike.where(sex: false)
-      elsif sex == "women"
-          result = Bike.where(sex: true)
+        Bike.where(sex: false)
       end
     end
+  end
+
+  def self.find_bike_from_user_size_param(user_size)
+    if user_size == true
+      self.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..300)
+    end
+  end
 end

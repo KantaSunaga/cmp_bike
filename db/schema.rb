@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328225825) do
+ActiveRecord::Schema.define(version: 20170331130609) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "maker_id"
     t.string   "bike_series"
     t.string   "bike_name"
-    t.string   "frame_type"
+    t.integer  "frame_type"
     t.string   "rear_derailleur"
     t.string   "front_derailleur"
     t.string   "crank"
