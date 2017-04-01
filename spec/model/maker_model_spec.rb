@@ -12,5 +12,4 @@ RSpec.describe Maker, type: :model do
      expect(Maker.all.count).to eq 1
    end
   end
-
 end

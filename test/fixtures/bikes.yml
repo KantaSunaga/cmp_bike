@@ -27,7 +27,7 @@ one:
   accessory: MyString
   maker_url: MyString
   shop_url: MyString
-  picture: 
+  picture:
 
 two:
   maker_id: 1
@@ -56,4 +56,4 @@ two:
   accessory: MyString
   maker_url: MyString
   shop_url: MyString
-  picture: 
+  picture:
