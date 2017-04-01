@@ -10,7 +10,7 @@ class Bike < ApplicationRecord
        if maker_created_authenticity
          maker_info = maker_created_authenticity
        else
-         maker_info = Maker.create(maker_name:maker_name, year: year)
+         maker_info = Maker.create(maker_name: maker_name)
        end
 
         bike_info = Bike.create( bike_series: bike_series, bike_name: bike_name, frame_type:frame_type,
@@ -30,7 +30,7 @@ class Bike < ApplicationRecord
                 bike_info.sizes << size
           roupe_time += 1
         end
-
+  end
   def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)
      cheking_params = [bike_id,bike_id_1,bike_id_2,bike_id_3]
 
@@ -58,11 +58,9 @@ class Bike < ApplicationRecord
   end
 
   def self.find_bike_frame_param(frame_type)
-    if self == true
       if frame_type == true
         Bike.where(frame_type: frame_type.to_i)
       end
-    end
   end
 
   def self.find_bike_price_param(price_up, price_down)
@@ -71,14 +69,47 @@ class Bike < ApplicationRecord
 
     def self.find_bike_from_sex_param(sex)
       if sex == "men"
-        Bike.where(sex: false)
+        self.where(sex: false)
       end
     end
+
+
+  def self.find_bike_from_road_bike_type_param(road_bike_type)
+      self.where(road_bike_type: road_bike_type.to_i)
   end
 
   def self.find_bike_from_user_size_param(user_size)
-    if user_size == true
+    if user_size != nil
       self.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..300)
     end
+  end
+
+  def self.find_bike_from_color_param(color_param)
+    if color_param != nil
+      self.where("color like '%" + color_param + "%'")
+    end
+  end
+
+  def self.find_bike_from_maker_param(maker_id)
+    if maker_id != nil
+      self.where(maker_id: maker_id.to_i)
+    end
+  end
+
+  def self.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type)
+    @bike = Bike.find_bike_price_param(price_up, price_down).find_bike_from_sex_param(sex).find_bike_from_color_param(color_param)
+
+    if @bike !=nil
+      if road_bike_type != nil
+        @bike.find_bike_from_road_bike_type_param(road_bike_type)
+      end
+      if maker_id != nil
+        @bike.find_bike_from_maker_param(maker_id)
+      end
+      if frame_type != nil
+        @bike..find_bike_frame_param(frame_type)
+      end
+    end
+    @bike
   end
 end

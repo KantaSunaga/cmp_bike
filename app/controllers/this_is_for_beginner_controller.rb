@@ -1,6 +1,7 @@
 class ThisIsForBeginnerController < ApplicationController
   def home
     @bike_info = Bike.new
+    @maker = Maker.all
   end
 
   def result
@@ -21,6 +22,7 @@ class ThisIsForBeginnerController < ApplicationController
        :detail_frame,
        :detail_bike_type,
        :detail_component,
+       :detail_maker,
        :price_down,
        :price_up,
        :color,

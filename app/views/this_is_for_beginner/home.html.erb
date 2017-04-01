@@ -22,27 +22,22 @@
 </div>
 
 <div id="detaile">
+  <div id = "detail_maker">
+    <strong>メーカー</strong>
+      <div>
+        <%= select_tag :detail_maker, options_for_select(@maker.map{|m|[m.maker_name, m.id]}),:include_blank => true%>
+      </div>
+  </div>
   <div id = "detail_frame">
-
-
-
-
-
     <strong>フレーム</strong>
     <br>
       <%= select_tag :detail_frame, options_for_select( [["",nil],["カーボン", "カーボン"],["アルミ","アルミ"],["クロモリ","アルミ"]])%>
     </div>
 
-
-
-
-
-
-
     <div id = "detail_bike_type">
     <strong>ロードバイクのタイプ</strong>
       <br>
-      <%= select_tag :detail_bike_type, options_for_select( [["",nil],["エアロバイク",1],["ロングライド", 2],["オールラウンド", 3],["シクロクロス", 4]])%>
+      <%= select_tag :detail_bike_type, options_for_select([["",nil],["エアロバイク",1],["ロングライド", 2],["オールラウンド", 3],["シクロクロス", 4]])%>
     </div>
     <div id = "detail_component">
     <strong>コンポーネントランク</strong>
@@ -94,6 +89,8 @@ $("#detail_frame").hide();
 $("#detail_bike_type").hide();
 $("#detail_component").hide();
 $("#use_check_box").hide();
+$("#detail_maker").hide();
+
 
 $("#bike_type").change(function(){
   var bike_type_value = $("#bike_type").val();
@@ -115,10 +112,12 @@ $("#detail_check_box").click(function(){
     $("#detail_frame").show(500);
     $("#detail_bike_type").show(500);
     $("#detail_component").show(500);
+    $("#detail_maker").show(500);
   }else {
      $("#detail_frame").hide(500);
      $("#detail_bike_type").hide(500);
      $("#detail_component").hide(500);
+     $("#detail_maker").hide(500);
      $("#detail_frame").val(null);
      $("#detail_bike_type").val(null);
      $("#detail_component").val(null);

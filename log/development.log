@@ -20803,3 +20803,216 @@ Migrating to ChangeDatatypeFrameTypeOfBikes (20170331130609)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-03-31 13:09:52 UTC], ["updated_at", 2017-03-31 13:09:52 UTC], ["bike_id", 13]]
   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:37:12 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (0.8ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (2108.7ms)
+Completed 500 Internal Server Error in 2598ms (ActiveRecord: 18.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `maker' for #<#<Class:0x007fc7e2702c48>:0x007fc7e2701988>
+Did you mean?  @maker):
+    24: <div id="detaile">
+    25:   <div id = "detail_maker">
+    26:     <strong>メーカー</strong>
+    27:     <%= select_tag :detail_maker, options_for_select(@maker.map{|m|[m.maker_name, maker.id]})%>
+    28:   </div>
+    29:   <div id = "detail_frame">
+    30:     <strong>フレーム</strong>
+  
+app/views/this_is_for_beginner/home.html.erb:27:in `block (2 levels) in _app_views_this_is_for_beginner_home_html_erb___1865211785267753042_70248237111920'
+app/views/this_is_for_beginner/home.html.erb:27:in `block in _app_views_this_is_for_beginner_home_html_erb___1865211785267753042_70248237111920'
+app/views/this_is_for_beginner/home.html.erb:4:in `_app_views_this_is_for_beginner_home_html_erb___1865211785267753042_70248237111920'
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.6ms)
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (238.4ms)
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:37:47 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (1.9ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 906ms (Views: 849.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:39:37 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (2.9ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 459ms (Views: 421.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:41:08 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (2.6ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (48.3ms)
+Completed 200 OK in 245ms (Views: 217.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:41:57 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (2.6ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 264ms (Views: 231.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:42:27 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (25.7ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/kanta/cmp_bike/app/views/this_is_for_beginner/home.html.erb:28: syntax error, unexpected ',', expecting '}'
+...select(@maker.map{|m|["", nil],[m.maker_name, m.id]}));@outp...
+...                               ^):
+  
+app/views/this_is_for_beginner/home.html.erb:28: syntax error, unexpected ',', expecting '}'
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.0ms)
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/kanta/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (139.6ms)
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 10:43:59 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (2.5ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (201.5ms)
+Completed 200 OK in 542ms (Views: 496.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/this_is_for_beginner/result?method=post" for ::1 at 2017-04-01 10:44:22 +0900
+Processing by ThisIsForBeginnerController#result as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XsvJxE841TqtpE/hnEu7kzjsi1Ij5hysfA6eltAZk6tIiz9eKzWtdGpQvdFzTMnVlVC9AGFIxmgnqXAJHD1fbQ==", "bike_type"=>"1", "detail_check_box"=>"1", "detail_maker"=>"2", "detail_frame"=>"", "detail_bike_type"=>"", "detail_component"=>"", "price_down"=>"0", "price_up"=>"100000", "color"=>"", "sex"=>"men", "user_size"=>"", "commit"=>"探す", "method"=>"post"}
+Unpermitted parameters: utf8, authenticity_token, detail_check_box, commit, method
+  [1m[36mBike Load (7.9ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."road_bike_type" = ?[0m  [["road_bike_type", 0]]
+Unpermitted parameters: utf8, authenticity_token, detail_check_box, commit, method
+  Rendering this_is_for_beginner/result.html.erb within layouts/application
+  Rendered this_is_for_beginner/result.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 462ms (Views: 250.7ms | ActiveRecord: 7.9ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveMakerFromYear (20170401015535)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveYearFromMaker (20170401020008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amakers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maker_name" varchar, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "amakers" ("id","maker_name","year","created_at","updated_at")
+                     SELECT "id","maker_name","year","created_at","updated_at" FROM "makers"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "makers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "makers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maker_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "makers" ("id","maker_name","created_at","updated_at")
+                     SELECT "id","maker_name","created_at","updated_at" FROM "amakers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "amakers"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170401020008"]]
+  [1m[35m (20.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "MERIDA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 3], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", 1], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "merida ride sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 14]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 14]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 14]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "GIANT"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 2], ["bike_series", "DEFY"], ["bike_name", "defy_adovanced_sl_0"], ["frame_type", 2], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["saddle", "オリジナル"], ["seat_pillar", "フレーム一体型"], ["handle", "GIANT CONTACT SLR Carbon 31.8"], ["stem", "GIANT CONTACT SLR"], ["tire", "GIANT GAVIA SLR 700x25C TUBELESS READY"], ["pedal", "無"], ["valve", "無"], ["accessory", "RideSense、ベル、チューブレスバルブ、シーラント"], ["maker_url", "http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications"], ["shop_url", "hoge"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["price", 750000], ["gear", 22], ["fork", "Advanced SL-Grade Composite，Full Composite OverDrive 2 Column"], ["frame_name", "ジャイアントフレーム"], ["fork_type", "ダイヤモンド"], ["kc_or_cb", "クリンチャー"], ["component", "SORA"], ["road_bike_type", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 45], ["min_height", 150], ["max_height", 160], ["weight", 7], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 165], ["weight", 7], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 65], ["min_height", 160], ["max_height", 170], ["weight", 7], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 15]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "CANNONDEL"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 4], ["bike_series", "CAAD"], ["bike_name", "CAAD12"], ["frame_type", 3], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "ライト"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "caadd 12 sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105"], ["road_bike_type", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 16]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 16]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-01 02:01:32 UTC], ["updated_at", 2017-04-01 02:01:32 UTC], ["bike_id", 16]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 11:03:52 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (1.6ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 950ms (Views: 809.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 12:28:58 +0900
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (33.5ms)
+Started GET "/this_is_for_beginner/home" for ::1 at 2017-04-01 12:28:59 +0900
+Completed 200 OK in 823ms (Views: 340.8ms | ActiveRecord: 3.0ms)
+
+
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 315ms (Views: 176.9ms | ActiveRecord: 2.2ms)
+
+
