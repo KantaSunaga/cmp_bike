@@ -112,4 +112,25 @@ class Bike < ApplicationRecord
     end
     @bike
   end
+
+  def self.serch_bike_result_and_size(bike_arry, user_size)
+    if bike_arry != nil
+      result_bike_and_size = []
+
+      bike_arry.each do |bike|
+        bike_and_size = {bike_obj: bike}
+        size_list = bike.sizes.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..250)
+
+        if !(size_list.blank?) && size_list != nil
+          bike_and_size[:size] = size_list
+          result_bike_and_size << bike_and_size#[{bike=>bike_obj,size=>[size_obj]}...]
+          
+        else
+          return nil
+        end
+      end
+      return result_bike_and_size
+    end
+  end
+
 end

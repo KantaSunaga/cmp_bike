@@ -49,7 +49,7 @@ RSpec.describe Bike, type: :model do
                                                           bike_info_hash[:shop_url],bike_info_hash[:picture], bike_info_hash[:size_list],bike_info_hash[:weight_list],
                                                           bike_info_hash[:price], bike_info_hash[:gear], bike_info_hash[:fork],bike_info_hash[:frame_name],
                                                           bike_info_hash[:fork_type], bike_info_hash[:kc_or_cb],bike_info_hash[:component],bike_info_hash[:height_list],bike_info_hash[:sex],bike_info_hash[:road_bike_type])
-    end
+  end
 
 
   describe "self.creating_maker_and_all_size_bike_need_argument_is" do
@@ -148,20 +148,32 @@ RSpec.describe Bike, type: :model do
       expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type).length).to eq 1
     end
   end
-  #サイズは最後に作る。コンポは保留
-  # describe "self.find_bike_from_sex_param" do
-  #   it "nilオブジェクトに対してやった場合" do
-  #     user_size = 165
-  #     expect(Bike.find_bike_from_user_size_param(user_size)).to eq nil
-  #   end
-  #   it "bikeオブジェクトに対してやった場合" do
-  #     user_size = 165
-  #     price_up = 1000000
-  #     price_down = 10000
-  #     result = Bike.find_bike_price_param(price_up, price_down)
-  #     p 'ddddddddddddddddddddddddd'
-  #     p result
-  #     expect(result.find_bike_from_user_size_param(user_size)).to eq 2
-  #   end
-  # end
+
+  describe "self.serch_bike_result_and_size(bike_arry, user_size)" do
+    price_up = 10_00_000
+    price_down = 10_000
+    sex = "men"
+    color_param = "red"
+      it "bike_arryがtrue,user_sizeが１６５だった場合" do
+        user_size = 165
+        road_bike_type = nil
+        maker_id = nil
+        frame_type = nil
+          bike_arry = Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type)
+        expect(Bike.serch_bike_result_and_size(bike_arry, user_size).length).to eq 1
+      end
+      it "bike_arry = nilだった場合" do
+        user_size = 165
+        bike_arry = nil
+        expect(Bike.serch_bike_result_and_size(bike_arry, user_size)).to eq nil
+      end
+      it "bike_arryがtrue,user_sizeが１10で、サイズがなかった場合" do
+        user_size = 110
+        road_bike_type = nil
+        maker_id = nil
+        frame_type = nil
+        bike_arry = Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type)
+        expect(Bike.serch_bike_result_and_size(bike_arry, user_size)).to eq nil
+      end
+  end
 end
