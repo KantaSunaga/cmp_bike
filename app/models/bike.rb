@@ -75,7 +75,9 @@ class Bike < ApplicationRecord
 
 
   def self.find_bike_from_road_bike_type_param(road_bike_type)
+    if road_bike_type != nil
       self.where(road_bike_type: road_bike_type.to_i)
+    end
   end
 
   def self.find_bike_from_user_size_param(user_size)
@@ -96,7 +98,7 @@ class Bike < ApplicationRecord
     end
   end
 
-  def self.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type)
+  def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param)
     @bike = Bike.find_bike_price_param(price_up, price_down).find_bike_from_sex_param(sex).find_bike_from_color_param(color_param)
 
     if @bike !=nil
@@ -107,8 +109,11 @@ class Bike < ApplicationRecord
         @bike.find_bike_from_maker_param(maker_id)
       end
       if frame_type != nil
-        @bike..find_bike_frame_param(frame_type)
+        @bike.find_bike_frame_param(frame_type)
       end
+       if component_param != nil
+          @bike.find_bike_from_component(component_param.to_i)
+       end
     end
     @bike
   end
@@ -124,7 +129,7 @@ class Bike < ApplicationRecord
         if !(size_list.blank?) && size_list != nil
           bike_and_size[:size] = size_list
           result_bike_and_size << bike_and_size#[{bike=>bike_obj,size=>[size_obj]}...]
-          
+
         else
           return nil
         end
@@ -133,4 +138,9 @@ class Bike < ApplicationRecord
     end
   end
 
+  def self.find_bike_from_component(component_param)
+    if component_param != nil
+      self.where(component: component_param.to_i)
+    end
+  end
 end

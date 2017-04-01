@@ -40,11 +40,19 @@
       <%= select_tag :detail_bike_type, options_for_select([["",nil],["エアロバイク",1],["ロングライド", 2],["オールラウンド", 3],["シクロクロス", 4]])%>
     </div>
     <div id = "detail_component">
-    <strong>コンポーネントランク</strong>
+    <strong>コンポーネント</strong>
     <br>
-      <%= select_tag :detail_component, options_for_select( [["",nil],["105", "105"]])%>
+      <%= select_tag :detail_component, options_for_select( [["",nil],["---SHIMANO---",nil],["DURA-ACE", 10],["ULTEGRA", 11],["105",12],
+      ["TIAGRA",13],["SORA", 14],["CLARIS",14],["DURA-ACE DI2",15],["ULTEGRA DI2",16],["---CAMPAGNOLO---", nil],["SuperRecord EPS",17],
+      ["SuperRecord",18],["Record EPS",19],["Record",20],["Chorus EPS",21],["Chorus",22],["Athena",23],["Potenza",24],["Veloce",25],
+      ["---SRAM---",nil],["S-Series",1],["SRAM Apex",2],["SRAM Apex 1", 3],["SRAM Rival",4],["SRAM Rival 1",5],["SRAM Force", 6],
+      ["SRAM Force 1",7],["SRAM RED",8],["SRAM RED eTAP", 9]])%>
     </div>
 </div>
+
+<!-- ["SRAM",nil],["S-Series",1],["SRAM Apex",2],["SRAM Apex 1", 3],["SRAM Rival",4],["SRAM Rival 1",5],["SRAM Force", 6],["SRAM Force 1",7],["SRAM RED",8],["SRAM RED eTAP", 9]
+#[SHIMANO["DURA-ACE", 10],["ULTEGRA", 11],["105",12],["TIAGRA",13],["SORA", 14],["CLARIS",14],["DURA-ACE" DI2,15],["ULTEGRA DI2",16]]
+#[CAMPAGNOLO, nil] ,["SuperRecord EPS",17],["SuperRecord", 18]["Record EPS",19],["Record",20],["Chorus EPS",21],["Chorus",22],["Athena",23],["Potenza", 24],["Veloce",25] -->
   <div>
     <strong>予算</strong>
     <div>

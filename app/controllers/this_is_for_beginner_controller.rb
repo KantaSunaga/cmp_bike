@@ -6,12 +6,9 @@ class ThisIsForBeginnerController < ApplicationController
 
   def result
  serch_params = check_params_from_home
-  p params[:detail_bike_type].to_i
-  p Bike.where(road_bike_type: params[:detail_bike_type].to_i)
-  p serch_params
+    p "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
   p check_params_from_home
   # p @result_serch_from_userparams = Bike.find_by( min_height: 100..160  )
-  p "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
 
   end
 

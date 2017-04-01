@@ -17,7 +17,10 @@
 #ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 # 1 maker_nameはずべて大文字で統一
 # 2 カラーは全て小文字でカタカナも英語化、謎の名前は見た目で判断（メインんカラーのみロゴやワンポイントは無視）
-# 3 コンポはランクにする
+# 3 コンポはそれぞれ、番号を持たせることにする[SRAM[S-Series,1],[SRAM Apex,2],[SRAM Apex 1, 3],[SRAM Rival,4][SRAM Rival 1,5][SRAM Force, 6],[SRAM Force 1,7],[SRAM RED,8],[SRAM RED eTAP, 9]]
+#[SHIMANO[DURA-ACE, 10][ULTEGRA, 11][105,12][TIAGRA,13][SORA, 14][CLARIS,14],[DURA-ACE DI2,15][ULTEGRA DI2,16]]
+#[CAMPAGNOLO ,[SuperRecord EPS,17],[SuperRecord, 18][Record EPS,19][Record,20],[Chorus EPS,21],[Chorus,22],[Athena,23],[Potenza 24],[Veloce,25]]
+#
 #４　バイクタイプは{１ロードバイク,2マウンテン、３クロス、４ピスト、５ミニベロ、６シティサイクル、７折りたたみ、８電動アシスト}
 #５　ロードバイクタイプ{１ロングライド、２エンデュランス、３エアロバイク（トライアスロン）、４シクロクロス}
 #６　sexはfalseが男性、trueが女性
@@ -31,7 +34,7 @@ all_bike_info_hash_list =[]
                             tire: "Panareser/ほげ", pedal: "有", valve: "仏式", accessory: "鍵,リフレクター", maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
                             shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html", picture: "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                              size_list: [50,55,60] , weight_list: [6.8,6.85,6.9],price: 150000, gear: 22, fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
-                            frame_name: "merida ride sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: "105ミックス",height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1}
+                            frame_name: "merida ride sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: 12,height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1}
 
   all_bike_info_hash_list << ride3000_bike_info_hash
 
@@ -42,7 +45,7 @@ all_bike_info_hash_list =[]
                              tire: "GIANT GAVIA SLR 700x25C TUBELESS READY",pedal:"無",valve:"仏式",accessory:"RideSense、ベル、チューブレスバルブ、シーラント",maker_url:"http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications",
                              shop_url:"hoge",picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                              size_list: [45,55,65] , weight_list: [7.8,7.85,7.9],price:750000,gear:22,fork:"Advanced SL-Grade Composite，Full Composite OverDrive 2 Column",
-                             frame_name: "ジャイアントフレーム", fork_type: "ダイヤモンド", kc_or_cb: "クリンチャー", component: "SORA",height_list:[[150,160],[155,165],[160,170]],sex:false,road_bike_type:1}
+                             frame_name: "ジャイアントフレーム", fork_type: "ダイヤモンド", kc_or_cb: "クリンチャー", component: 14,height_list:[[150,160],[155,165],[160,170]],sex:false,road_bike_type:1}
 
 all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
 
@@ -53,7 +56,7 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                               tire: "Panareser/ほげ", pedal: "有", valve: "仏式", accessory: "ライト", maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
                               shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html", picture: "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                size_list: [50,55,60] , weight_list: [6.8,6.85,6.9],price: 150000, gear: 22, fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
-                              frame_name: "caadd 12 sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: "105",height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1}
+                              frame_name: "caadd 12 sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: 10,height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1}
 
   all_bike_info_hash_list << cacd12_bike_info_hash
   #-----------------------------------------------------テストデータ終了ーーーーーーーーーーーーーーーーーーーーーーー

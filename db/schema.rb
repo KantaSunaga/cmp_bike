@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170401020008) do
+ActiveRecord::Schema.define(version: 20170401140738) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "maker_id"
@@ -48,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170401020008) do
     t.string   "frame_name"
     t.string   "fork_type"
     t.string   "kc_or_cb"
-    t.string   "component"
+    t.integer  "component"
     t.integer  "bike_type"
     t.boolean  "sex",              default: false, null: false
     t.integer  "max_hight"
