@@ -22797,3 +22797,186 @@ Migrating to RemoveYearFromMaker (20170401020008)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."sex" = ? AND (color like '%red%')[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[31mDELETE FROM "bikes"[0m
+  [1m[36mMaker Load (1.0ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "MERIDA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 231], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", 1], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "merida ride sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 300]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 300]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 300]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "GIANT"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 232], ["bike_series", "DEFY"], ["bike_name", "defy_adovanced_sl_0"], ["frame_type", 2], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "green"], ["saddle", "オリジナル"], ["seat_pillar", "フレーム一体型"], ["handle", "GIANT CONTACT SLR Carbon 31.8"], ["stem", "GIANT CONTACT SLR"], ["tire", "GIANT GAVIA SLR 700x25C TUBELESS READY"], ["pedal", "無"], ["valve", "無"], ["accessory", "RideSense、ベル、チューブレスバルブ、シーラント"], ["maker_url", "http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications"], ["shop_url", "hoge"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["price", 750000], ["gear", 22], ["fork", "Advanced SL-Grade Composite，Full Composite OverDrive 2 Column"], ["frame_name", "ジャイアントフレーム"], ["fork_type", "ダイヤモンド"], ["kc_or_cb", "クリンチャー"], ["component", "SORA"], ["road_bike_type", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 45], ["min_height", 150], ["max_height", 160], ["weight", 7], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 301]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 165], ["weight", 7], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 301]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 65], ["min_height", 160], ["max_height", 170], ["weight", 7], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 301]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "CANNONDEL"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 233], ["bike_series", "CAAD"], ["bike_name", "CAAD12"], ["frame_type", 3], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "blue"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "ライト"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "caadd 12 sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105"], ["road_bike_type", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 302]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 302]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-01 05:13:04 UTC], ["updated_at", 2017-04-01 05:13:04 UTC], ["bike_id", 302]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "bikes"[0m
+  [1m[36mMaker Load (0.9ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "MERIDA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["maker_name", "MERIDA"], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 234], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", 1], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "red"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "merida ride sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105ミックス"], ["road_bike_type", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 303]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 303]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 303]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "GIANT"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["maker_name", "GIANT"], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 235], ["bike_series", "DEFY"], ["bike_name", "defy_adovanced_sl_0"], ["frame_type", 2], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "green"], ["saddle", "オリジナル"], ["seat_pillar", "フレーム一体型"], ["handle", "GIANT CONTACT SLR Carbon 31.8"], ["stem", "GIANT CONTACT SLR"], ["tire", "GIANT GAVIA SLR 700x25C TUBELESS READY"], ["pedal", "無"], ["valve", "無"], ["accessory", "RideSense、ベル、チューブレスバルブ、シーラント"], ["maker_url", "http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications"], ["shop_url", "hoge"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["price", 750000], ["gear", 22], ["fork", "Advanced SL-Grade Composite，Full Composite OverDrive 2 Column"], ["frame_name", "ジャイアントフレーム"], ["fork_type", "ダイヤモンド"], ["kc_or_cb", "クリンチャー"], ["component", "SORA"], ["road_bike_type", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 45], ["min_height", 150], ["max_height", 160], ["weight", 7], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 304]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 165], ["weight", 7], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 304]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 65], ["min_height", 160], ["max_height", 170], ["weight", 7], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 304]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "CANNONDEL"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["maker_name", "CANNONDEL"], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "color", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "picture", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 236], ["bike_series", "CAAD"], ["bike_name", "CAAD12"], ["frame_type", 3], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["color", "blue"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "ライト"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["picture", "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "caadd 12 sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", "105"], ["road_bike_type", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 305]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 305]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "bike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-01 05:14:23 UTC], ["updated_at", 2017-04-01 05:14:23 UTC], ["bike_id", 305]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.1ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT  "bikes".* FROM "bikes" WHERE "bikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?)[0m  [["price", 10000], ["price", 1000000]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."sex" = ?[0m  [["sex", false]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.7ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."road_bike_type" = ?[0m  [["price", 10000], ["price", 1000000], ["road_bike_type", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.6ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND (color like '%red%')[0m  [["price", 10000], ["price", 1000000]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.1ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?)[0m  [["price", 10000], ["price", 1000000]]
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."maker_id" = ?[0m  [["price", 10000], ["price", 1000000], ["maker_id", 234]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."sex" = ? AND (color like '%red%')[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."sex" = ? AND (color like '%red%')[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."sex" = ? AND (color like '%red%')[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE ("bikes"."price" BETWEEN ? AND ?) AND "bikes"."sex" = ? AND (color like '%red%')[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
