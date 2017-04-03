@@ -18,11 +18,11 @@
 # 1 maker_nameはずべて大文字で統一
 # 2 カラーは全て小文字でカタカナも英語化、謎の名前は見た目で判断（メインんカラーのみロゴやワンポイントは無視）
 # 3 コンポはそれぞれ、番号を持たせることにする[SRAM[S-Series,1],[SRAM Apex,2],[SRAM Apex 1, 3],[SRAM Rival,4][SRAM Rival 1,5][SRAM Force, 6],[SRAM Force 1,7],[SRAM RED,8],[SRAM RED eTAP, 9]]
-#[SHIMANO[DURA-ACE, 10][ULTEGRA, 11][105,12][TIAGRA,13][SORA, 14][CLARIS,14],[DURA-ACE DI2,15][ULTEGRA DI2,16]]
-#[CAMPAGNOLO ,[SuperRecord EPS,17],[SuperRecord, 18][Record EPS,19][Record,20],[Chorus EPS,21],[Chorus,22],[Athena,23],[Potenza 24],[Veloce,25]]
+#[SHIMANO[DURA-ACE, 10][ULTEGRA, 11][105,12][TIAGRA,13][SORA, 14][CLARIS,14],[DURA-ACE DI2,15][ULTEGRA DI2,17]]
+#[CAMPAGNOLO ,[SuperRecord EPS,18],[SuperRecord, 19][Record EPS,20][Record,21],[Chorus EPS,22],[Chorus,23],[Athena,24],[Potenza 25],[Veloce,26]]
 #
-#４　バイクタイプは{１ロードバイク,2マウンテン、３クロス、４ピスト、５ミニベロ、６シティサイクル、７折りたたみ、８電動アシスト}
-#５　ロードバイクタイプ{１ロングライド、２エンデュランス、３エアロバイク（トライアスロン）、４シクロクロス}
+#４　バイクタイプは{１ロードバイク,2マウンテン、３クロス、４ピスト、５ミニベロ、６シティサイクル、７折りたたみ、８電動アシスト 9シクロクロス　１０TTバイク}
+#５　ロードバイクタイプ{１ロングライド、２エンデュランス、３エアロバイく}
 #６　sexはfalseが男性、trueが女性
 #7　フレームタイプ{1カーボン２アルミ３クロモリ}
 #--------------------------------------------------テストデータ用ーーーーーーーーーーーーーーーーーーーーーーーー

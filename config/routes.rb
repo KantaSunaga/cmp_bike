@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post "/this_is_for_beginner/result"
   get 'this_is_for_intermediate_or_advanced/result'
   get 'home/top' => 'home#top'
+  get 'this_is_for_beginner/detail/:id' =>'this_is_for_beginner#detail'
 
   get 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#home'
 

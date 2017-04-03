@@ -99,17 +99,20 @@ class Bike < ApplicationRecord
   end
 
   def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param)
-    @bike = Bike.find_bike_price_param(price_up, price_down).find_bike_from_sex_param(sex).find_bike_from_color_param(color_param)
-
+    @bike = Bike.find_bike_price_param(price_up.to_i, price_down.to_i).find_bike_from_sex_param(sex)
     if @bike !=nil
+      if color_param != nil
+        @bike.find_bike_from_color_param(color_param)
+      end
       if road_bike_type != nil
-        @bike.find_bike_from_road_bike_type_param(road_bike_type)
+        @bike.find_bike_from_road_bike_type_param(road_bike_type.to_i)
       end
       if maker_id != nil
-        @bike.find_bike_from_maker_param(maker_id)
+        @bike.find_bike_from_maker_param(maker_id.to_i)
       end
+
       if frame_type != nil
-        @bike.find_bike_frame_param(frame_type)
+        @bike.find_bike_frame_param(frame_type.to_i)
       end
        if component_param != nil
           @bike.find_bike_from_component(component_param.to_i)
@@ -125,13 +128,9 @@ class Bike < ApplicationRecord
       bike_arry.each do |bike|
         bike_and_size = {bike_obj: bike}
         size_list = bike.sizes.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..250)
-
-        if !(size_list.blank?) && size_list != nil
+        if size_list[0] != nil
           bike_and_size[:size] = size_list
           result_bike_and_size << bike_and_size#[{bike=>bike_obj,size=>[size_obj]}...]
-
-        else
-          return nil
         end
       end
       return result_bike_and_size
