@@ -5,21 +5,46 @@ class Bike < ApplicationRecord
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
        maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component,height_list,sex,road_bike_type)
-       maker_created_authenticity = Maker.find_by(maker_name: maker_name)
 
-       if maker_created_authenticity
-         maker_info = maker_created_authenticity
-       else
-         maker_info = Maker.create(maker_name: maker_name)
-       end
+       year_info = Year.find_by(year: year.to_i)
+       year_info = Year.create(year: year.to_i) if year_info == nil
 
-        bike_info = Bike.create( bike_series: bike_series, bike_name: bike_name, frame_type:frame_type,
-                  rear_derailleur: rear_derailleur, front_derailleur:front_derailleur,
-                  crank: crank, brake: brake, chain: chain, sprocket:sprocket, sti_lever: sti_lever, bb: bb,
-                  wheel: wheel, color: color,saddle: saddle, seat_pillar: seat_pillar, handle: handle, stem: stem,
-                  tire: tire, pedal: pedal, valve: pedal, accessory: accessory, maker_url: maker_url, shop_url: shop_url,
-                  picture: picture,  price: price, gear: gear, fork: fork, frame_name: frame_name, fork_type: fork_type,
-                   kc_or_cb: kc_or_cb, component: component, sex:sex, road_bike_type:road_bike_type )
+       maker_info = year_info.makers.find_by(maker_name: maker_name)
+       maker_info = year_info.makers.create(maker_name: maker_name) if maker_info == nil
+
+        bike_info = Bike.create( bike_series: bike_series,
+                                bike_name: bike_name,
+                                frame_type:frame_type,
+                                rear_derailleur: rear_derailleur,
+                                front_derailleur:front_derailleur,
+                                crank: crank,
+                                brake: brake,
+                                chain: chain,
+                                sprocket:sprocket,
+                                sti_lever: sti_lever,
+                                bb: bb,
+                                wheel: wheel,
+                                color: color,
+                                saddle: saddle,
+                                seat_pillar: seat_pillar,
+                                handle: handle,
+                                stem: stem,
+                                tire: tire,
+                                pedal: pedal,
+                                valve: pedal,
+                                accessory: accessory,
+                                maker_url: maker_url,
+                                shop_url: shop_url,
+                                picture: picture,
+                                price: price,
+                                gear: gear,
+                                fork: fork,
+                                frame_name: frame_name,
+                                fork_type: fork_type,
+                                kc_or_cb: kc_or_cb,
+                                component: component,
+                                sex:sex,
+                                road_bike_type:road_bike_type )
         maker_info.bikes << bike_info
 
         roupe_end_time = size_list.length
@@ -43,7 +68,7 @@ class Bike < ApplicationRecord
          checked_bike_id_params << params
        end
      end
-    return checked_bike_id_params
+   checked_bike_id_params
   end
 
   def self.get_bike_info_from(params_array)
@@ -57,68 +82,19 @@ class Bike < ApplicationRecord
     return result_get_bike_info_from
   end
 
-  def self.find_bike_frame_param(frame_type)
-      if frame_type == true
-        Bike.where(frame_type: frame_type.to_i)
-      end
-  end
 
-  def self.find_bike_price_param(price_up, price_down)
-    Bike.where(price: price_down.to_i..price_up.to_i)
-  end
-
-    def self.find_bike_from_sex_param(sex)
-      if sex == "men"
-        self.where(sex: false)
-      end
-    end
-
-
-  def self.find_bike_from_road_bike_type_param(road_bike_type)
-    if road_bike_type != nil
-      self.where(road_bike_type: road_bike_type.to_i)
-    end
-  end
-
-  def self.find_bike_from_user_size_param(user_size)
-    if user_size != nil
-      self.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..300)
-    end
-  end
-
-  def self.find_bike_from_color_param(color_param)
-    if color_param != nil
-      self.where("color like '%" + color_param + "%'")
-    end
-  end
-
-  def self.find_bike_from_maker_param(maker_id)
-    if maker_id != nil
-      self.where(maker_id: maker_id.to_i)
-    end
-  end
 
   def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param)
-    @bike = Bike.find_bike_price_param(price_up.to_i, price_down.to_i).find_bike_from_sex_param(sex)
-    if @bike !=nil
-      if color_param != nil
-        @bike.find_bike_from_color_param(color_param)
-      end
-      if road_bike_type != nil
-        @bike.find_bike_from_road_bike_type_param(road_bike_type.to_i)
-      end
-      if maker_id != nil
-        @bike.find_bike_from_maker_param(maker_id.to_i)
-      end
-
-      if frame_type != nil
-        @bike.find_bike_frame_param(frame_type.to_i)
-      end
-       if component_param != nil
-          @bike.find_bike_from_component(component_param.to_i)
-       end
+    # binding.pry
+    bike = Bike.where(price: price_down.to_i..price_up.to_i)
+    if bike !=nil
+        bike = bike.where(sex: Bike.which_sex?(sex))
+        bike = bike.where("color like '%" + color_param + "%'") if color_param != nil && color_param != ""
+        bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""
+        bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil && maker_id != ""
+        bike = bike.where(frame_type: frame_type.to_i) if frame_type != nil && frame_type != ""
     end
-    @bike
+    bike
   end
 
   def self.serch_bike_result_and_size(bike_arry, user_size)
@@ -131,15 +107,23 @@ class Bike < ApplicationRecord
         if size_list[0] != nil
           bike_and_size[:size] = size_list
           result_bike_and_size << bike_and_size#[{bike=>bike_obj,size=>[size_obj]}...]
+        else
+         return nil
         end
       end
       return result_bike_and_size
     end
   end
 
-  def self.find_bike_from_component(component_param)
-    if component_param != nil
-      self.where(component: component_param.to_i)
-    end
+  # def self.find_bike_from_component(component_param)
+  #   if component_param != nil
+  #     self.where(component: component_param.to_i)
+  #   else
+  #     return
+  #   end
+  # end
+  def self.which_sex?(sex_param)
+    return true if sex_param == "women"
+    false
   end
 end

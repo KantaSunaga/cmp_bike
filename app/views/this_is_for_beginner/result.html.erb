@@ -2,7 +2,9 @@
   <h4>
     その条件では見つかりませんでした。
   </h4>
+  <%= link_to '戻る', :back %>
 <%else%>
+<%= link_to '戻る', :back %>
   <%@bike.each do |bike|%>
   <table>
     <tr>

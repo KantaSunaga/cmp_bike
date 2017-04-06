@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Bike, type: :model do
   Bike.delete_all
+  Maker.delete_all
   all_bike_info_hash_list =[]
   ride3000_bike_info_hash = {maker_name:"MERIDA", year:2017, bike_series: "Ride",bike_name:"Ride3000",
                              frame_type: 1, rear_derailleur: "リアだよ",
@@ -32,7 +33,7 @@ RSpec.describe Bike, type: :model do
                                tire: "Panareser/ほげ", pedal: "有", valve: "仏式", accessory: "ライト", maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
                                shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html", picture: "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                 size_list: [50,55,60] , weight_list: [6.8,6.85,6.9],price: 150000, gear: 22, fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
-                               frame_name: "caadd 12 sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: 10,height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1}
+                               frame_name: "caadd 12 sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: 10,height_list:[[150,165],[155,170],[160,175]],sex:true,road_bike_type:1}
 
     all_bike_info_hash_list << cacd12_bike_info_hash
 
@@ -59,6 +60,9 @@ RSpec.describe Bike, type: :model do
     it "すでにメーカーが存在していた場合" do
       expect(Bike.all.length).to eq 3
     end
+    # it "リレーションができているか確認" do
+    #
+    # end
   end
   describe "self.check_params" do
     it "バイクID＝１が４番目に含まれていた場合" do
@@ -72,51 +76,51 @@ RSpec.describe Bike, type: :model do
       expect(Bike.get_bike_info_from([1]).length).to eq 1
     end
   end
-  describe "パラメーターから絞るところ" do
-      it "self.find_bike_frame_param(frame_type)" do
-        expect(Bike.find_bike_frame_param(1)).to eq nil
-    end
-  end
+  # describe "パラメーターから絞るところ" do
+  #     it "self.find_bike_frame_param(frame_type)" do
+  #       expect(Bike.find_bike_frame_param(1).length).to eq 1
+  #   end
+  # end
 
-  describe "self.find_bike_price_param(price_up, price_down)" do
-      it "1000000..10000のものが１つあった場合" do
-          price_up = 1000000
-          price_down = 10000
-        expect(Bike.find_bike_price_param(price_up, price_down).length).to eq 3
-    end
-  end
-
-  describe "self.find_bike_from_sex_param" do
-    it "sex=womanだった場合" do
-        sex =" woman"
-      expect(Bike.find_bike_from_sex_param(sex)).to eq nil
-    end
-    it "sex=manだった場合" do
-      sex = "men"
-      expect(Bike.find_bike_from_sex_param(sex).length).to eq 3
-    end
-  end
-  describe ".find_bike_from_road_bike_type_param" do
-    it "self == true だった場合（ロングライド）" do
-      bike = Bike.find_bike_price_param(1000000, 10000)
-      expect(bike.find_bike_from_road_bike_type_param(1).length).to eq 3
-    end
-  end
-
-  describe "find_bike_from_color_param(color_param)" do
-    it "color = redだった場合" do
-      bike = Bike.find_bike_price_param(1000000, 10000)
-      color = "red"
-      expect(bike.find_bike_from_color_param(color).length).to eq 1
-    end
-  end
-
-  describe "self.find_bike_from_maker_param(maker_id)" do
-    it "meridaがだったら" do
-    bike = Bike.find_bike_price_param(1000000, 10000)
-      expect(bike.find_bike_from_maker_param(bike[0][:maker_id]).length).to eq 1
-    end
-  end
+  # describe "self.find_bike_price_param(price_up, price_down)" do
+  #     it "1000000..10000のものが１つあった場合" do
+  #         price_up = 1000000
+  #         price_down = 10000
+  #       expect(Bike.find_bike_price_param(price_up, price_down).length).to eq 3
+  #   end
+  # end
+  #
+  # describe "self.find_bike_from_sex_param" do
+  #   it "sex=womanだった場合" do
+  #       sex =" woman"
+  #     expect(Bike.find_bike_from_sex_param(sex)).to eq nil
+  #   end
+  #   it "sex=manだった場合" do
+  #     sex = "men"
+  #     expect(Bike.find_bike_from_sex_param(sex).length).to eq 2
+  #   end
+  # end
+  # describe ".find_bike_from_road_bike_type_param" do
+  #   it "self == true だった場合（ロングライド）" do
+  #     bike = Bike.find_bike_price_param(1000000, 10000)
+  #     expect(bike.find_bike_from_road_bike_type_param(1).length).to eq 3
+  #   end
+  # end
+  #
+  # describe "find_bike_from_color_param(color_param)" do
+  #   it "color = redだった場合" do
+  #     bike = Bike.find_bike_price_param(1000000, 10000)
+  #     color = "red"
+  #     expect(bike.find_bike_from_color_param(color).length).to eq 1
+  #   end
+  # end
+  #
+  # describe "self.find_bike_from_maker_param(maker_id)" do
+  #   it "meridaがだったら" do
+  #   bike = Bike.find_bike_price_param(1000000, 10000)
+  #     expect(bike.find_bike_from_maker_param(bike[0][:maker_id]).length).to eq 1
+  #   end
+  # end
 
   describe "serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type)" do
     price_up = 10_00_000
@@ -128,32 +132,37 @@ RSpec.describe Bike, type: :model do
       maker_id = nil
       frame_type = nil
       component_param = nil
+
       expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param).length).to eq 1
     end
-    it "detetailがroad_bike_type意外のパラメーターがnilだった場合" do
+    it "detetailがroad_bike_type以外のパラメーターがnilだった場合" do
       road_bike_type = 1
       maker_id = nil
       frame_type = nil
       component_param = nil
       expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param).length).to eq 1
     end
-    it "component_paramのパラメーターだけがnilだった場合" do
-      road_bike_type = 1
-      maker_id = 2
-      frame_type = 1
+    it "component_paramで絞れること" do
+      road_bike_type = nil
+      maker_id = nil
+      frame_type = nil
+      component_param = 14
+      color_param = nil
+      binding.pry
+      expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param).length).to eq 1
+    end
+    it "メーカーで絞れること" do
+      maker_info = Maker.find_by(maker_name: "MERIDA")
+      road_bike_type = nil
+      maker_id = maker_info.id
+      frame_type = nil
       component_param = nil
       expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param).length).to eq 1
     end
-    it "componentが12(１０５)だった場合" do
+    it "全てのdetailパラメーターが存在した場合" do
       road_bike_type = 1
-      maker_id = 2
-      frame_type = nil
-      component_param = 12
-      expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param).length).to eq 1
-    end
-    it "全てのdettalパラメーターが存在した場合" do
-      road_bike_type = 1
-      maker_id = 2
+      maker_info = Maker.find_by(maker_name:"MERIDA")
+      maker_id = maker_info.id
       frame_type = 1
       price_up = 10_00_000
       price_down = 10_000
@@ -193,4 +202,9 @@ end
         bike_arry = Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param)
         expect(Bike.serch_bike_result_and_size(bike_arry, user_size)).to eq nil
       end
-  end
+    end
+      describe "which_sex?" do
+        it "男性（false）が帰ってきてほしい場合" do
+          expect(Bike.which_sex?("man")).to eq false
+         end
+       end
