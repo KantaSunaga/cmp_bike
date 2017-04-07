@@ -148,7 +148,6 @@ RSpec.describe Bike, type: :model do
       frame_type = nil
       component_param = 14
       color_param = nil
-      binding.pry
       expect(Bike.serch_mach_bike(price_up, price_down,sex,color_param,road_bike_type,maker_id,frame_type,component_param).length).to eq 1
     end
     it "メーカーで絞れること" do

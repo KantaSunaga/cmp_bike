@@ -85,10 +85,11 @@ class Bike < ApplicationRecord
 
 
   def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param)
-    # binding.pry
+      sex_info = false if sex == "men"
     bike = Bike.where(price: price_down.to_i..price_up.to_i)
     if bike !=nil
-        bike = bike.where(sex: Bike.which_sex?(sex))
+        bike = bike.where(sex: sex_info) if sex_info == false
+        bike = bike.where(component: component_param.to_i) if component_param != nil && component_param != ""
         bike = bike.where("color like '%" + color_param + "%'") if color_param != nil && color_param != ""
         bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""
         bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil && maker_id != ""
