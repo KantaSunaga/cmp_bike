@@ -974,7 +974,7 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
 
   all_bike_info_hash_list.each do |bike_info_hash|
 
- Bike.creating_maker_and_all_size_bike_need_argument_is(bike_info_hash[:maker_name], bike_info_hash[:year], bike_info_hash[:bike_series],
+ Roadbike.creating_maker_and_all_size_bike_need_argument_is(bike_info_hash[:maker_name], bike_info_hash[:year], bike_info_hash[:bike_series],
                                                         bike_info_hash[:bike_name], bike_info_hash[:frame_type],bike_info_hash[:rear_derailleur],
                                                         bike_info_hash[:front_derailleur],bike_info_hash[:cranc], bike_info_hash[:brake],
                                                         bike_info_hash[:chain], bike_info_hash[:sprocket],bike_info_hash[:sti_lever],

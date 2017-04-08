@@ -1,18 +1,18 @@
 class ThisIsForBeginnerController < ApplicationController
   def home
-    @bike_info = Bike.new
+    @bike_info = Roadbike.new
     @maker = Maker.all
   end
 
   def result
-  result = Bike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
+  result = Roadbike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
                               check_params_from_home[:color],check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],
                               check_params_from_home[:detail_frame],check_params_from_home[:detail_component],check_params_from_home[:brake_type])
-  @bike = Bike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
+  @bike = Roadbike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
   end
 
   def detail
-   @bike =Bike.find_by(id: check_params_from_home[:id].to_i)
+   @bike =Roadbike.find_by(id: check_params_from_home[:id].to_i)
    @size = @bike.sizes.all
   end
 

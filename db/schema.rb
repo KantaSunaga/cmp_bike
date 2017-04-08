@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407082749) do
+ActiveRecord::Schema.define(version: 20170408053952) do
 
-  create_table "bikes", force: :cascade do |t|
+  create_table "makers", force: :cascade do |t|
+    t.string   "maker_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "year_id"
+  end
+
+  create_table "roadbikes", force: :cascade do |t|
     t.integer  "maker_id"
     t.string   "bike_series"
     t.string   "bike_name"
@@ -55,21 +62,14 @@ ActiveRecord::Schema.define(version: 20170407082749) do
     t.integer  "brake_type"
   end
 
-  create_table "makers", force: :cascade do |t|
-    t.string   "maker_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "year_id"
-  end
-
   create_table "sizes", force: :cascade do |t|
     t.integer  "size"
     t.integer  "min_height"
     t.integer  "max_height"
     t.integer  "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "bike_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "roadbike_id"
   end
 
   create_table "years", force: :cascade do |t|

@@ -1,8 +1,4 @@
 class Maker < ApplicationRecord
   belongs_to :year
-  has_many :bikes, dependent: :destroy
-  def self.cretae_maker_return_maker_id(maker_name,year)
-    maker_info = Maker.create(year: year, maker_name: maker_name)
-    return maker_info.id
-  end
+  has_many :roadbikes, dependent: :destroy
 end

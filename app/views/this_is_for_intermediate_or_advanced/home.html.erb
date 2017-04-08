@@ -19,25 +19,25 @@
 <div>
   <strong>1台目</strong>
   <%= select_tag :maker_id, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-  <%= select_tag :bike_id, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :bike_id, options_from_collection_for_select(Roadbike.all, :id, :bike_name)%>
 </div>
 
 <div>
   <strong>2台目</strong>
   <%= select_tag :maker_id_1, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-  <%= select_tag :bike_id_1, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :bike_id_1, options_from_collection_for_select(Roadbike.all, :id, :bike_name)%>
 </div>
 
 <div>
   <strong>３台目</strong>
   <%= select_tag :maker_id_2, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-  <%= select_tag :bike_id_2, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :bike_id_2, options_from_collection_for_select(Roadbike.all, :id, :bike_name)%>
 </div>
 
 <div>
   <strong>４台目</strong>
   <%= select_tag :maker_id_3, options_from_collection_for_select(Maker.all, :id, :maker_name)%>
-  <%= select_tag :bike_id_3, options_from_collection_for_select(Bike.all, :id, :bike_name)%>
+  <%= select_tag :bike_id_3, options_from_collection_for_select(Roadbike.all, :id, :bike_name)%>
 </div>
 
 <%= submit_tag("Search") %>
