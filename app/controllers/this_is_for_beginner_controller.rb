@@ -7,7 +7,7 @@ class ThisIsForBeginnerController < ApplicationController
   def result
   result = Bike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
                               check_params_from_home[:color],check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],
-                              check_params_from_home[:detail_frame],check_params_from_home[:detail_component])
+                              check_params_from_home[:detail_frame],check_params_from_home[:detail_component],check_params_from_home[:brake_type])
   @bike = Bike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
   end
 
@@ -29,6 +29,7 @@ class ThisIsForBeginnerController < ApplicationController
        :color,
        :sex,
        :user_size,
-       :id)
+       :id,
+       :brake_type)
     end
 end

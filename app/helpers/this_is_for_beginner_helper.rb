@@ -107,6 +107,10 @@ module ThisIsForBeginnerHelper
       elsif road_bike_type == 3
         return "エアロバイク"
       end
+    end
 
+    def find_brake_type(brake_type)
+        return "ディスクブレーキ" if brake_type == 2
+        return "リムブレーキ"
     end
 end

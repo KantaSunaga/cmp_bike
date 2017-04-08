@@ -3,8 +3,8 @@ class Bike < ApplicationRecord
   has_many :sizes, dependent: :destroy
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
-       crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,
-       maker_url, shop_url, picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component,height_list,sex,road_bike_type)
+       crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
+       picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component, height_list, sex, road_bike_type, brake_type)
 
        year_info = Year.find_by(year: year.to_i)
        year_info = Year.create(year: year.to_i) if year_info == nil
@@ -44,7 +44,8 @@ class Bike < ApplicationRecord
                                 kc_or_cb: kc_or_cb,
                                 component: component,
                                 sex:sex,
-                                road_bike_type:road_bike_type )
+                                road_bike_type:road_bike_type,
+                                brake_type: brake_type)
         maker_info.bikes << bike_info
 
         roupe_end_time = size_list.length
@@ -72,7 +73,6 @@ class Bike < ApplicationRecord
   end
 
   def self.get_bike_info_from(params_array)
-
     result_get_bike_info_from = []
 
     params_array.each do |bike_id|
@@ -82,9 +82,8 @@ class Bike < ApplicationRecord
     return result_get_bike_info_from
   end
 
-
-
-  def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param)
+  def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param,brake_type)
+    binding.pry
       sex_info = false if sex == "men"
     bike = Bike.where(price: price_down.to_i..price_up.to_i)
     if bike !=nil
@@ -94,6 +93,7 @@ class Bike < ApplicationRecord
         bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""
         bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil && maker_id != ""
         bike = bike.where(frame_type: frame_type.to_i) if frame_type != nil && frame_type != ""
+        bike = bike.where(brake_type: brake_type.to_i) if brake_type != nil && brake_type != ""
     end
     bike
   end
@@ -116,13 +116,6 @@ class Bike < ApplicationRecord
     end
   end
 
-  # def self.find_bike_from_component(component_param)
-  #   if component_param != nil
-  #     self.where(component: component_param.to_i)
-  #   else
-  #     return
-  #   end
-  # end
   def self.which_sex?(sex_param)
     return true if sex_param == "women"
     false
