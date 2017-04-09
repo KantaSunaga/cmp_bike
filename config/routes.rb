@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :colors
   post 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#cmp_result'
   get "/this_is_for_beginner/result"
   get "/this_is_for_beginner/home"

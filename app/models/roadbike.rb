@@ -1,11 +1,12 @@
 class Roadbike < ApplicationRecord
   belongs_to :maker
   has_many :sizes, dependent: :destroy
+  has_many :colors, dependent: :destroy
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
-       crank, brake, chain, sprocket, sti_lever, bb, wheel, color,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
-       picture, size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component, height_list, sex, road_bike_type, brake_type)
-       
+       crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
+       size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component, height_list, sex, road_bike_type, brake_type)
+
        year_info = Year.find_by(year: year.to_i)
        year_info = Year.create(year: year.to_i) if year_info == nil
 
@@ -20,11 +21,11 @@ class Roadbike < ApplicationRecord
                                 crank: crank,
                                 brake: brake,
                                 chain: chain,
-                                sprocket:sprocket,
+                                price: price,
+                                sprocket: sprocket,
                                 sti_lever: sti_lever,
                                 bb: bb,
                                 wheel: wheel,
-                                color: color,
                                 saddle: saddle,
                                 seat_pillar: seat_pillar,
                                 handle: handle,
@@ -35,8 +36,6 @@ class Roadbike < ApplicationRecord
                                 accessory: accessory,
                                 maker_url: maker_url,
                                 shop_url: shop_url,
-                                picture: picture,
-                                price: price,
                                 gear: gear,
                                 fork: fork,
                                 frame_name: frame_name,
@@ -82,13 +81,13 @@ class Roadbike < ApplicationRecord
     return result_get_bike_info_from
   end
 
-  def self.serch_mach_bike(price_up, price_down, sex, color_param, road_bike_type, maker_id, frame_type,component_param,brake_type)
+  def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type)
       sex_info = false if sex == "men"
     bike = Roadbike.where(price: price_down.to_i..price_up.to_i)
     if bike !=nil
         bike = bike.where(sex: sex_info) if sex_info == false
         bike = bike.where(component: component_param.to_i) if component_param != nil && component_param != ""
-        bike = bike.where("color like '%" + color_param + "%'") if color_param != nil && color_param != ""
+        # bike = bike.where("color like '%" + color_param + "%'") if color_param != nil && color_param != ""
         bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""
         bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil && maker_id != ""
         bike = bike.where(frame_type: frame_type.to_i) if frame_type != nil && frame_type != ""
@@ -106,7 +105,7 @@ class Roadbike < ApplicationRecord
         size_list = bike.sizes.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..250)
         if size_list[0] != nil
           bike_and_size[:size] = size_list
-          result_bike_and_size << bike_and_size#[{bike=>bike_obj,size=>[size_obj]}...]
+          result_bike_and_size << bike_and_size#[{bike=>bike_obj,size=>[size_obj],color => [picture_url]}...]
         else
          return nil
         end
