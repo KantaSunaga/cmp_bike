@@ -12,13 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :frame_type %>
-    <%= f.text_field :frame_type %>
+
+    <%= f.label :maker_id %>
+    <%= f.number_field :maker_id %>
   </div>
 
   <div class="field">
-    <%= f.label :component %>
-    <%= f.text_field :component %>
+    <%= f.label :bike_series %>
+    <%= f.text_field :bike_series %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bike_name %>
+    <%= f.text_field :bike_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :frame_type %>
+    <%= f.text_field :frame_type %>
+
   </div>
 
   <div class="field">
@@ -62,6 +74,13 @@
   </div>
 
   <div class="field">
+
+    <%= f.label :bb %>
+    <%= f.text_field :bb %>
+  </div>
+
+  <div class="field">
+
     <%= f.label :wheel %>
     <%= f.text_field :wheel %>
   </div>
@@ -82,6 +101,13 @@
   </div>
 
   <div class="field">
+
+    <%= f.label :handle %>
+    <%= f.text_field :handle %>
+  </div>
+
+  <div class="field">
+
     <%= f.label :stem %>
     <%= f.text_field :stem %>
   </div>
@@ -107,18 +133,47 @@
   </div>
 
   <div class="field">
-    <%= f.label :shop_url %>
-    <%= f.text_field :shop_url %>
-  </div>
 
-  <div class="field">
     <%= f.label :maker_url %>
     <%= f.text_field :maker_url %>
   </div>
 
   <div class="field">
+
+    <%= f.label :shop_url %>
+    <%= f.text_field :shop_url %>
+  </div>
+
+  <div class="field">
+
     <%= f.label :picture %>
     <%= f.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.number_field:size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight%>
+    <%= f.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price%>
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gear%>
+    <%= f.number_field :gear%>
+  </div>
+
+  <div class="field">
+    <%= f.label :fork%>
+    <%= f.text_field :fork %>
+
   </div>
 
   <div class="actions">

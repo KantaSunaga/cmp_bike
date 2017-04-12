@@ -1,0 +1,55 @@
+<%if @bike.blank?%>
+  <h4>
+    その条件では見つかりませんでした。
+  </h4>
+  <%= link_to '戻る', :back %>
+<%else%>
+<%= link_to '戻る', :back %>
+  <%@bike.each do |bike|%>
+  <table>
+    <tr>
+      <td><%= image_tag "#{find_picture(@color, bike[:bike_obj].id)}", :size =>"200x200"%></td>
+    </tr>
+    <tr>
+      <td>モデル</td>
+      <td><%=bike[:bike_obj].bike_name%></td>
+    </tr>
+    <tr>
+      <td>ブランド</td>
+      <td><%=find_maker_name_from bike[:bike_obj].maker_id%></td>
+    </tr>
+    <tr>
+    <td>カラー</td>
+      <td><%= find_color(bike[:bike_obj].id, @color)%></td>
+    </tr>
+    <tr>
+      <td>サイズ</td>
+      <td><%=get_all_size bike[:size]%></td>
+    </tr>
+    <tr>
+      <td>価格</td>
+      <td><%=bike[:bike_obj].price%>円</td>
+    </tr>
+    <tr>
+      <td>フレーム</td>
+      <td><%=chek_frame_type_from bike[:bike_obj].frame_type%></td>
+    </tr>
+    <tr>
+      <td>メインコンポ</td>
+      <td><%=chek_compornent_from bike[:bike_obj].component%></td>
+    </tr>
+    <tr>
+      <td>ブレーキタイプ</td>
+      <td><%=find_brake_type bike[:bike_obj].brake_type%></td>
+    </tr>
+    <tr>
+      <td>ロードバイクタイプ</td>
+      <td><%=chek_roade_bike_type_from bike[:bike_obj].road_bike_type%></td>
+    </tr>
+    <tr>
+      <td>詳細</td>
+      <td><%= link_to "詳細を見る", :controller => "this_is_for_beginner", :action => "detail", :id =>bike[:bike_obj].id  %></td>
+    </tr>
+  </table>
+  <%end%>
+<%end%>

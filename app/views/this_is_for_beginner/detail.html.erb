@@ -1,0 +1,132 @@
+<table border="1">
+  <thead>
+      <td>画像</td>
+      <td><%= image_tag "#{@bike.picture}" , :size =>"200x200"%></td>
+    <tr>
+      <td>メーカー</td>
+      <td><%= get_maker_id_from_bike @bike.maker_id %></td>
+    </tr>
+    <tr>
+      <td>バイク名</td>
+      <td><%= @bike.bike_name %></td>
+    </tr>
+    <tr>
+      <td>価格</td>
+      <td><%= @bike.price %>円</td>
+    </tr>
+    <tr>
+      <td>サイズ/重量</td>
+      <td>
+      <% @size.each do |size| %>
+      <%= "#{size.size}cm/#{size.weight}kg　" %>
+      <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>カラー</td>
+      <td><%= @bike.color %></td>
+    </tr>
+    <tr>
+      <td>ギア</td>
+      <td><%= @bike.gear %></td>
+    </tr>
+    <tr>
+    <td>フレーム名</td>
+      <td><%= @bike.frame_name %></td>
+    </tr>
+      <tr>
+      <td>フレーム素材</td>
+        <td><%=chek_frame_type_from @bike.frame_type %></td>
+      </tr>
+      <tr>
+          <td>フォーク</td>
+          <td><%= @bike.fork %></td>
+        </tr>
+      <tr>
+        <td>フォーク素材</td>
+        <td><%= @bike.fork_type %></td>
+      </tr>
+      <td>コンポーネント</td>
+        <td><%=chek_compornent_from @bike.component %></td>
+      </tr>
+        <td>リアディレイーラー</td>
+        <td><%= @bike.rear_derailleur %></td>
+      </tr>
+      <tr>
+        <td>フロントディレーラー</td>
+        <td><%= @bike.front_derailleur %></td>
+      </tr>
+      <tr>
+        <td>クランク</td>
+        <td><%= @bike.crank %></td>
+      </tr>
+      <tr>
+        <td>ブレーキ</td>
+        <td><%= @bike.brake %></td>
+      </tr>
+      <tr>
+        <td>チェーン</td>
+        <td><%= @bike.chain %></td>
+      </tr>
+      <tr>
+        <td>スプロケット</td>
+        <td><%= @bike.sprocket %></td>
+      </tr>
+      <tr>
+        <td>STIレバー</td>
+        <td><%= @bike.sti_lever %></td>
+      </tr>
+      <tr>
+        <td>ボトムブラケット</td>
+        <td><%= @bike.bb %></td>
+      </tr>
+      <tr>
+        <tr>
+          <td>ホイール</td>
+          <td><%= @bike.wheel %></td>
+        </tr>
+        <td>タイヤ</td>
+        <td><%= @bike.tire%></td>
+      </tr>
+      <tr>
+        <tr>
+          <td>タイヤタイプ</td>
+          <td><%= @bike.kc_or_cb %></td>
+        </tr>
+        <tr>
+          <td>バルブ</td>
+          <td><%= @bike.valve%></td>
+        </tr>
+        <tr>
+        <td>ペダル</td>
+        <td><%= @bike.pedal%></td>
+      </tr>
+        <td>サドル</td>
+        <td><%= @bike.saddle %></td>
+      </tr>
+      <tr>
+        <td>シートピラー</td>
+        <td><%= @bike.seat_pillar %></td>
+      </tr>
+      <tr>
+        <td>ハンドル</td>
+        <td><%= @bike.handle%></td>
+      </tr>
+      <tr>
+        <td>ステム</td>
+        <td><%= @bike.stem%></td>
+      </tr>
+      <tr>
+      <td>付属品</td>
+        <td><%= @bike.accessory%></td>
+      </tr>
+      <tr>
+        <td>メーカーURL</td>
+        <td><%= link_to "こちら", "#{@bike.maker_url}" %></td>
+      </tr>
+      <tr>
+        <td>ショップURL</td>
+        <td><%= link_to "こちら", "#{@bike.shop_url}"%></td>
+      </tr>
+</table>
+<%= link_to '戻る', :back %>

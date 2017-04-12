@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+ # gem "mysql2"
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -32,14 +33,15 @@ gem 'jquery-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails'
-  gem 'guard-rspec', require: false # guardでrspecを動かす
-  gem 'terminal-notifier'
-  gem 'terminal-notifier-guard'  # デスクトップ通知を行う
   gem 'byebug', platform: :mri
   gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer' # スタックをたどれる
+  gem 'guard-rspec', require: false # guardでrspecを動かす
+  gem 'terminal-notifier'
+  gem 'terminal-notifier-guard'  # デスクトップ通知を行う
+  gem "factory_girl_rails"
 end
 
 group :development do

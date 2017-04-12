@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  frame_type: 
+  maker_id: 1
+  bike_series: MyString
+  bike_name: MyString
+  frame_type: MyString
   component: MyString
   rear_derailleur: MyString
   front_derailleur: MyString
@@ -11,21 +14,26 @@ one:
   sprocket: MyString
   sti_lever: MyString
   bb: MyString
+  bb: MyString
   wheel: MyString
   color: MyString
   saddle: MyString
   seat_pillar: MyString
+  handle: MyString
   stem: MyString
   tire: MyString
   pedal: MyString
   valve: MyString
   accessory: MyString
-  shop_url: MyString
   maker_url: MyString
-  picture: 
+  shop_url: MyString
+  picture:
 
 two:
-  frame_type: 
+  maker_id: 1
+  bike_series: MyString
+  bike_name: MyString
+  frame_type: MyString
   component: MyString
   rear_derailleur: MyString
   front_derailleur: MyString
@@ -35,15 +43,17 @@ two:
   sprocket: MyString
   sti_lever: MyString
   bb: MyString
+  bb: MyString
   wheel: MyString
   color: MyString
   saddle: MyString
   seat_pillar: MyString
+  handle: MyString
   stem: MyString
   tire: MyString
   pedal: MyString
   valve: MyString
   accessory: MyString
-  shop_url: MyString
   maker_url: MyString
-  picture: 
+  shop_url: MyString
+  picture:

@@ -69,6 +69,7 @@ class SizesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def size_params
-      params.require(:size).permit(:size, :bikes_id)
+
+      params.require(:size).permit(:size, :min_height, :max_height, :weight)
     end
 end

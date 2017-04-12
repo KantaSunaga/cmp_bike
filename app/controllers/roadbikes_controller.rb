@@ -1,10 +1,10 @@
-class BikesController < ApplicationController
+class RoadbikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   # GET /bikes
   # GET /bikes.json
   def index
-    @bikes = Bike.all
+    @bikes = Roadbike.all
   end
 
   # GET /bikes/1
@@ -14,7 +14,7 @@ class BikesController < ApplicationController
 
   # GET /bikes/new
   def new
-    @bike = Bike.new
+    @bike = Roadbike.new
   end
 
   # GET /bikes/1/edit
@@ -24,7 +24,7 @@ class BikesController < ApplicationController
   # POST /bikes
   # POST /bikes.json
   def create
-    @bike = Bike.new(bike_params)
+    @bike = Roadbike.new(bike_params)
 
     respond_to do |format|
       if @bike.save
@@ -64,11 +64,11 @@ class BikesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bike
-      @bike = Bike.find(params[:id])
+      @bike = Roadbike.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:frame_type, :component, :rear_derailleur, :front_derailleur, :crank, :brake, :chain, :sprocket, :sti_lever, :bb, :wheel, :color, :saddle, :seat_pillar, :stem, :tire, :pedal, :valve, :accessory, :shop_url, :maker_url, :picture)
+      params.require(:bike).permit(:maker_id, :bike_series, :bike_name, :frame_type, :component, :rear_derailleur, :front_derailleur, :crank, :brake, :chain, :sprocket, :sti_lever, :bb, :bb, :wheel, :color, :saddle, :seat_pillar, :handle, :stem, :tire, :pedal, :valve, :accessory, :maker_url, :shop_url, :picture)
     end
 end
