@@ -5,10 +5,14 @@ class ThisIsForBeginnerController < ApplicationController
   end
 
   def result
-  result = Roadbike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
-                              check_params_from_home[:color],check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],
-                              check_params_from_home[:detail_frame],check_params_from_home[:detail_component],check_params_from_home[:brake_type])
-  @bike = Roadbike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
+    bike_from_color = check_params_from_home[:color]
+    bike_from_color = nil if check_params_from_home[:color].blank?
+
+    result = Roadbike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
+                              check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],check_params_from_home[:detail_frame],
+                              check_params_from_home[:detail_component],check_params_from_home[:brake_type],bike_from_color)
+    @bike = Roadbike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
+    @color = check_params_from_home[:color]
   end
 
   def detail

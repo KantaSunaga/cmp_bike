@@ -43,7 +43,9 @@
                           # height_list:[[],[]],
                           # sex:,
                           # road_bike_type:
-                          #brake_type:}
+                          #brake_type:,
+                          # color_list: [[main_color,subcolor],...],
+                          # picture_list:[]}
 #ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 # 1 maker_nameはずべて大文字で統一
 # 2 カラーは全て小文字でカタカナも英語化、謎の名前は見た目で判断（メインんカラーのみロゴやワンポイントは無視）
@@ -56,38 +58,143 @@
 #６　sexはfalseが男性、trueが女性
 #7　フレームタイプ{1カーボン２アルミ３クロモリ}
 #brake_type{1リムブレーキ、２ディスクブレーキ}
+#カラーとピクチャーは対応インデッックス番号で日もお付けていること
 #--------------------------------------------------テストデータ用ーーーーーーーーーーーーーーーーーーーーーーーー
 all_bike_info_hash_list =[]
- ride3000_bike_info_hash = {maker_name:"MERIDA", year:2017, bike_series: "Ride",bike_name:"Ride3000",
-                            frame_type: 1, rear_derailleur: "リアだよ",
-                            front_derailleur:"フロントだよ",cranc:"クランクだよ",brake:"ブレーキだよ",chain:"チェーンだよ",sprocket:"スプロケだよ",sti_lever:"レバーだよ",
-                            bb: "bbだよ", wheel: "FULCRUM/RACING 3", color: "red", saddle: "オリジナル", seat_pillar:"オリジナル", handle: "オリジナル", stem: "オリジナル",
-                            tire: "Panareser/ほげ", pedal: "有", valve: "仏式", accessory: "鍵,リフレクター", maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
-                            shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html", picture: "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
-                             size_list: [50,55,60] , weight_list: [6.8,6.85,6.9],price: 150000, gear: 22, fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
-                            frame_name: "merida ride sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: 12,height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1, brake_type: 1}
+ ride3000_bike_info_hash = {maker_name:"MERIDA",
+                            year:2017,
+                            bike_series: "Ride",
+                            bike_name:"Ride3000",
+                            frame_type: 1,
+                            rear_derailleur: "リアだよ",
+                            front_derailleur:"フロントだよ",
+                            cranc:"クランクだよ",
+                            brake:"ブレーキだよ",
+                            chain:"チェーンだよ",
+                            sprocket:"スプロケだよ",
+                            sti_lever:"レバーだよ",
+                            bb: "bbだよ",
+                            wheel: "FULCRUM/RACING 3",
+                            color: "red",
+                            saddle: "オリジナル",
+                            seat_pillar:"オリジナル",
+                            handle: "オリジナル",
+                            stem: "オリジナル",
+                            tire: "Panareser/ほげ",
+                            pedal: "有",
+                            valve: "仏式",
+                            accessory: "鍵,リフレクター",
+                            maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
+                            shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html",
+                            size_list: [50,55,60] ,
+                            weight_list: [6.8,6.85,6.9],
+                            price: 150000,
+                            gear: 22,
+                            fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
+                            frame_name: "merida ride sp",
+                            fork_type: "カーボン",
+                            kc_or_cb: "クリンチャー",
+                            component: 12,
+                            height_list:[[150,165],[155,170],[160,175]],
+                            sex:false,
+                            road_bike_type:1,
+                            brake_type: 1,
+                            color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                            picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                                    ]}
 
   all_bike_info_hash_list << ride3000_bike_info_hash
 
-  defy_adovanced_sl_0_bike_info_hash = {maker_name:"GIANT", year:2017, bike_series: "DEFY",bike_name:"defy_adovanced_sl_0",
-                             frame_type: 2,rear_derailleur: "リアだよ",
-                             front_derailleur:"フロントだよ",cranc:"クランクだよ",brake:"ブレーキだよ",chain:"チェーンだよ",sprocket:"スプロケだよ",sti_lever:"レバーだよ",
-                             bb: "bbだよ", wheel:"FULCRUM/RACING 3",color:"red",saddle:"オリジナル",seat_pillar:"フレーム一体型",handle:	"GIANT CONTACT SLR Carbon 31.8",stem:"GIANT CONTACT SLR",
-                             tire: "GIANT GAVIA SLR 700x25C TUBELESS READY",pedal:"無",valve:"仏式",accessory:"RideSense、ベル、チューブレスバルブ、シーラント",maker_url:"http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications",
-                             shop_url:"hoge",picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
-                             size_list: [45,55,65] , weight_list: [7.8,7.85,7.9],price:750000,gear:22,fork:"Advanced SL-Grade Composite，Full Composite OverDrive 2 Column",
-                             frame_name: "ジャイアントフレーム", fork_type: "ダイヤモンド", kc_or_cb: "クリンチャー", component: 14,height_list:[[150,160],[155,165],[160,170]],sex:false,road_bike_type:1, brake_type: 1}
+  defy_adovanced_sl_0_bike_info_hash = {maker_name:"GIANT",
+                                        year:2017, bike_series: "DEFY",
+                                        bike_name:"defy_adovanced_sl_0",
+                                       frame_type: 2,
+                                       rear_derailleur: "リアだよ",
+                                       front_derailleur:"フロントだよ",
+                                       cranc:"クランクだよ",
+                                       brake:"ブレーキだよ",
+                                       chain:"チェーンだよ",
+                                       sprocket:"スプロケだよ",
+                                       sti_lever:"レバーだよ",
+                                       bb: "bbだよ",
+                                       wheel:"FULCRUM/RACING 3",
+                                       color:"red",
+                                       saddle:"オリジナル",
+                                       seat_pillar:"フレーム一体型",
+                                       handle:	"GIANT CONTACT SLR Carbon 31.8",
+                                       stem:"GIANT CONTACT SLR",
+                                       tire: "GIANT GAVIA SLR 700x25C TUBELESS READY",
+                                       pedal:"無",
+                                       valve:"仏式",
+                                       accessory:"RideSense、ベル、チューブレスバルブ、シーラント",
+                                       maker_url:"http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications",
+                                       shop_url:"hoge",
+                                       size_list: [45,55,65] ,
+                                       weight_list: [7.8,7.85,7.9],
+                                       price:750000,
+                                       gear:22,
+                                       fork:"Advanced SL-Grade Composite，Full Composite OverDrive 2 Column",
+                                       frame_name: "ジャイアントフレーム",
+                                       fork_type: "ダイヤモンド",
+                                       kc_or_cb: "クリンチャー",
+                                       component: 14,
+                                       height_list:[[150,160],[155,165],[160,170]],
+                                       sex:false,road_bike_type:1,
+                                       brake_type: 1,
+                                       color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                                       picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                               "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                               "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                                               ]}
+
 
 all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
 
-   cacd12_bike_info_hash = {maker_name:"CANNONDEL", year:2017, bike_series: "CAAD",bike_name:"CAAD12",
-                              frame_type: 3, rear_derailleur: "リアだよ",
-                              front_derailleur:"フロントだよ",cranc:"クランクだよ",brake:"ブレーキだよ",chain:"チェーンだよ",sprocket:"スプロケだよ",sti_lever:"レバーだよ",
-                              bb: "bbだよ", wheel: "FULCRUM/RACING 3", color: "red", saddle: "オリジナル", seat_pillar:"オリジナル", handle: "オリジナル", stem: "オリジナル",
-                              tire: "Panareser/ほげ", pedal: "有", valve: "仏式", accessory: "ライト", maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
-                              shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html", picture: "https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
-                               size_list: [50,55,60] , weight_list: [6.8,6.85,6.9],price: 150000, gear: 22, fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
-                              frame_name: "caadd 12 sp", fork_type: "カーボン", kc_or_cb: "クリンチャー", component: 10,height_list:[[150,165],[155,170],[160,175]],sex:false,road_bike_type:1, brake_type: 1}
+   cacd12_bike_info_hash = {maker_name:"CANNONDEL",
+                            year:2017,
+                            bike_series: "CAAD",
+                            bike_name:"CAAD12",
+                            frame_type: 3,
+                            rear_derailleur: "リアだよ",
+                            front_derailleur:"フロントだよ",
+                            cranc:"クランクだよ",
+                            brake:"ブレーキだよ",
+                            chain:"チェーンだよ",
+                            sprocket:"スプロケだよ",
+                            sti_lever:"レバーだよ",
+                            bb: "bbだよ",
+                            wheel: "FULCRUM/RACING 3",
+                            color: "red",
+                            saddle: "オリジナル",
+                            seat_pillar:"オリジナル",
+                            handle: "オリジナル",
+                            stem: "オリジナル",
+                            tire: "Panareser/ほげ",
+                            pedal: "有",
+                            valve: "仏式",
+                            accessory: "ライト",
+                            maker_url: "http://www.merida.jp/lineup/road_bike/ride_3000.html",
+                            shop_url: "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html",
+                            size_list: [50,55,60] ,
+                            weight_list: [6.8,6.85,6.9],
+                            price: 150000,
+                            gear: 22,
+                            fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
+                            frame_name: "caadd 12 sp",
+                            fork_type: "カーボン",
+                            kc_or_cb: "クリンチャー",
+                            component: 10,
+                            height_list:[[150,165],[155,170],[160,175]],
+                            sex:false,
+                            road_bike_type:1,
+                            brake_type: 1,
+                            color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                            picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                                    ]}
 
   all_bike_info_hash_list << cacd12_bike_info_hash
 
@@ -116,7 +223,6 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                             accessory:"スタンド" ,
                             maker_url:"https://www.specialized.com/ja/ja/sworks-tarmac-di2/106244" ,
                             shop_url:"https://www.specialized.com/ja/ja/sworks-tarmac-di2/106244" ,
-                            picture:"https://www.google.co.jp/imgres?imgurl=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F378800000220029324%2Ffe66faeca20115da8566e51d83447ead_400x400.jpeg&imgrefurl=https%3A%2F%2Ftwitter.com%2Fharinezumi_pics&docid=Nu-RxvEdFF5DaM&tbnid=v5i1bLFlU5zpDM%3A&vet=10ahUKEwj0-IW9vonTAhVHvrwKHZikBm4QMwgcKAAwAA..i&w=400&h=400&bih=555&biw=1093&q=%E7%94%BB%E5%83%8F&ved=0ahUKEwj0-IW9vonTAhVHvrwKHZikBm4QMwgcKAAwAA&iact=mrc&uact=8",
                             price: 1090000,
                             gear: 22,
                             fork:"S-Works FACT carbon, full monocoque, size-specific taper" ,
@@ -129,7 +235,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                             height_list:[[150,165],[155,170],[160,175],[165,180],[170,185],[175,190]],
                             sex:true,
                             road_bike_type:1,
-                            brake_type: 2}
+                            brake_type: 2,
+                            color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                            picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                                    ]}
   all_bike_info_hash_list << s_Works_Tarmac_Di2_bike_info_hash
   #-----------------------------------------------------テストデータ終了ーーーーーーーーーーーーーーーーーーーーーーー
   #-------------------------------------------------------以下本当のデーターーーーーーーーーーーーーーーーーーーーーーーー
@@ -161,27 +272,52 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
  #                             #ブレーキ、チェーン、画像、重量、バルブ、ペダルの有無、付属品,サイズ、コンポーネント（ミックスなのか全部統一なのかなのか）、クリンチャーかチューブラーか、
  # all_bike_info_hash_list << speed_concept_75_info_hash
  #
- #  speed_Concept_70_bike_info_hash = {maker_name:"TREK", year:2017, bike_series:"Speed Concept" ,bike_name:"Speed Concept 7.0",
- #                             frame_type:"カーボン" ,
- #                         rear_derailleur:"Shimano 105" ,
- #                         front_derailleur:"Shimano 105, braze-on",cranc:"Shimano RS500, 50/34 (compact)",brake:"",chain:"",sprocket:"Shimano 105, 11-28, 11 speed",
- #                         sti_lever:"Shimano Dura-Ace, bar end control, 11 speed",bb:"BB90" , wheel:"Alloy hubs; Bontrager Tubeless Ready rims" ,
- #                         color:"grey", saddle:"Vision AeroMax Tri" , seat_pillar:"Bontrager Speed Concept Race Lite, Alloy, +/-20mm offset",
- #                         handle:"Bontrager Race Bullhorn w/Race Lite clip-on" , stem:"Bontrager Elite, 31.8mm, 7 degree, w/computer & light mounts" ,
- #                         tire:"Bontrager R1 Hard-Case Lite, 700x23c" , pedal:"" , valve:"" , accessory:"" , maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%B9%E3%83%AD%E3%83%B3%E3%83%90%E3%82%A4%E3%82%AF/speed-concept/speed-concept-7-0/p/1483000-2017/" ,
- #                         shop_url:"" , picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1483000_2017_A_1_Speed_Concept_70?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on" ,
- #                         price:399000 , gear:22 , fork:"SC full foil carbon, integrated brake & stem" , size_list: [] , weight_list: [],
- #                         frame_name:"500 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, BB90 w/Speed Fin, DuoTrap compatible, SC Draft Box 2 & SC Speed Box compatible",
- #                         fork_type:"カーボン", kc_or_cb:"", component:""}
- #                         #ブレーキ、チェーン、画像、重量、バルブ、ペダルの有無、付属品,サイズ、コンポーネント（ミックスなのか全部統一なのかなのか）、クリンチャーかチューブラーか、
- #
+ #  speed_Concept_70_bike_info_hash = {maker_name:"TREK",
+              #                          year:2017,
+              #                          bike_series:"Speed Concept" ,
+              #                          bike_name:"Speed Concept 7.0",
+              #  #                        frame_type:"カーボン" ,
+              #  #                        rear_derailleur:"Shimano 105" ,
+              #  #                        front_derailleur:"Shimano 105, braze-on",
+              #                           cranc:"Shimano RS500, 50/34 (compact)",
+              #                           brake:"",
+              #                           chain:"",
+              #                           sprocket:"Shimano 105, 11-28, 11 speed",
+              #  #                        sti_lever:"Shimano Dura-Ace, bar end control,11 speed",bb:"BB90" ,
+              #                           wheel:"Alloy hubs; Bontrager Tubeless Ready rims" ,
+              #  #                        color:"grey",
+              #                           saddle:"Vision AeroMax Tri" ,
+              #                           seat_pillar:"Bontrager Speed Concept Race Lite, Alloy, +/-20mm offset",
+              #  #                        handle:"Bontrager Race Bullhorn w/Race Lite clip-on" ,
+              #                           stem:"Bontrager Elite, 31.8mm, 7 degree, w/computer & light mounts" ,
+              #                           #tire:"Bontrager R1 Hard-Case Lite, 700x23c" ,
+              #                           pedal:"" ,
+              #                           valve:"" ,
+              #                           accessory:"" ,
+              #                           maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%B9%E3%83%AD%E3%83%B3%E3%83%90%E3%82%A4%E3%82%AF/speed-concept/speed-concept-7-0/p/1483000-2017/" ,
+              #  #                        shop_url:"" , picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1483000_2017_A_1_Speed_Concept_70?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on" ,
+              #  #                        price:399000 ,
+              #                           gear:22 , fork:"SC full foil carbon, integrated brake & stem" ,
+              #                           size_list: [] ,
+              #                           weight_list: [],
+              #  #                        frame_name:"500 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, BB90 w/Speed Fin, DuoTrap compatible, SC Draft Box 2 & SC Speed Box compatible",
+              #  #                        fork_type:"カーボン",
+              #                           kc_or_cb:"",
+              #                           component:"",
+                                          # brake_type: ,
+                                          # color_list: [["red",""]],
+                                          # picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                          #         "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                          #         "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                                          #         ]}
+              #  #                         #ブレーキ、チェーン、画像、重量、バルブ、ペダルの有無、付属品,サイズ、コンポーネント（ミックスなのか全部統一なのかなのか）、クリンチャーかチューブラーか、
+               #
  # all_bike_info_hash_list << speed_Concept_70_bike_info_hash
  #
  # hoge_bike_info_hash = {maker_name:"",
                            # year:2017,
                            # bike_series:"" ,
                            # bike_name:"",
-                           # color:""
                            # frame_name:"",
                            # frame_type:"" ,
                            # fork:"" ,
@@ -208,27 +344,59 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # accessory:"" ,
                            # maker_url:"" ,
                            # shop_url:"" ,
-                           # picture: ,
                            # price: ,
                            # size_list: [] ,
                            # weight_list: [],
                            # height_list:[[],[]],
                            # sex:,
                            # road_bike_type:
-                           # brake_type:}
+                           # brake_type:,
+                          # color_list: [["",""]],
+                          # picture:["",]}
  #ttbike------------------end-------------------------------------------------------------------------------------
- # madone_race_shop_limited_bike_info_hash = {maker_name:"TREK", year:2017, bike_series:"Madone " ,bike_name:"Madone Race Shop Limited",
- #                                             frame_type:"カーボン" ,rear_derailleur:"Shimano Dura-Ace Di2" ,front_derailleur:"Shimano Dura-Ace Di2, braze-on",cranc:"Shimano Dura-Ace, 53/39 (double)",
- #                                             brake:"情報が必要",chain:"情報が必要",sprocket:"Shimano Dura-Ace, 11-28, 11 speed",sti_lever:"Shimano Dura-Ace Di2, 11 speed",
- #                                             bb:"BB90" , wheel:"Bontrager Aeolus 5 D3 Tubeless Ready" , color:"red", saddle:"Bontrager Montrose Pro, carbon rails" , seat_pillar:"Madone Micro-adjust carbon seatmast cap, 25mm offset",
- #                                              handle:"Madone XXX Integrated Bar/Stem, KVF profile, invisible cable routing, OCLV Carbon, VR-CF" , stem:"Madone XXX Integrated bar/stem, OCLV Carbon, 7 degree, aero top cap pocket, w/computer & light mounts" ,
- #                                             tire:"Bontrager R4 Hard-Case Lite, 220tpi, aramid bead, 700x25c" , pedal:"情報が必要" , valve:"情報が必要" , accessory:"" , maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/madone/madone-race-shop-limited/p/1476000-2017/" ,
- #                                             shop_url:"情報が必要" , picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on" ,
- #                                             price:1345000 , gear:22 , fork:"Madone KVF full carbon, carbon E2 tapered steerer, carbon dropouts, integrated brake and stem" , size_list: [50,52,54,56,58,60] , weight_list: [6.1,6.1,6.1,6.1,6.1,6.1],
- #                                             fork_type:"カーボン",frame_name:"700 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2 tapered head tube, BB90, invisible cable routing, control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible",
- #                                            kc_or_cb:"情報が必要", component:"情報が必要", brake_type:1}
- #
+ # madone_race_shop_limited_bike_info_hash = {maker_name:"TREK",
+# # madone_race_shop_limited_bike_info_hash = {maker_name:"TREK",
+#                                               year:2017,
+#                                               bike_series:"Madone " ,
+#                                               bike_name:"Madone Race Shop Limited",
+#  #                                            frame_type:"カーボン" ,
+#                                               rear_derailleur:"Shimano Dura-Ace Di2" ,
+#                                               front_derailleur:"Shimano Dura-Ace Di2, braze-on",
+#                                               cranc:"Shimano Dura-Ace, 53/39 (double)",
+#  #                                            brake:"情報が必要",
+#                                               chain:"情報が必要",
+#                                               sprocket:"Shimano Dura-Ace,11-28, 11 speed",
+#                                               sti_lever:"Shimano Dura-Ace Di2, 11 speed",
+#  #                                            bb:"BB90" ,
+#                                               wheel:"Bontrager Aeolus 5 D3 Tubeless Ready" ,
+#                                               saddle:"Bontrager Montrose Pro, carbon rails" ,
+#                                               seat_pillar:"Madone Micro-adjust carbon seatmast cap, 25mm offset",
+#  #                                            handle:"Madone XXX Integrated Bar/Stem, KVF profile, invisible cable routing, OCLV Carbon, VR-CF" ,
+#                                               stem:"Madone XXX Integrated bar/stem, OCLV Carbon, 7 degree, aero top cap pocket, w/computer & light mounts" ,
+#  #                                            tire:"Bontrager R4 Hard-Case Lite, 220tpi, aramid bead, 700x25c" ,
+#                                               pedal:"情報が必要" ,
+#                                               valve:"情報が必要" ,
+#                                               accessory:"" ,
+#                                               maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/madone/madone-race-shop-limited/p/1476000-2017/" ,
+#  #                                            shop_url:"情報が必要" ,
+#  #                                            price:1345000 ,
+#                                               gear:22 ,
+#                                               fork:"Madone KVF full carbon, carbon E2 tapered steerer, carbon dropouts, integrated brake and stem" ,
+#                                               size_list: [50,52,54,56,58,60] ,
+#                                               weight_list: [6.1,6.1,6.1,6.1,6.1,6.1],
+# #                                             fork_type:"カーボン",
+#                                               frame_name:"700 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2 tapered head tube, BB90, invisible cable routing, control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible",
+#  #                                            kc_or_cb:"情報が必要",
+#                                               component:"情報が必要",
+#                                               brake_type:1,
+    #                                           color_list: [["red","white"]],
+    #                                           picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+    #                                                    ]}
+#  #
  # all_bike_info_hash_list << madone_race_shop_limited_bike_info_hash
+
+
+  # all_bike_info_hash_list << madone_race_shop_limited_bike_info_hash
 
  #domane_SLR_10_Race_Shop_Limited_bike_info_hash = {maker_name:"TREK",
                            # year:2017,
@@ -244,7 +412,6 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # sti_lever:"Shimano Dura-Ace Di2, 11 speed",
                            # bb:"BB90" ,
                            # wheel:"Bontrager Aeolus 5 D3 Tubular RSL" ,
-                           # color:"red",
                            # saddle:"Bontrager Affinity Pro, carbon rails" ,
                            # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
                            # handle:"Bontrager Pro IsoCore VR-CF, 31.8mm" ,
@@ -255,7 +422,6 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # accessory:"情報が必要" ,
                            # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-slr-10-race-shop-limited/p/1481000-2017/" ,
                            # shop_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-slr-10-race-shop-limited/p/1481000-2017/" ,
-                           # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1481000_2017_A_1_Domane_SLR_10_RSL?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on" ,
                            # price: 1,220,000,
                            # gear:22 ,
                            # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -268,7 +434,10 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # height_list:[[167,176],[173,180],[179,180],[184,191]],
                            # sex:false,
                            # road_bike_type: nil,
-                           #brake_type:1}
+                           #brake_type:1,
+                           # color_list: [["red","white"]],
+                           # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1481000_2017_A_1_Domane_SLR_10_RSL?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                           #]}
         #domane_SLR_10_Race_Shop_Limited_bike_info_hashペダルの有無、バルブ（仏、えい）、サイズと重さ、付属品クリンやーかrty−ぶらーか、ロードバイクタイプ
  #all_bike_info_hash_list << domane_SLR_10_Race_Shop_Limited_bike_info_hash
 
@@ -276,7 +445,6 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # year:2017,
                            # bike_series:"Émonda" ,
                            # bike_name:"Émonda SLR 9",
-                           # color:"blue",
                            # frame_name:"Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
                            # frame_type:1 ,
                            # fork:"Émonda full carbon, carbon E2 tapered steerer, carbon dropouts" ,
@@ -303,21 +471,22 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # accessory:"情報が必要" ,
                            # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-slr-9/p/1479000-2017/" ,
                            # shop_url:"情報が必要" ,
-                           # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1479000_2017_A_1_Emonda_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                            # price:1_199_000,
                            # size_list: [47,50,52,54,56,58,60] ,
                            # weight_list: [6.11,6.11,6.11,6.11,6.11,6.11,6.11],
                            # height_list:[[153,160],[157,165],[163,170],[167,176],[173,181],[179,187],[184,192]],
                            # sex:false,
                            # road_bike_type:nil
-                           # brake_type: 1}
+                           # brake_type: 1,
+                           # color_list: [["blue","black"]],
+                           # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1479000_2017_A_1_Emonda_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                           #]}
 #all_bike_info_hash_list << a_Émonda_SLR_9_bike_info_hash
 
 #a_Émonda_SLR_10_Race_Shop_Limited_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Émonda" ,
                           # bike_name:"Émonda SLR 10 Race Shop Limited",
-                          # color:"black",
                           # frame_name:"Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Émonda full carbon, carbon E2 tapered steerer, carbon dropouts" ,
@@ -345,20 +514,21 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 1_199_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-slr-10-race-shop-limited/p/1479200-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1479200_2017_A_1_EMONDA_SLR_10_H1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [5.38,5.38,5.38,5.38,5.38,5.38,5.38],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["black","red"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1479200_2017_A_1_EMONDA_SLR_10_H1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                          #]}
 #all_bike_info_hash_list << a_Émonda_SLR_10_Race_Shop_Limited_hash
 
 #a_Domane_SLR_9_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SLR 9",
-                          # color:"black",
                           # frame_name:"600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -386,20 +556,21 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 1_130_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-slr-9/p/1477000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1477000_2017_A_1_Domane_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [6.86,6.86,6.86,6.86,6.86,6.86,6.86],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["red","black"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1477000_2017_A_1_Domane_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]
+                        #}
 #all_bike_info_hash_list << a_Domane_SLR_9_hash
 
 #a_Madone_9.9_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Madone" ,
                           # bike_name:"Madone 9.9",
-                          # color:"black",
                           # frame_name:"600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2 tapered head tube, BB90, invisible cable routing, control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible",
                           # frame_type:1 ,
                           # fork:"Madone KVF full carbon, carbon E2 tapered steerer, carbon dropouts, integrated brake and stem" ,
@@ -427,20 +598,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 1_095_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/madone/madone-9-9/p/1478000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1478000_2017_A_1_Madone_99?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [6.87,6.87,6.87,6.87,6.87,6.87,6.87],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["red","black"]s],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1478000_2017_A_1_Madone_99?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Madone_9.9_hash
 
 #a_Madone_9.5_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Madone" ,
                           # bike_name:"Madone 9.5",
-                          # color:"silver",
                           # frame_name:"600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2 tapered head tube, BB90, invisible cable routing, control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible",
                           # frame_type:1 ,
                           # fork:"Madone KVF full carbon, carbon E2 tapered steerer, carbon dropouts, integrated brake and stem" ,
@@ -468,20 +639,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 860_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/madone/madone-9-5/p/1472000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1472000_2017_A_1_Madone_95?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [7.32,7.32,7.32,7.32,7.32,7.32],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["silver","black"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1472000_2017_A_1_Madone_95?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Madone_9.5_hash
 
 #a_Émonda_SLR_8_Race_Shop_Limited_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Émonda" ,
                           # bike_name:"Émonda SLR 8 Race Shop Limited",
-                          # color:"red",
                           # frame_name:"フレームUltralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Émonda full carbon, carbon E2 tapered steerer, carbon dropouts" ,
@@ -509,20 +680,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 860_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-slr-8-race-shop-limited/p/1471000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1471000_2017_A_1_Emonda_SLR_8_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [6.3,6.3,6.3,6.3,6.3,6.3],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["red","white"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1471000_2017_A_1_Emonda_SLR_8_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Émonda_SLR_8_Race_Shop_Limited_hash
 
 #a_Madone_9.5_Ultegra_Di2_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Madone" ,
                           # bike_name:"Madone 9.5 Ultegra Di2",
-                          # color:"silver",
                           # frame_name:"600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2 tapered head tube, BB90, invisible cable routing, control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible",
                           # frame_type:1 ,
                           # fork:"Madone KVF full carbon, carbon E2 tapered steerer, carbon dropouts, integrated brake and stem" ,
@@ -550,20 +721,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 840_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/madone/madone-9-5-ultegra-di2/p/1472090-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1472090_2017_A_1_Madone_9_5_Ultegra_Di2?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [7.45,7.45,7.45,7.45,7.45,7.45],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["silver","black"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1472090_2017_A_1_Madone_9_5_Ultegra_Di2?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Madone_9.5_Ultegra_Di2_hash
 
 #a_Émonda_SLR_6_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Émonda" ,
                           # bike_name:"Émonda SLR 6",
-                          # color:"pink,black,yellow,green,red,gray",
                           # frame_name:"Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Émonda full carbon, carbon E2 tapered steerer, carbon dropouts" ,
@@ -591,20 +762,23 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 750_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-slr-6/p/1470000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [47,50,52,54,56,58,60] ,
                           # weight_list: [6.6,6.6,6.6,6.6,6.6,6.6,6.6],
                           # height_list:[[153,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1
+                          # color_list: [["black","pink"],["gray","green"],["gray","red"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                  #        ]}
 #all_bike_info_hash_list << a_Émonda_SLR_6_hash
 
 #a_Domane_SLR_7_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SLR 7",
-                          # color:"orange,white",
                           # frame_name:"600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -632,20 +806,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 680_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-slr-7/p/1466000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1466000_2017_A_2_Domane_SLR_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [7.49,7.49,7.49,7.49,7.49,7.49],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["white","orange"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1466000_2017_A_1_Domane_SLR_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Domane_SLR_7_hash
 
 #a_Madone_9.2_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Madone" ,
                           # bike_name:"Madone 9.2",
-                          # color:"black,green,blue,silver,gray,red",
                           # frame_name:"600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2 tapered head tube, BB90, invisible cable routing, control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible",
                           # frame_type:1 ,
                           # fork:"Madone KVF full carbon, carbon E2 tapered steerer, carbon dropouts, integrated brake and stem" ,
@@ -673,20 +847,25 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 680_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/madone/madone-9-2/p/1474000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_A_1_Madone_92?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60,62] ,
                           # weight_list: [7.58,7.58,7.58,7.58,7.58,7.58,7,58],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192],[189,197]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["black"],["black","green"],["silver","blue"],["red","black"],["red","gray"]],
+                          # # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_A_1_Madone_92?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_C_1_MADONE_9.2_C_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_E_1_MADONE_9.2_C_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_B_1_Madone_92?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_D_1_MADONE_9.2_C_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                          #]}
 #all_bike_info_hash_list << a_Madone_9.2_hash
 
 #a_Domane_SLR_6_Disc_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SLR 6 Disc",
-                          # color:"black,blue,silver,red,yellow",
                           # frame_name:"600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Flat Mount disc brakes, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane full carbon disc, E2 tapered steerer, 12mm thru-axle" ,
@@ -714,20 +893,24 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 640_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-slr-6-disc/p/1477300-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_A_1_Domane_SLR_6_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [7.58,7.58,7.58,7.58,7.58,7.58],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 2}
+                          # brake_type: 2,
+                          # color_list: [["black","black"],["black","yellow"],["blue","black"],["silver","red"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_A_1_Domane_SLR_6_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_B_1_DOMANE_SLR_6_DISC_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_D_1_DOMANE_SLR_6_DISC_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_C_1_DOMANE_SLR_6_DISC_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
+                                    # ]}}
 #all_bike_info_hash_list << a_Domane_SLR_6_Disc_hash
 
 #a_Domane_SL_6_Disc_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SL 6 Disc",
-                          # color:"black,white",
                           # frame_name:"500 Series OCLV Carbon, Front & Rear IsoSpeed, E2 tapered head tube, BB90, Flat Mount disc brakes, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane carbon disc, E2 tapered steerer, 12mm thru-axle" ,
@@ -755,20 +938,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 599_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-sl-6-disc/p/1462000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1462000_2017_A_1_Domane_SL_6_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [8.41,8.41,8.41,8.41,8.41,8.41],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 2}
+                          # brake_type: 2,
+                          # color_list: [["black","white"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1462000_2017_A_1_Domane_SL_6_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Domane_SL_6_Disc_hash
 
 #a_Silque_SLR_6_Women's_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Silque" ,
                           # bike_name:"Silque SLR 6 Women's",
-                          # color:"black,pink",
                           # frame_name:"600 Series OCLV Carbon, Front IsoSpeed, WSD-tuned Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Silque full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -796,20 +979,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 590_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/silque-womens/silque-slr-6-womens/p/1475003-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1475003_2017_A_1_Silque_SLR_6_Womens?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [44,47,50,52] ,
                           # weight_list: [7.54,7.54,7.54,7.54],
                           # height_list:[[151,155],[152,160],[157,165],[162,170]],
                           # sex:true,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["black","pink"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1475003_2017_A_1_Silque_SLR_6_Womens?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << Silque_SLR_6_Women's
 
 #a_Domane_SLR_6_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SLR 6",
-                          # color:"black,yellow,blue,red,gray",
                           # frame_name:"600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -837,20 +1020,24 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 590_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-slr-6/p/1475000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_A_1_Domane_SLR_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [7.46,7.46,7.46,7.46,7.46,7.46],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["black","black"],["black","yellow"],["blue","black"],["silver","red"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_A_1_Domane_SLR_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_B_1_DOMANE_SLR_6_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_D_1_DOMANE_SLR_6_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_C_1_DOMANE_SLR_6_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                        #  ]}
 #all_bike_info_hash_list << a_Domane_SLR_6_hash
 
 #a_Domane_SL_8_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SL 8",
-                          # color:"blue,gray",
                           # frame_name:"500 Series OCLV Carbon, Front & Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -878,20 +1065,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 559_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-sl-8/p/1450000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1450000_2017_A_1_Domane_SL_8?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58] ,
                           # weight_list: [7.48,7.48,7.48,7.48,7.48],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["blue","green"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1450000_2017_A_1_Domane_SL_8?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Domane_SL_8_hash
 
 #a_Domane_SL_5_Disc_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SL 5 Disc",
-                          # color:"blue,green",
                           # frame_name:"500 Series OCLV Carbon, Front & Rear IsoSpeed, E2 tapered head tube, BB90, Flat Mount disc brakes, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane carbon disc, E2 tapered steerer, 12mm thru-axle" ,
@@ -919,20 +1106,20 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 549_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-sl-5-disc/p/1447000-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1447000_2017_A_1_Domane_SL_5_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [44,47,50,52,54,56,58,60] ,
                           # weight_list: [8.54,8.54,8.54,8.54,8.54,8.54,8.54,8.54],
                           # height_list:[[151,155],[152,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 2}
+                          # brake_type: 2,
+                          # color_list: [["green","blue"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1447000_2017_A_1_Domane_SL_5_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Domane_SL_5_Disc_hash
 
 #a_Domane_SL_7_hash = {maker_name:"TEREK",
                           # year:2017,
                           # bike_series:"Domane" ,
                           # bike_name:"Domane SL 7",
-                          # color:"blue,black",
                           # frame_name:"500 Series OCLV Carbon, Front & Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
                           # frame_type:1 ,
                           # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
@@ -960,13 +1147,14 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #price: 510_000,
                           # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-sl-7/p/1467500-2017/" ,
                           # shop_url:"情報が必要" ,
-                          # picture:"https://trek.scene7.com/is/image/TrekBicycleProducts/1467500_2017_A_1_Domane_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           # size_list: [50,52,54,56,58,60] ,
                           # weight_list: [8.54,8.54,8.54,8.54,8.54,8.54],
                           # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
                           # sex:false,
                           # road_bike_type: nil
-                          # brake_type: 1}
+                          # brake_type: 1,
+                          # color_list: [["black","blue"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1467500_2017_A_1_Domane_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
 #all_bike_info_hash_list << a_Domane_SL_7_hash
 
  #-------------------------------------------------------本当のデータ終了ーーーーーーーーーーーーーーーーーーーーーーーー
@@ -978,12 +1166,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                                                         bike_info_hash[:bike_name], bike_info_hash[:frame_type],bike_info_hash[:rear_derailleur],
                                                         bike_info_hash[:front_derailleur],bike_info_hash[:cranc], bike_info_hash[:brake],
                                                         bike_info_hash[:chain], bike_info_hash[:sprocket],bike_info_hash[:sti_lever],
-                                                        bike_info_hash[:bb],bike_info_hash[:wheel],bike_info_hash[:color],
-                                                        bike_info_hash[:saddle],bike_info_hash[:seat_pillar],bike_info_hash[:handle],
-                                                        bike_info_hash[:stem], bike_info_hash[:tire], bike_info_hash[:pedal],
+                                                        bike_info_hash[:bb],bike_info_hash[:wheel],bike_info_hash[:saddle],bike_info_hash[:seat_pillar],
+                                                        bike_info_hash[:handle],bike_info_hash[:stem], bike_info_hash[:tire], bike_info_hash[:pedal],
                                                         bike_info_hash[:valve],bike_info_hash[:accessory],bike_info_hash[:maker_url],
-                                                        bike_info_hash[:shop_url],bike_info_hash[:picture], bike_info_hash[:size_list],bike_info_hash[:weight_list],
+                                                        bike_info_hash[:shop_url], bike_info_hash[:size_list],bike_info_hash[:weight_list],
                                                         bike_info_hash[:price], bike_info_hash[:gear], bike_info_hash[:fork],bike_info_hash[:frame_name],
                                                         bike_info_hash[:fork_type], bike_info_hash[:kc_or_cb],bike_info_hash[:component],bike_info_hash[:height_list],
-                                                        bike_info_hash[:sex],bike_info_hash[:road_bike_type], bike_info_hash[:brake_type])
+                                                        bike_info_hash[:sex],bike_info_hash[:road_bike_type], bike_info_hash[:brake_type],
+                                                        bike_info_hash[:color_list],bike_info_hash[:picture_list])
   end

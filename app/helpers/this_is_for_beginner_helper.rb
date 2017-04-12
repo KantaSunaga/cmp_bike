@@ -113,4 +113,17 @@ module ThisIsForBeginnerHelper
         return "ディスクブレーキ" if brake_type == 2
         return "リムブレーキ"
     end
+
+    def find_picture(color, bike_id)
+      color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
+      if color_recorde == ""
+        color_recorde = Color.find_by(sub_olor: color, roadbike_id: bike_id)
+      end
+     return color_recorde.picture
+    end
+
+    def find_color(bike_id, color)
+      color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
+      return color_recorde.color
+    end
 end
