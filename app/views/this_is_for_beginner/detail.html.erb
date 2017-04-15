@@ -1,7 +1,14 @@
-<table border="1">
+<table>
   <thead>
-      <td>画像</td>
-      <td><%= image_tag "#{@bike.picture}" , :size =>"200x200"%></td>
+        <td>画像</td>
+        <td>
+        <tr><%= image_tag "#{@color[0].picture}", :size =>"300x250", id: "detail_big_img"%></tr>
+        <div>
+        <%@color.each do |color|%>
+          <%= image_tag "#{color.picture}", id: "detail_smale_img"%>
+        <%end%>
+      </div>
+      </td>
     <tr>
       <td>メーカー</td>
       <td><%= get_maker_id_from_bike @bike.maker_id %></td>

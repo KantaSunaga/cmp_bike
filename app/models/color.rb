@@ -1,5 +1,6 @@
 class Color < ApplicationRecord
     belongs_to :roadbike
+    scope :serch_color, -> { where("color = ? or sub_color = ? or sub_color2 = ? ",color)}
     def self.create_color_and_picture(color_arry,picture_array, bike_obj)
       roupe_time_end = color_arry.length
       roupe_time = 0

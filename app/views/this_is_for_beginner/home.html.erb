@@ -17,8 +17,10 @@
                 :color => :color,
                 :sex => :sex,
                 :user_size => :user_size,
-                :brake_type => :brake_type
-                }) do %>
+                :brake_type => :brake_type,
+                :sub_color => :sub_color,
+                :sub_color2 => :sub_color2
+                 }) do %>
 <div>
   <strong>自転車のタイプ*</strong>
   <div>
@@ -80,9 +82,25 @@
   </div>
 <div>
   <strong>カラー</strong>
+    <div id="main_color">
+      <%= select_tag :color, options_for_select([["",0],["red","red"],["gray", "gray"],["green","green"],["black","black"],
+                                              ["pink","pink"]])%>
+    </div>
+</div>
+
+<div id="sub_color_view1">
+  <strong>サブカラー</strong>
     <div>
-      <%= select_tag :color, options_for_select([["",nil],["red","red"],["blue", "blue"],["green","green"],["black","black"],
-                                              ["white","white"],["celeste", "celeste"]])%>
+      <%= select_tag :sub_color, options_for_select([["",0],["red","red"],["gray", "gray"],["green","green"],["black","black"],
+                                              ["pink","pink"]])%>
+    </div>
+</div>
+
+<div id="sub_color_view2">
+  <strong>サブカラー２</strong>
+    <div>
+      <%= select_tag :sub_color2, options_for_select([["",0],["red","red"],["gray", "gray"],["green","green"],["black","black"],
+                                              ["pink","pink"]])%>
     </div>
 </div>
 
@@ -113,6 +131,8 @@ $("#use_check_box").hide();
 $("#detail_maker").hide();
 $(".must").hide();
 $("#detail_brake_type").hide();
+$("#sub_color_view1").hide();
+$("#sub_color_view2").hide();
 
 $("#bike_type").change(function(){
   var bike_type_value = $("#bike_type").val();
@@ -165,6 +185,25 @@ $("#serch").click(function(){
     return false;
   }else{
     $('#serch').submit();
+  }
+});
+
+$("#color").change(function(){
+  if($("#color").val() != 0){
+    $("#sub_color_view1").show(500);
+  }else if($("#color").val() == 0){
+    $("#sub_color_view1").hide(500);
+    $("#sub_color option").attr("selected", false);
+    $("#sub_color_view2").hide(500);
+    $("#sub_color2 option").attr("selected", false);
+  }
+});
+  $("#sub_color").change(function(){
+    if(($("#color").val() != 0 && $("#sub_color").val() != 0)){
+    $("#sub_color_view2").show(500);
+  }else if($("#sub_color").val() == 0) {
+    $("#sub_color_view2").hide(500);
+    $("#sub_color2 option").attr("selected", false);
   }
 });
 </script>

@@ -5,13 +5,14 @@ class Roadbike < ApplicationRecord
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
-       size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component, height_list, sex, road_bike_type, brake_type,color_list,picture_list)
+       size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component, height_list, sex, road_bike_type, brake_type,color_list,
+       picture_list,official_color,bike_comment,maker_comment)
 
        year_info = Year.find_by(year: year.to_i)
-       year_info = Year.create(year: year.to_i) if year_info == nil
+       year_info = Year.create(year: year.to_i) if year_info.blank?
 
        maker_info = year_info.makers.find_by(maker_name: maker_name)
-       maker_info = year_info.makers.create(maker_name: maker_name) if maker_info == nil
+       maker_info = year_info.makers.create(maker_name: maker_name, maker_comment: maker_comment) if maker_info == nil
 
         bike_info = Roadbike.create( bike_series: bike_series,
                                 bike_name: bike_name,
@@ -44,7 +45,8 @@ class Roadbike < ApplicationRecord
                                 component: component,
                                 sex:sex,
                                 road_bike_type:road_bike_type,
-                                brake_type: brake_type
+                                brake_type: brake_type,
+                                bike_comment: bike_comment
                                 )
         maker_info.roadbikes << bike_info
 
@@ -59,7 +61,8 @@ class Roadbike < ApplicationRecord
         color_roupe_time = 0
         while color_roupe_time < color_roupe_end_time do
           if color_list[color_roupe_time][1] != nil && color_list[color_roupe_time][1] != ""
-            bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time],sub_color: color_list[color_roupe_time][1])
+            bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time],
+                                    sub_color: color_list[color_roupe_time][1], official_color: official_color[color_roupe_time])
           else
             bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time])
           end
@@ -86,21 +89,27 @@ class Roadbike < ApplicationRecord
     result_get_bike_info_from = []
 
     params_array.each do |bike_id|
-        result_each = Roadbike.find_by(id: bike_id)
-        result_get_bike_info_from << result_each
+      result_each = Roadbike.find_by(id: bike_id)
+      result_get_bike_info_from << result_each
     end
     return result_get_bike_info_from
   end
 
   def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type,color)
+    #binding.pry
     sex_info = false if sex == "men"
     if color != nil && color != ""
-      bike = Roadbike.joins(:colors).where(colors: {color: color}).uniq if color != nil && color != ""
-      bike = bike.where(price: price_down.to_i..price_up.to_i)
-    else
+     bike = Roadbike.joins(:colors).where(colors: {color: color}).distinct
+    #  p "@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    #  p bike_relation
+    #  bike = bike_relation.where(colors: {color: color}).or(bike_relation.where(colors: {sub_color2: color})).or(bike_relation.where(colors: {sub_color: color}))
+    #  p "@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    #  p bike
+     bike = bike.where(price: price_down.to_i..price_up.to_i)
+   else
       bike = Roadbike.where(price: price_down.to_i..price_up.to_i)
     end
-    if bike !=nil
+    if bike != nil
         bike = bike.where(sex: sex_info) if sex_info == false
         bike = bike.where(component: component_param.to_i) if component_param != nil && component_param != ""
         bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""

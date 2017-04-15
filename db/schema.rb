@@ -10,22 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411224645) do
+ActiveRecord::Schema.define(version: 20170414051840) do
 
   create_table "colors", force: :cascade do |t|
     t.string   "color"
     t.integer  "roadbike_id"
     t.string   "picture"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "sub_color"
+    t.string   "official_color"
   end
 
   create_table "makers", force: :cascade do |t|
     t.string   "maker_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "year_id"
+    t.text     "maker_comment"
   end
 
   create_table "roadbikes", force: :cascade do |t|
@@ -59,16 +61,15 @@ ActiveRecord::Schema.define(version: 20170411224645) do
     t.integer  "price"
     t.integer  "gear"
     t.string   "fork"
-    t.boolean  "beginer_flag",     default: false, null: false
     t.string   "frame_name"
     t.string   "fork_type"
     t.string   "kc_or_cb"
     t.integer  "component"
     t.integer  "bike_type"
     t.boolean  "sex",              default: false, null: false
-    t.integer  "max_hight"
     t.integer  "road_bike_type"
     t.integer  "brake_type"
+    t.text     "bike_comment"
   end
 
   create_table "sizes", force: :cascade do |t|

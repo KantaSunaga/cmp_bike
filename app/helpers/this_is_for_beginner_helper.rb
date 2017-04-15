@@ -116,14 +116,24 @@ module ThisIsForBeginnerHelper
 
     def find_picture(color, bike_id)
       color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
-      if color_recorde == ""
-        color_recorde = Color.find_by(sub_olor: color, roadbike_id: bike_id)
+      if color_recorde.blank?
+        color_recorde = Color.find_by(sub_color: color, roadbike_id: bike_id)
+        return color_recorde.picture
       end
-     return color_recorde.picture
+       color_recorde.picture
     end
 
     def find_color(bike_id, color)
-      color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
-      return color_recorde.color
+      if color = blank?
+        color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
+        return color_recorde.color
+      else
+          color_recorde = Color.where(roadbike_id: bike_id)
+          color = []
+          color_recorde.each do |color_obj|
+            color << color_obj.color
+          end
+          return color.join(",")
+      end
     end
 end

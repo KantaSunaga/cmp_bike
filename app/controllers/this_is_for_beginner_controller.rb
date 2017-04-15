@@ -5,19 +5,17 @@ class ThisIsForBeginnerController < ApplicationController
   end
 
   def result
-    bike_from_color = check_params_from_home[:color]
-    bike_from_color = nil if check_params_from_home[:color].blank?
-
     result = Roadbike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
                               check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],check_params_from_home[:detail_frame],
-                              check_params_from_home[:detail_component],check_params_from_home[:brake_type],bike_from_color)
+                              check_params_from_home[:detail_component],check_params_from_home[:brake_type],check_params_from_home[:color])
     @bike = Roadbike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
     @color = check_params_from_home[:color]
   end
 
   def detail
-   @bike =Roadbike.find_by(id: check_params_from_home[:id].to_i)
+   @bike = Roadbike.find_by(id: check_params_from_home[:id].to_i)
    @size = @bike.sizes.all
+   @color = Color.where(roadbike_id: check_params_from_home[:id].to_i)
   end
 
   private
@@ -34,6 +32,8 @@ class ThisIsForBeginnerController < ApplicationController
        :sex,
        :user_size,
        :id,
-       :brake_type)
+       :brake_type,
+       :sub_color,
+       :sub_color2)
     end
 end
