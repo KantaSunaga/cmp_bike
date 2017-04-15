@@ -8,7 +8,8 @@
   <%@bike.each do |bike|%>
   <table>
     <tr>
-      <td><%= image_tag "#{find_picture(@color, bike[:bike_obj].id)}", :size =>"200x200"%></td>
+      <td>イメージ</td>
+      <td><%= image_tag "#{find_picture(@color, bike[:bike_obj].id)}", :size =>"200x200",class: "result_img"%></td>
     </tr>
     <tr>
       <td>モデル</td>

@@ -4,9 +4,24 @@
 .must{
   color:red;
 }
-#detail_smale_img{
+.detail_smale_img{
+  img{
   max-width: 100px;
    height: auto;
    border: 1px solid #888 ;
    margin: 5px;
+ }
+}
+#detail_big_img{
+  max-width: 400px;
+   height: auto;
+   border: 1px solid #888 ;
+   margin: 5px;
+}
+
+.result_img{
+  max-height: 400px;
+  width: auto;
+  border: 1px solid #888 ;
+
 }
