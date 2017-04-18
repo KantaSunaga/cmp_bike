@@ -4,13 +4,20 @@
 .must{
   color:red;
 }
+.serch_page{
+
+}
+#result_page{
+   align:center;
+
+}
 .detail_smale_img{
   img{
   max-width: 100px;
    height: auto;
    border: 1px solid #888 ;
    margin: 5px;
- }
+  }
 }
 #detail_big_img{
   max-width: 400px;
@@ -18,10 +25,30 @@
    border: 1px solid #888 ;
    margin: 5px;
 }
-
+#detail_pictures{
+  align:center;
+}
 .result_img{
   max-height: 400px;
   width: auto;
-  border: 1px solid #888 ;
+  margin-right: 5px;
+  // position: relative;
+  // top: 165px;
+  // right: 335px;
+   border: 1px solid #888 ;
+}
+
+.result_table{
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  //  width: 600px;
+  //  height: 400px;
+}
+
+.detail_page{
+  border-collapse: collapse;
+}
+//以下スマホ用
+@media screen and ( max-width:479px ){
 
 }

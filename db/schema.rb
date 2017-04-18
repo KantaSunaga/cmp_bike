@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414051840) do
+ActiveRecord::Schema.define(version: 20170416220456) do
 
   create_table "colors", force: :cascade do |t|
     t.string   "color"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170414051840) do
     t.datetime "updated_at",     null: false
     t.string   "sub_color"
     t.string   "official_color"
+    t.string   "sub_color2"
   end
 
   create_table "makers", force: :cascade do |t|

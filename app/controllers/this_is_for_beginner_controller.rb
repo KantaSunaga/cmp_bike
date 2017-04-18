@@ -1,4 +1,5 @@
 class ThisIsForBeginnerController < ApplicationController
+  require 'browser'
   def home
     @bike_info = Roadbike.new
     @maker = Maker.all
@@ -10,12 +11,14 @@ class ThisIsForBeginnerController < ApplicationController
                               check_params_from_home[:detail_component],check_params_from_home[:brake_type],check_params_from_home[:color])
     @bike = Roadbike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
     @color = check_params_from_home[:color]
+    @length = @bike.length
   end
 
   def detail
    @bike = Roadbike.find_by(id: check_params_from_home[:id].to_i)
    @size = @bike.sizes.all
    @color = Color.where(roadbike_id: check_params_from_home[:id].to_i)
+   @official_color = Color.pluck(:official_color).uniq.join(",")
   end
 
   private

@@ -45,7 +45,10 @@
                           # road_bike_type:
                           #brake_type:,
                           # color_list: [[main_color,subcolor],...],
-                          # picture_list:[]}
+                          # picture_list:[],
+                          #official_color:[""]
+                          # bike_comment: "",
+                          # maker_comment: ""}
 #ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 # 1 maker_nameはずべて大文字で統一
 # 2 カラーは全て小文字でカタカナも英語化、謎の名前は見た目で判断（メインんカラーのみロゴやワンポイントは無視）
@@ -99,11 +102,17 @@ all_bike_info_hash_list =[]
                             sex:false,
                             road_bike_type:1,
                             brake_type: 1,
-                            color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                            color_list: [["black","pink","yellow"],["gray","green"],["red","gray"]],
+                            official_color:["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                             picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                                    ]}
+                                    ],
+                            bike_comment: "世界でもっとも美味しいロードドバイクです。",
+                            maker_comment: "ほげホゲホゲh越えg吠えホゲ
+                            ホゲホゲホゲホゲオゲホゲオhゲオhゲオへ御
+                            へごへ越えh越えhg"
+                                  }
 
   all_bike_info_hash_list << ride3000_bike_info_hash
 
@@ -143,11 +152,18 @@ all_bike_info_hash_list =[]
                                        height_list:[[150,160],[155,165],[160,170]],
                                        sex:false,road_bike_type:1,
                                        brake_type: 1,
-                                       color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                                       color_list: [["black","pink","yellow"],["gray","green"],["red","gray"]],
+                                       official_color:["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                                        picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                                "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                                "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                                               ]}
+                                               ],
+                                       bike_comment: "世界でもっもイケイケなロードドバイクです。",
+                                       maker_comment: "PPAPPPAPPPAPPPA
+                                       PPPAPPPAPPPAPPPAPPPAPPPAPPPAPPPAPPPAPPP
+                                       APPPPAPPPPPAPPPAPPPAPPPAPPP
+                                       PAAPPAPAPPPPPAPPPAPPPAAPPAP"
+                                             }
 
 
 all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
@@ -190,11 +206,18 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                             sex:false,
                             road_bike_type:1,
                             brake_type: 1,
-                            color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                            color_list: [["black","pink","yellow"],["gray","green"],["red","gray"]],
+                            official_color:["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                             picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                                    ]}
+                                    ],
+                            bike_comment: "世界でもっとも美味しいロードドバイクです。",
+                            maker_comment: "となっていて、正規表現でSafariという文字があった時に処理をするようにしているためChromeでも反応してしまいます。
+                                          どうしようかなと迷っていたらbrowserといういいgemを見つけま
+                                          インストールはGemfileに以下を追加するだけです。
+                                          "
+                          }
 
   all_bike_info_hash_list << cacd12_bike_info_hash
 
@@ -236,11 +259,17 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                             sex:true,
                             road_bike_type:1,
                             brake_type: 2,
-                            color_list: [["black","pink"],["gray","green"],["red","gray"]],
+                            color_list: [["black","pink","yellow"],["gray","green"],["red","gray"]],
+                            official_color:["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                             picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                                    ]}
+                                    ],
+                            bike_comment: "世界でもっとも美味しいロードドバイクです。",
+                            maker_comment: "Railsでブラウザ判定する時に
+                            request.env['HTTP_USER_AGENT']でブラウザ判定しようとしたのですが、Chrom
+                            eからうまくSafariが取れませんでした。request.env['HTTP_USER_AGENT']を見てみると"
+                          }
   all_bike_info_hash_list << s_Works_Tarmac_Di2_bike_info_hash
   #-----------------------------------------------------テストデータ終了ーーーーーーーーーーーーーーーーーーーーーーー
   #-------------------------------------------------------以下本当のデーターーーーーーーーーーーーーーーーーーーーーーーー
@@ -1173,5 +1202,6 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                                                         bike_info_hash[:price], bike_info_hash[:gear], bike_info_hash[:fork],bike_info_hash[:frame_name],
                                                         bike_info_hash[:fork_type], bike_info_hash[:kc_or_cb],bike_info_hash[:component],bike_info_hash[:height_list],
                                                         bike_info_hash[:sex],bike_info_hash[:road_bike_type], bike_info_hash[:brake_type],
-                                                        bike_info_hash[:color_list],bike_info_hash[:picture_list])
+                                                        bike_info_hash[:color_list],bike_info_hash[:picture_list],bike_info_hash[:official_color],
+                                                        bike_info_hash[:bike_comment],bike_info_hash[:maker_comment])
   end

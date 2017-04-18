@@ -42,7 +42,7 @@ RSpec.describe Roadbike, type: :model do
                              sex:false,
                              road_bike_type:1,
                              brake_type: 2,
-                             color_list: [["red","green"],["black","green"],["orange"]],
+                             color_list: [["red","green","yellow"],["black","green"],["orange"]],
                              picture_list: ["red,green_picture","black,gree_picture,","white_picture"],
                              official_color: ["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                              bike_comment: "世界でもっとも重いロードドバイクです。",
@@ -88,7 +88,7 @@ RSpec.describe Roadbike, type: :model do
                                           sex:false,
                                           road_bike_type:1,
                                           brake_type: 1,
-                                          color_list: [["red","green"],["black","green"],["white"]],
+                                          color_list: [["red","green","yellow"],["black","green"],["white"]],
                                           picture_list: ["red,green_picture","black,gree_picture,","white_picture"],
                                           official_color: ["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                                           bike_comment: "世界でもっとも美味しいロードドバイクです。",
@@ -134,7 +134,7 @@ RSpec.describe Roadbike, type: :model do
                              sex:true,
                              road_bike_type:1,
                              brake_type: 2,
-                             color_list: [["red","green"],["black","green"],["white"]],
+                             color_list: [["red","green","gold"],["black","green"],["white"]],
                              picture_list: ["red,green_picture","black,gree_picture,","white_picture"],
                              official_color: ["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
                              bike_comment: "世界でもっとも赤いロードドバイクです。",
@@ -174,6 +174,9 @@ RSpec.describe Roadbike, type: :model do
     end
     it "色が作られていること" do
       expect(Color.where(sub_color: "green").length).to eq 6
+    end
+    it"sub_color２が保存されていること"do
+      expect(Color.where(sub_color2: "gold").length).to eq 1
     end
     it "official_colorが保存されていること" do
       expect(Color.where( official_color: "Matte Trek Black/Pink/Yellow-P1").length).to eq 3
@@ -269,14 +272,13 @@ RSpec.describe Roadbike, type: :model do
       expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 1
     end
     it "sub_colorで絞れること" do
-      color = "red"
       road_bike_type = nil
       maker_id = nil
       frame_type = nil
       component_param = nil
       brake_type = nil
-      sub_color = "green"
-      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color,sub_color).length).to eq 3
+      color = "green"
+      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
     end
   end
 end

@@ -1,7 +1,7 @@
 module ThisIsForBeginnerHelper
   def find_maker_name_from(maker_id)
     maker_info=Maker.find_by(id: maker_id)
-    return maker_info.maker_name
+    return maker_info
   end
   def chek_bike_type_from(bike_type)
     if bike_type == 1
@@ -115,26 +115,29 @@ module ThisIsForBeginnerHelper
     end
 
     def find_picture(color, bike_id)
-      color_recorde = Color.find_by(roadbike_id: bike_id,color: color)
-      if color_recorde.blank?
+      if color == "0"
+        color_recorde = Color.find_by(roadbike_id: bike_id)
+      else
         color_recorde = Color.find_by(sub_color: color, roadbike_id: bike_id)
         color_recorde = Color.find_by(sub_color2: color, roadbike_id: bike_id) if color_recorde.blank?
-        return color_recorde.picture
+        color_recorde = Color.find_by(sub_color: color, roadbike_id: bike_id) if color_recorde.blank?
       end
-       color_recorde.picture
+        return color_recorde.picture
     end
 
     def find_color(bike_id, color)
-      if color = blank?
-        color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
-        return color_recorde.color
+      if color == "0"
+        color =  Color.find_by(roadbike_id: bike_id)
+        return color.official_color
+        # color = []
+        # color_recorde = Color.where( roadbike_id: bike_id)
+        # color_recorde.each do |color_obj|
+        #   color << color_obj.official_color
+        #   end
+        # return color.join(",")
       else
-          color_recorde = Color.where(roadbike_id: bike_id)
-          color = []
-          color_recorde.each do |color_obj|
-            color << color_obj.color
-          end
-          return color.join(",")
+          color_recorde = Color.find_by(roadbike_id: bike_id, color:color)
+          return color_recorde.official_color
       end
     end
 end

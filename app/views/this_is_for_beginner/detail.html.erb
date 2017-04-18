@@ -1,14 +1,14 @@
-<table>
-  <thead>
-        <td>画像</td>
-        <td>
-          <tr><%= image_tag "#{@color[0].picture}", :size =>"300x250", id: "detail_big_img"%></tr>
-          <div class="detail_smale_img">
-          <%@color.each do |color|%>
-            <%= image_tag "#{color.picture}"%>
-          <%end%>
-        </div>
-      </td>
+
+    <div align="center">
+        <tr><%= image_tag "#{@color[0].picture}", :size =>"300x250", class: "detail_big_img"%></tr>
+        <div class="detail_smale_img">
+        <%@color.each do |color|%>
+          <%= image_tag "#{color.picture}"%>
+        <%end%>
+      </div>
+    </div>
+    <table border="1" Align="center" class="detail_page">
+      <thead>
     <tr>
       <td>メーカー</td>
       <td><%= get_maker_id_from_bike @bike.maker_id %></td>
@@ -31,7 +31,7 @@
     </tr>
     <tr>
       <td>カラー</td>
-      <td><%= @bike.color %></td>
+      <td><%=@official_color%></td>
     </tr>
     <tr>
       <td>ギア</td>
@@ -141,7 +141,7 @@
 $(function(){
   $(".detail_smale_img img").click(function(){
     var img_url = $(this).attr("src");
-    $("#detail_big_img").attr('src', img_url);
+    $(".detail_big_img").attr('src', img_url);
   });
 });
 </script>

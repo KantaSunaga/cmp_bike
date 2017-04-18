@@ -7,6 +7,10 @@ RSpec.describe ThisIsForBeginnerController, type: :controller do
       get :home
       expect(response).to have_http_status(:success)
     end
+    it "@bike_infoがRoadebikeクラスである事" do
+    end
+    it "@makerがすべてのメーカーを持っていること" do
+    end
   end
 
   describe "GET #result" do

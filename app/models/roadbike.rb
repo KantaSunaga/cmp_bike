@@ -62,7 +62,8 @@ class Roadbike < ApplicationRecord
         while color_roupe_time < color_roupe_end_time do
           if color_list[color_roupe_time][1] != nil && color_list[color_roupe_time][1] != ""
             bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time],
-                                    sub_color: color_list[color_roupe_time][1], official_color: official_color[color_roupe_time])
+                                    sub_color: color_list[color_roupe_time][1], official_color: official_color[color_roupe_time],
+                                    sub_color2:color_list[color_roupe_time][2] )
           else
             bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time])
           end
@@ -96,15 +97,9 @@ class Roadbike < ApplicationRecord
   end
 
   def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type,color)
-    #binding.pry
     sex_info = false if sex == "men"
-    if color != nil && color != ""
-     bike = Roadbike.joins(:colors).where(colors: {color: color}).distinct
-    #  p "@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    #  p bike_relation
-    #  bike = bike_relation.where(colors: {color: color}).or(bike_relation.where(colors: {sub_color2: color})).or(bike_relation.where(colors: {sub_color: color}))
-    #  p "@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    #  p bike
+    if color != "0"
+     bike = Roadbike.joins(:colors).where(colors: {color: color}).or(Roadbike.joins(:colors).where(colors: {sub_color2: color})).or(Roadbike.joins(:colors).where(colors: {sub_color: color})).distinct
      bike = bike.where(price: price_down.to_i..price_up.to_i)
    else
       bike = Roadbike.where(price: price_down.to_i..price_up.to_i)

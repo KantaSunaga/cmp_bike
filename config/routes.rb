@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   get 'this_is_for_intermediate_or_advanced/get_bike_name_2'
   get 'this_is_for_intermediate_or_advanced/get_bike_name_3'
   #Ajax-end
-  resources :bikes
+  resources :roadbikes
+  # resources :bikes
+
   resources :makers
   resources :sizes
   resources :sizes
