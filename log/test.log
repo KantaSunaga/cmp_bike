@@ -15826,3 +15826,406 @@ Completed 200 OK in 1114ms (Views: 1110.4ms | ActiveRecord: 0.5ms)
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "colors"[0m
+  [1m[36mRoadbike Load (0.7ms)[0m  [1m[34mSELECT  "roadbikes".* FROM "roadbikes" WHERE "roadbikes"."bike_name" = ? LIMIT ?[0m  [["bike_name", "Ride3000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "red"], ["roadbike_id", 28], ["picture", "www..."], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "green"], ["roadbike_id", 28], ["picture", "ww123"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "blue"], ["roadbike_id", 28], ["picture", "wwwww"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoadbike Load (0.1ms)[0m  [1m[34mSELECT  "roadbikes".* FROM "roadbikes" WHERE "roadbikes"."bike_name" = ? LIMIT ?[0m  [["bike_name", "defy_adovanced_sl_0"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "yellow"], ["roadbike_id", 29], ["picture", "www..."], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "green"], ["roadbike_id", 29], ["picture", "ww123"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "blue"], ["roadbike_id", 29], ["picture", "wwwww"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT  "roadbikes".* FROM "roadbikes" WHERE "roadbikes"."bike_name" = ? LIMIT ?[0m  [["bike_name", "CAAD12"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "gray"], ["roadbike_id", 30], ["picture", "www..."], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "green"], ["roadbike_id", 30], ["picture", "ww123"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "blue"], ["roadbike_id", 30], ["picture", "wwwww"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "roadbikes"[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[31mDELETE FROM "makers"[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "colors"[0m
+  [1m[36mYear Load (0.6ms)[0m  [1m[34mSELECT  "years".* FROM "years" WHERE "years"."year" = ? LIMIT ?[0m  [["year", 2017], ["LIMIT", 1]]
+  [1m[36mMaker Load (0.3ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."year_id" = ? AND "makers"."maker_name" = ? LIMIT ?[0m  [["year_id", 1], ["maker_name", "MERIDA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at", "year_id", "maker_comment") VALUES (?, ?, ?, ?, ?)[0m  [["maker_name", "MERIDA"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["year_id", 1], ["maker_comment", "ウェーイwwwwwwwwwwwwwwwwwwwwwwwwp@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "roadbikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type", "brake_type", "bike_comment") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 31], ["bike_series", "Ride"], ["bike_name", "Ride3000"], ["frame_type", 1], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["handle", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "鍵,リフレクター"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "merida ride sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", 12], ["road_bike_type", 1], ["brake_type", 2], ["bike_comment", "世界でもっとも重いロードドバイクです。"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 31]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 31]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 31]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at", "sub_color", "official_color", "sub_color2") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", "red"], ["roadbike_id", 31], ["picture", "red,green_picture"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["sub_color", "green"], ["official_color", "Matte Trek Black/Pink/Yellow-P1"], ["sub_color2", "yellow"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at", "sub_color", "official_color") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["color", "black"], ["roadbike_id", 31], ["picture", "black,gree_picture,"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["sub_color", "green"], ["official_color", "Charcoal/Black/Green-P1"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "orange"], ["roadbike_id", 31], ["picture", "white_picture"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mYear Load (0.1ms)[0m  [1m[34mSELECT  "years".* FROM "years" WHERE "years"."year" = ? LIMIT ?[0m  [["year", 2017], ["LIMIT", 1]]
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."year_id" = ? AND "makers"."maker_name" = ? LIMIT ?[0m  [["year_id", 1], ["maker_name", "GIANT"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at", "year_id", "maker_comment") VALUES (?, ?, ?, ?, ?)[0m  [["maker_name", "GIANT"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["year_id", 1], ["maker_comment", "白石峠わずwwwwwwwwwwwwwwwwwwwwwwwwp@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "roadbikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "saddle", "seat_pillar", "handle", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "road_bike_type", "brake_type", "bike_comment") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 32], ["bike_series", "DEFY"], ["bike_name", "defy_adovanced_sl_0"], ["frame_type", 2], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["saddle", "オリジナル"], ["seat_pillar", "フレーム一体型"], ["handle", "GIANT CONTACT SLR Carbon 31.8"], ["stem", "GIANT CONTACT SLR"], ["tire", "GIANT GAVIA SLR 700x25C TUBELESS READY"], ["pedal", "無"], ["valve", "無"], ["accessory", "RideSense、ベル、チューブレスバルブ、シーラント"], ["maker_url", "http://www.giant.co.jp/giant17/bike_datail.php?p_id=00000029#specifications"], ["shop_url", "hoge"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["price", 750000], ["gear", 22], ["fork", "Advanced SL-Grade Composite，Full Composite OverDrive 2 Column"], ["frame_name", "ジャイアントフレーム"], ["fork_type", "ダイヤモンド"], ["kc_or_cb", "クリンチャー"], ["component", 14], ["road_bike_type", 1], ["brake_type", 1], ["bike_comment", "世界でもっとも美味しいロードドバイクです。"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 45], ["min_height", 150], ["max_height", 160], ["weight", 7], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 32]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 165], ["weight", 7], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 32]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 65], ["min_height", 160], ["max_height", 170], ["weight", 7], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 32]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at", "sub_color", "official_color", "sub_color2") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", "red"], ["roadbike_id", 32], ["picture", "red,green_picture"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["sub_color", "green"], ["official_color", "Matte Trek Black/Pink/Yellow-P1"], ["sub_color2", "yellow"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at", "sub_color", "official_color") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["color", "black"], ["roadbike_id", 32], ["picture", "black,gree_picture,"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["sub_color", "green"], ["official_color", "Charcoal/Black/Green-P1"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "white"], ["roadbike_id", 32], ["picture", "white_picture"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mYear Load (0.2ms)[0m  [1m[34mSELECT  "years".* FROM "years" WHERE "years"."year" = ? LIMIT ?[0m  [["year", 2017], ["LIMIT", 1]]
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."year_id" = ? AND "makers"."maker_name" = ? LIMIT ?[0m  [["year_id", 1], ["maker_name", "CANNONDEL"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "makers" ("maker_name", "created_at", "updated_at", "year_id", "maker_comment") VALUES (?, ?, ?, ?, ?)[0m  [["maker_name", "CANNONDEL"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["year_id", 1], ["maker_comment", "一人暮らしウェーイwwwwwwwwwwwwwwwwwwwwwwwwp@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "roadbikes" ("maker_id", "bike_series", "bike_name", "frame_type", "rear_derailleur", "front_derailleur", "crank", "brake", "chain", "sprocket", "sti_lever", "bb", "wheel", "saddle", "seat_pillar", "stem", "tire", "pedal", "valve", "accessory", "maker_url", "shop_url", "created_at", "updated_at", "price", "gear", "fork", "frame_name", "fork_type", "kc_or_cb", "component", "sex", "road_bike_type", "brake_type", "bike_comment") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["maker_id", 33], ["bike_series", "CAAD"], ["bike_name", "CAAD12"], ["frame_type", 3], ["rear_derailleur", "リアだよ"], ["front_derailleur", "フロントだよ"], ["crank", "クランクだよ"], ["brake", "ブレーキだよ"], ["chain", "チェーンだよ"], ["sprocket", "スプロケだよ"], ["sti_lever", "レバーだよ"], ["bb", "bbだよ"], ["wheel", "FULCRUM/RACING 3"], ["saddle", "オリジナル"], ["seat_pillar", "オリジナル"], ["stem", "オリジナル"], ["tire", "Panareser/ほげ"], ["pedal", "有"], ["valve", "有"], ["accessory", "ライト"], ["maker_url", "http://www.merida.jp/lineup/road_bike/ride_3000.html"], ["shop_url", "http://store.shopping.yahoo.co.jp/cycle-garage1/merida-2017-0004.html"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["price", 150000], ["gear", 22], ["fork", "FACT carbon fiber, full carbon monocoque, Zertz inserts"], ["frame_name", "caadd 12 sp"], ["fork_type", "カーボン"], ["kc_or_cb", "クリンチャー"], ["component", 10], ["sex", true], ["road_bike_type", 1], ["brake_type", 2], ["bike_comment", "世界でもっとも赤いロードドバイクです。"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 50], ["min_height", 150], ["max_height", 165], ["weight", 6], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 33]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 55], ["min_height", 155], ["max_height", 170], ["weight", 6], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 33]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "sizes" ("size", "min_height", "max_height", "weight", "created_at", "updated_at", "roadbike_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["size", 60], ["min_height", 160], ["max_height", 175], ["weight", 6], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["roadbike_id", 33]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at", "sub_color", "official_color", "sub_color2") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["color", "red"], ["roadbike_id", 33], ["picture", "red,green_picture"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["sub_color", "green"], ["official_color", "Matte Trek Black/Pink/Yellow-P1"], ["sub_color2", "gold"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at", "sub_color", "official_color") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["color", "black"], ["roadbike_id", 33], ["picture", "black,gree_picture,"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC], ["sub_color", "green"], ["official_color", "Charcoal/Black/Green-P1"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "colors" ("color", "roadbike_id", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["color", "white"], ["roadbike_id", 33], ["picture", "white_picture"], ["created_at", 2017-04-18 23:12:04 UTC], ["updated_at", 2017-04-18 23:12:04 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ColorsController#new as HTML
+  Rendering colors/new.html.erb within layouts/application
+  Rendered colors/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "colors"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by SizesController#new as HTML
+  Rendering sizes/new.html.erb within layouts/application
+  Rendered sizes/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "sizes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ThisIsForBeginnerController#home as HTML
+  Rendering this_is_for_beginner/home.html.erb within layouts/application
+  Rendered this_is_for_beginner/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ThisIsForBeginnerController#result as HTML
+  [1m[36mRoadbike Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?)[0m  [["price", 0], ["price", 0]]
+  Rendering this_is_for_beginner/result.html.erb within layouts/application
+  Rendered this_is_for_beginner/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ThisIsForIntermediateOrAdvancedController#home as HTML
+  Rendering this_is_for_intermediate_or_advanced/home.html.erb within layouts/application
+  Rendered this_is_for_intermediate_or_advanced/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by ThisIsForIntermediateOrAdvancedController#result as HTML
+  Rendering this_is_for_intermediate_or_advanced/result.html.erb within layouts/application
+  Rendered this_is_for_intermediate_or_advanced/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mColor Load (0.4ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT "roadbikes".* FROM "roadbikes"[0m
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."roadbike_id" = ? AND (color like '%red%')[0m  [["roadbike_id", 31]]
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."roadbike_id" = ? AND (color like '%red%')[0m  [["roadbike_id", 32]]
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."roadbike_id" = ? AND (color like '%red%')[0m  [["roadbike_id", 33]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT "roadbikes".* FROM "roadbikes"[0m
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."roadbike_id" = ? AND (color like '%green%')[0m  [["roadbike_id", 31]]
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."roadbike_id" = ? AND (color like '%green%')[0m  [["roadbike_id", 32]]
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."roadbike_id" = ? AND (color like '%green%')[0m  [["roadbike_id", 33]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.1ms)[0m  [1m[34mSELECT "roadbikes".* FROM "roadbikes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT "roadbikes".* FROM "roadbikes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT  "roadbikes".* FROM "roadbikes" WHERE "roadbikes"."bike_name" = ? LIMIT ?[0m  [["bike_name", "CAAD12"], ["LIMIT", 1]]
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."roadbike_id" = ?[0m  [["roadbike_id", 33]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mColor Load (0.3ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."sub_color" = ?[0m  [["sub_color", "green"]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."sub_color2" = ?[0m  [["sub_color2", "gold"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."official_color" = ?[0m  [["official_color", "Matte Trek Black/Pink/Yellow-P1"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT "roadbikes".* FROM "roadbikes" WHERE "roadbikes"."bike_comment" = ?[0m  [["bike_comment", "世界でもっとも赤いロードドバイクです。"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT "makers".* FROM "makers" WHERE "makers"."maker_comment" = ?[0m  [["maker_comment", "一人暮らしウェーイwwwwwwwwwwwwwwwwwwwwwwwwp@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.3ms)[0m  [1m[34mSELECT  "roadbikes".* FROM "roadbikes" WHERE "roadbikes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ? AND "roadbikes"."road_bike_type" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false], ["road_bike_type", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (1.6ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ? AND "roadbikes"."component" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false], ["component", 14]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.2ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "MERIDA"], ["LIMIT", 1]]
+  [1m[36mRoadbike Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ? AND "roadbikes"."maker_id" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false], ["maker_id", 31]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ? AND "roadbikes"."brake_type" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false], ["brake_type", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMaker Load (0.1ms)[0m  [1m[34mSELECT  "makers".* FROM "makers" WHERE "makers"."maker_name" = ? LIMIT ?[0m  [["maker_name", "MERIDA"], ["LIMIT", 1]]
+  [1m[36mRoadbike Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ? AND "roadbikes"."component" = ? AND "roadbikes"."road_bike_type" = ? AND "roadbikes"."maker_id" = ? AND "roadbikes"."frame_type" = ? AND "roadbikes"."brake_type" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false], ["component", 12], ["road_bike_type", 1], ["maker_id", 31], ["frame_type", 1], ["brake_type", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" = ? OR "colors"."sub_color2" = ?) OR "colors"."sub_color" = ?) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ?[0m  [["color", "white"], ["sub_color2", "white"], ["sub_color", "white"], ["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" = ? OR "colors"."sub_color2" = ?) OR "colors"."sub_color" = ?) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ?[0m  [["color", "green"], ["sub_color2", "green"], ["sub_color", "green"], ["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."roadbike_id" = ? AND ("sizes"."min_height" BETWEEN ? AND ?) AND ("sizes"."max_height" BETWEEN ? AND ?)[0m  [["roadbike_id", 31], ["min_height", 100], ["min_height", 165], ["max_height", 165], ["max_height", 250]]
+  [1m[36mSize Load (0.6ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."roadbike_id" = ? AND ("sizes"."min_height" BETWEEN ? AND ?) AND ("sizes"."max_height" BETWEEN ? AND ?)[0m  [["roadbike_id", 32], ["min_height", 100], ["min_height", 165], ["max_height", 165], ["max_height", 250]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoadbike Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "roadbikes".* FROM "roadbikes" INNER JOIN "colors" ON "colors"."roadbike_id" = "roadbikes"."id" WHERE (("colors"."color" IS NULL OR "colors"."sub_color2" IS NULL) OR "colors"."sub_color" IS NULL) AND ("roadbikes"."price" BETWEEN ? AND ?) AND "roadbikes"."sex" = ?[0m  [["price", 10000], ["price", 1000000], ["sex", false]]
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."roadbike_id" = ? AND ("sizes"."min_height" BETWEEN ? AND ?) AND ("sizes"."max_height" BETWEEN ? AND ?)[0m  [["roadbike_id", 31], ["min_height", 100], ["min_height", 110], ["max_height", 110], ["max_height", 250]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/colors" for 127.0.0.1 at 2017-04-19 08:12:06 +0900
+Processing by ColorsController#index as HTML
+  Rendering colors/index.html.erb within layouts/application
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  Rendered colors/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 419ms (Views: 401.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/sizes" for 127.0.0.1 at 2017-04-19 08:12:06 +0900
+Processing by SizesController#index as HTML
+  Rendering sizes/index.html.erb within layouts/application
+  [1m[36mSize Load (0.8ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  Rendered sizes/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 54ms (Views: 47.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  Rendering sizes/new.html.erb
+  Rendered sizes/_form.html.erb (30.9ms)
+  Rendered sizes/new.html.erb (70.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

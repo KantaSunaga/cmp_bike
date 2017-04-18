@@ -115,10 +115,13 @@ module ThisIsForBeginnerHelper
     end
 
     def find_picture(color, bike_id)
+      p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      p bike_id
+      p color
       if color == "0"
         color_recorde = Color.find_by(roadbike_id: bike_id)
       else
-        color_recorde = Color.find_by(sub_color: color, roadbike_id: bike_id)
+        color_recorde = Color.find_by(color: color, roadbike_id: bike_id)
         color_recorde = Color.find_by(sub_color2: color, roadbike_id: bike_id) if color_recorde.blank?
         color_recorde = Color.find_by(sub_color: color, roadbike_id: bike_id) if color_recorde.blank?
       end
@@ -136,7 +139,7 @@ module ThisIsForBeginnerHelper
         #   end
         # return color.join(",")
       else
-          color_recorde = Color.find_by(roadbike_id: bike_id, color:color)
+          color_recorde = Color.find_by(roadbike_id: bike_id, color: color)
           return color_recorde.official_color
       end
     end
