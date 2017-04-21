@@ -381,7 +381,10 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # road_bike_type:
                            # brake_type:,
                           # color_list: [["",""]],
-                          # picture:["",]}
+                          # picture:["",],
+                          #official_color:[""],
+                          # bike_comment: "",
+                          # maker_comment: ""}
  #ttbike------------------end-------------------------------------------------------------------------------------
  # madone_race_shop_limited_bike_info_hash = {maker_name:"TREK",
 # # madone_race_shop_limited_bike_info_hash = {maker_name:"TREK",
@@ -420,7 +423,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
 #                                               brake_type:1,
     #                                           color_list: [["red","white"]],
     #                                           picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1476000_2017_A_1_Madone_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-    #                                                    ]}
+    #                                                    ],
+                                                  #official_color:["Viper Red/Trek White"],
+                                                  # bike_comment: "軽いよ",
+                                                  # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                                                  # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                                                  # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #  #
  # all_bike_info_hash_list << madone_race_shop_limited_bike_info_hash
 
@@ -466,7 +474,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            #brake_type:1,
                            # color_list: [["red","white"]],
                            # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1481000_2017_A_1_Domane_SLR_10_RSL?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                           #]}
+                           #],
+                           #official_color:["Viper Red"],
+                           # bike_comment: "軽いよ",
+                           # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                           # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                           # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
         #domane_SLR_10_Race_Shop_Limited_bike_info_hashペダルの有無、バルブ（仏、えい）、サイズと重さ、付属品クリンやーかrty−ぶらーか、ロードバイクタイプ
  #all_bike_info_hash_list << domane_SLR_10_Race_Shop_Limited_bike_info_hash
 
@@ -509,7 +522,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                            # brake_type: 1,
                            # color_list: [["blue","black"]],
                            # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1479000_2017_A_1_Emonda_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                           #]}
+                           #],
+                           #official_color:["Matte Battleship Blue"],
+                           # bike_comment: "軽いよ",
+                           # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                           # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                           # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Émonda_SLR_9_bike_info_hash
 
 #a_Émonda_SLR_10_Race_Shop_Limited_hash = {maker_name:"TEREK",
@@ -551,7 +569,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # brake_type: 1,
                           # color_list: [["black","red"]],
                           # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1479200_2017_A_1_EMONDA_SLR_10_H1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                          #]}
+                          #],
+                          #official_color:["Carbon Vapor Coat"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Émonda_SLR_10_Race_Shop_Limited_hash
 
 #a_Domane_SLR_9_hash = {maker_name:"TEREK",
@@ -592,8 +615,13 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["red","black"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1477000_2017_A_1_Domane_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]
-                        #}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1477000_2017_A_1_Domane_SLR_9?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                        #
+                        #official_color:["Matte Dnister Black/Viper Red"],
+                        # bike_comment: "軽いよ",
+                        # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                        # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                        # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SLR_9_hash
 
 #a_Madone_9.9_hash = {maker_name:"TEREK",
@@ -633,8 +661,13 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # sex:false,
                           # road_bike_type: nil
                           # brake_type: 1,
-                          # color_list: [["red","black"]s],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1478000_2017_A_1_Madone_99?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # color_list: [["red","black"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1478000_2017_A_1_Madone_99?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Dnister Black/Gloss Viper Red"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Madone_9.9_hash
 
 #a_Madone_9.5_hash = {maker_name:"TEREK",
@@ -675,7 +708,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["silver","black"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1472000_2017_A_1_Madone_95?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1472000_2017_A_1_Madone_95?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Metallic Silver/Gloss Black"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Madone_9.5_hash
 
 #a_Émonda_SLR_8_Race_Shop_Limited_hash = {maker_name:"TEREK",
@@ -716,7 +754,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["red","white"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1471000_2017_A_1_Emonda_SLR_8_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1471000_2017_A_1_Emonda_SLR_8_Race_Shop_Limited?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Viper Red"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Émonda_SLR_8_Race_Shop_Limited_hash
 
 #a_Madone_9.5_Ultegra_Di2_hash = {maker_name:"TEREK",
@@ -757,7 +800,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["silver","black"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1472090_2017_A_1_Madone_9_5_Ultegra_Di2?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1472090_2017_A_1_Madone_9_5_Ultegra_Di2?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Metallic Silver/Gloss Black"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Madone_9.5_Ultegra_Di2_hash
 
 #a_Émonda_SLR_6_hash = {maker_name:"TEREK",
@@ -800,8 +848,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # color_list: [["black","pink"],["gray","green"],["gray","red"]],
                           # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_D_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_B_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
-                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                  #        ]}
+                                    # "https://trek.scene7.com/is/image/TrekBicycleProducts/1470000_2017_C_1_EMONDA_SLR_6_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                                    #official_color:["Matte Trek Black/Pink/Yellow-P1","Charcoal/Black/Green-P1","Viper Red/Shady Grey/Black-P1"],
+                                    # bike_comment: "軽いよ",
+                                    # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                                    # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                                    # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Émonda_SLR_6_hash
 
 #a_Domane_SLR_7_hash = {maker_name:"TEREK",
@@ -842,7 +894,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["white","orange"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1466000_2017_A_1_Domane_SLR_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1466000_2017_A_1_Domane_SLR_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Semigloss Crystal White/Roarange"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SLR_7_hash
 
 #a_Madone_9.2_hash = {maker_name:"TEREK",
@@ -888,7 +945,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_E_1_MADONE_9.2_C_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_B_1_Madone_92?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                           #           "https://trek.scene7.com/is/image/TrekBicycleProducts/1474000_2017_D_1_MADONE_9.2_C_H2_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                          #]}
+                          #],
+                          #official_color:["Matte Trek Black/Gloss Dnister Black","Trek Black/Charcoal/Green-P1","Matte Silver/Blue Prl/Black Prl-P1","Viper Red/Trek Black","Viper Red/Shady Grey/Black-P1"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Madone_9.2_hash
 
 #a_Domane_SLR_6_Disc_hash = {maker_name:"TEREK",
@@ -933,7 +995,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_B_1_DOMANE_SLR_6_DISC_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_D_1_DOMANE_SLR_6_DISC_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1477300_2017_C_1_DOMANE_SLR_6_DISC_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"
-                                    # ]}}
+                                    # ],
+                                    #official_color:["Matte/Gloss Trek Black","Black/Charcoal/Yellow-P1","Matte Blue/Black/Blue-P1","Quicksilver/Viper Red/Black-P1"],
+                                    # bike_comment: "軽いよ",
+                                    # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                                    # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                                    # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SLR_6_Disc_hash
 
 #a_Domane_SL_6_Disc_hash = {maker_name:"TEREK",
@@ -974,7 +1041,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 2,
                           # color_list: [["black","white"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1462000_2017_A_1_Domane_SL_6_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1462000_2017_A_1_Domane_SL_6_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Black Pearl/Crystal White"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SL_6_Disc_hash
 
 #a_Silque_SLR_6_Women's_hash = {maker_name:"TEREK",
@@ -1015,7 +1087,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["black","pink"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1475003_2017_A_1_Silque_SLR_6_Womens?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1475003_2017_A_1_Silque_SLR_6_Womens?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Trek Black"],
+                          # # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << Silque_SLR_6_Women's
 
 #a_Domane_SLR_6_hash = {maker_name:"TEREK",
@@ -1060,7 +1137,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_B_1_DOMANE_SLR_6_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_D_1_DOMANE_SLR_6_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
                                     # "https://trek.scene7.com/is/image/TrekBicycleProducts/1475000_2017_C_1_DOMANE_SLR_6_P1?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
-                        #  ]}
+                        #  ],
+                        #official_color:["Matte/Gloss Trek Black","Black/Charcoal/Yellow-P1","Matte Waterloo Blue/Black/Blue-P1","Quicksilver/Viper Red/Black-P1"],
+                        # bike_comment: "軽いよ",
+                        # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                        # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                        # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SLR_6_hash
 
 #a_Domane_SL_8_hash = {maker_name:"TEREK",
@@ -1101,7 +1183,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["blue","green"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1450000_2017_A_1_Domane_SL_8?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1450000_2017_A_1_Domane_SL_8?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Dark Aquatic/Shady Grey"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SL_8_hash
 
 #a_Domane_SL_5_Disc_hash = {maker_name:"TEREK",
@@ -1142,7 +1229,12 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 2,
                           # color_list: [["green","blue"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1447000_2017_A_1_Domane_SL_5_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1447000_2017_A_1_Domane_SL_5_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Deep Dark Blue/Green-light"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SL_5_Disc_hash
 
 #a_Domane_SL_7_hash = {maker_name:"TEREK",
@@ -1183,9 +1275,385 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # road_bike_type: nil
                           # brake_type: 1,
                           # color_list: [["black","blue"]],
-                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1467500_2017_A_1_Domane_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"]}
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1467500_2017_A_1_Domane_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Trek Black/Waterloo Blue"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Domane_SL_7_hash
 
+# a_Émonda_SL_7hash = {maker_name:"TREK",
+                          # year:2017,
+                          # bike_series:"Émonda" ,
+                          # bike_name:"Émonda SL 7",
+                          # frame_type:1 ,
+                          # rear_derailleur:"Shimano Ultegra Di2",
+                          # front_derailleur:"Shimano Ultegra Di2, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano Ultegra",
+                          # chain:"Shimano Ultegra",
+                          # sprocket:"Shimano Ultegra, 11-28, 11 speed",
+                          # sti_lever:"Shimano Ultegra Di2, 11 speed",
+                          # bb:"BB90" ,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # saddle:"Bontrager Montrose Comp, titanium rails" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Elite VR-C, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # tire:"Bontrager R2 Hard-Case Lite, aramid bead, 700x25c" ,
+                          # pedal:"無" ,
+                          # valve:"仏" ,
+                          # accessory:"情報が必要" ,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-sl-7/p/1464000-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1464000_2017_A_1_EMONDA_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          # price:459,000 ,
+                          # gear: 22,
+                          # fork:"Émonda full carbon, carbon E2 tapered steerer" ,
+                          # size_list: [44,47,50,52,54,56,58,60] ,
+                          # weight_list: [7.41 ,7.41 ,7.41 ,7.41 ,7.41 ,7.41 ,7.41 ,7.41],
+                          # frame_name:"Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
+                          # fork_type:"カーボン",
+                          # kc_or_cb:"クリンチャー",
+                          # component:17,
+                          # height_list:[[151,155],[153,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type:1,
+                          #brake_type:1,
+                          # color_list: [[black,white]],
+                          # picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1464000_2017_A_1_EMONDA_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Trek Black"]
+                          # bike_comment: "早くていいバイクです",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Émonda_SL_7hash
+
+#a_Domane_SL_7_hash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Domane" ,
+                          # bike_name:"Domane SL 7",
+                          # frame_name:"500 Series OCLV Carbon, Front & Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
+                          # frame_type:1 ,
+                          # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
+                          # fork_type:"カーボン",
+                          # component:17,
+                          # rear_derailleur:"Shimano Ultegra Di2" ,
+                          # front_derailleur:"Shimano Ultegra Di2, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Bontrager Speed Stop, direct mount",
+                          # chain:"情報が必要",
+                          # sprocket:"Shimano Ultegra, 11-32, 11 speed",
+                          # sti_lever:"Shimano Ultegra Di2, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # tire:"Bontrager R2 Hard-Case Lite, aramid bead, 700x28c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Affinity Comp, cromo rails" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Race Lite IsoZone, VR-CF, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price: 510_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-sl-7/p/1467500-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [50,52,54,56,58,60] ,
+                          # weight_list: [8.54,8.54,8.54,8.54,8.54,8.54],
+                          # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type: 1,
+                          # color_list: [["black","blue"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1467500_2017_A_1_Domane_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Trek Black/Waterloo Blue"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Domane_SL_7_hash
+
+# a_Émonda_SL_6_Prohash = {maker_name:"TREK",
+                          # year:2017,
+                          # bike_series:"Émonda" ,
+                          # bike_name:"Émonda SL 6 Pro",
+                          # frame_type:1 ,
+                          # rear_derailleur:"Shimano Ultegra",
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano Ultegra",
+                          # chain:"Shimano Ultegra",
+                          # sprocket:"Shimano Ultegra, 11-28, 11 speed",
+                          # sti_lever:"Shimano Ultegra Di2, 11 speed",
+                          # bb:"BB90" ,
+                          # wheel:"Vision Metron 40 LTD" ,
+                          # saddle:"Bontrager Montrose Comp" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Elite VR-C, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # tire:"Bontrager R2 Hard-Case Lite, aramid bead, 700x25c" ,
+                          # pedal:"無" ,
+                          # valve:"仏" ,
+                          # accessory:"情報が必要" ,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-sl-6-pro/p/1441990-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1464000_2017_A_1_EMONDA_SL_7?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          # price:450,000 ,
+                          # gear: 22,
+                          # fork:"Émonda full carbon, carbon E2 tapered steerer" ,
+                          # size_list: [44,47,50,52,54,56,58,60] ,
+                          # weight_list: [7.41 ,7.41 ,7.41 ,7.41 ,7.41 ,7.41 ,7.41 ,7.41],
+                          # frame_name:"Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
+                          # fork_type:"カーボン",
+                          # kc_or_cb:"クリンチャー",
+                          # component:11,
+                          # height_list:[[151,155],[153,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type:1,
+                          #brake_type:1,
+                          # color_list: [[blue,orange]],
+                          # picture_list:["https://trek.scene7.com/is/image/TrekBicycleProducts/1441990_2017_A_1_Emonda_SL_6_Carbon?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Deep Dark Blue"]
+                          # bike_comment: "早くていいバイクです",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Émonda_SL_6_Prohash
+
+#a_Domane_SL_6_hash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Domane" ,
+                          # bike_name:"Domane SL 6",
+                          # frame_name:"500 Series OCLV Carbon, Front & Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast",
+                          # frame_type:1 ,
+                          # fork:"Domane full carbon, E2 tapered steerer, direct mount brakes" ,
+                          # fork_type:"カーボン",
+                          # component:11,
+                          # rear_derailleur:"Shimano Ultegra" ,
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Bontrager Speed Stop, direct mount",
+                          # chain:"不明",
+                          # sprocket:"Shimano Ultegra, 11-32, 11 speed",
+                          # sti_lever:"Shimano Ultegra, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # tire:"ntrager R2 Hard-Case Lite, aramid bead, 700x2" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Affinity Comp, chromoly rails" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Race Lite IsoZone, VR-CF, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:410_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-sl-5-disc/p/1447000-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [50,52,54,56,58,60] ,
+                          # weight_list: [8.54,8.54,8.54,8.54,8.54,8.54],
+                          # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type: 1,
+                          # color_list: [["black","white"],["red"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1460000_2017_A_1_Domane_SL_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #"https://trek.scene7.com/is/image/TrekBicycleProducts/1460000_2017_B_1_Domane_SL_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Black Pearl/Crystal White","Matte Viper Red/Pinot Red"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Domane_SL_6_hash
+
+#a_Domane_S_6_hash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Domane" ,
+                          # bike_name:"Domane S 6",
+                          # frame_name:"400 Series OCLV Carbon, IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, 3S chain keeper, DuoTrap compatible",
+                          # frame_type:1 ,
+                          # fork:"Domane carbon, E2 tapered steerer, hidden fender mounts" ,
+                          # fork_type:"カーボン",
+                          # component:11,
+                          # rear_derailleur:"Shimano Ultegra" ,
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano Ultegra",
+                          # chain:"Shimano Ultegra",
+                          # sprocket:"Shimano Ultegra, 11-32, 11 speed",
+                          # sti_lever:"Shimano Ultegra, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # tire:"Bontrager R1 Hard-Case Lite, 700x25" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Affinity Comp, chromoly rails" ,
+                          # seat_pillar:"ontrager carbon, 2-bolt head, 27.2mm, 8mm offset",
+                          # handle:"Bontrager Race VR-C, 31.8mm" ,
+                          # stem:"Bontrager Elite, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:359_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-s-6/p/1443000-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [50,52,54,56,58] ,
+                          # weight_list: [8.54,8.54,8.54,8.54,8.54],
+                          # height_list:[[157,165],[162,170],[167,176],[173,181],[179,187]],
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type: 1,
+                          # color_list: [["white","blue","green"],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1443000_2017_A_1_DOMANE_S_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Crystal White/Deep Dark Blue"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Domane_S_6_hash
+
+#a_Émonda_SL_6_Women's_hash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Émonda" ,
+                          # bike_name:"Émonda SL 6 Women's",
+                          # frame_name:"Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
+                          # frame_type:1 ,
+                          # fork:"Émonda full carbon, carbon E2 tapered steerer" ,
+                          # fork_type:"カーボン",
+                          # component:11,
+                          # rear_derailleur:"Shimano Ultegra" ,
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano Ultegra",
+                          # chain:"Shimano Ultegra",
+                          # sprocket:"Shimano Ultegra, 11-28, 11 speed",
+                          # sti_lever:"Shimano Ultegra, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # tire:"Bontrager R2 Hard-Case Lite, aramid bead, 700x25c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Ajna Comp" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Comp VR-S, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:339_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-sl-6-womens/p/1441903-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [44,47,50,52] ,
+                          # weight_list: [8.54,8.54,8.54,8.54],
+                          # height_list:[[151,155],[153,160],[157,165],[162,170]],
+                          # sex:true,
+                          # road_bike_type: nil
+                          # brake_type: 1,
+                          # color_list: [["black","white","pink"],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1441903_2017_A_1_Emonda_SL_6_Womens?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Dnister Black"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Émonda_SL_6_Women's_hash
+
+#a_Emonda_SL_6_hash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Émonda" ,
+                          # bike_name:"Émonda SL 6",
+                          # frame_name:"Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
+                          # frame_type:1 ,
+                          # fork:"Émonda full carbon, carbon E2 tapered steerer" ,
+                          # fork_type:"カーボン",
+                          # component:11,
+                          # rear_derailleur:"Shimano Ultegra" ,
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano Ultegra",
+                          # chain:"Shimano Ultegra",
+                          # sprocket:"Shimano Ultegra, 11-28, 11 speed",
+                          # sti_lever:"Shimano Ultegra, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # tire:"Bontrager R2 Hard-Case Lite, aramid bead, 700x25c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Ajna Comp" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Comp VR-S, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:339_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-sl-6/p/1441900-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [44,47,50,52,54,56,58,60] ,
+                          # weight_list: [7.43,7.43,7.43,7.43,7.43,7.43,7.43,7.43],
+                          # height_list:[[151,155],[153,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type:1,
+                          # color_list:[["black","black"],["blue",blue]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1441900_2017_A_1_EMONDA_SL_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #          "https://trek.scene7.com/is/image/TrekBicycleProducts/1441900_2017_B_1_EMONDA_SL_6?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Matte Dnister Black","Matte California Sky Blue"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Emonda_SL_6_hash
+
+#a_Silque_S_6_Women'shash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Silque" ,
+                          # bike_name:"Silque S 6 Women's",
+                          # frame_name:"U400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2 tapered head tube, BB90, hidden fender mounts, 3S chain keeper, DuoTrap compatible",
+                          # frame_type:1 ,
+                          # fork:"Trek carbon road, carbon E2 tapered steerer" ,
+                          # fork_type:"カーボン",
+                          # component:11,
+                          # rear_derailleur:"Shimano Ultegra" ,
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano Ultegra",
+                          # chain:"不明",
+                          # sprocket:"Shimano Ultegra, 11-28, 11 speed",
+                          # sti_lever:"Shimano Ultegra, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Alloy hubs; Bontrager Tubeless Ready rims" ,
+                          # tire:"Bontrager R1 Hard-Case Lite, 700x25c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Ajna Comp" ,
+                          # seat_pillar:"Bontrager carbon, 2-bolt head, 27.2mm, 8mm offset",
+                          # handle:"Bontrager Comp VR-S, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:339_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/silque-womens/silque-s-6-womens/p/1443003-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [44,47,50,52] ,
+                          # weight_list: [7.43,7.43,7.43,7.43],
+                          # height_list:[[151,155],[153,160],[157,165],[162,170]],
+                          # sex:true,
+                          # road_bike_type: nil
+                          # brake_type:1,
+                          # color_list:[["black","purple","white"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1443003_2017_A_1_Silque_S_6_Womens?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Black Pearl/Crystal White"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Silque_S_6_Women'shash
  #-------------------------------------------------------本当のデータ終了ーーーーーーーーーーーーーーーーーーーーーーーー
 
 

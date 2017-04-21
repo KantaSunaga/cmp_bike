@@ -64,20 +64,10 @@
 
 <p>
 
-  <strong>Bb:</strong>
-  <%= @bike.bb %>
-</p>
-
-<p>
-
   <strong>Wheel:</strong>
   <%= @bike.wheel %>
 </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @bike.color %>
-</p>
 
 <p>
   <strong>Saddle:</strong>
@@ -133,10 +123,6 @@
 
 </p>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @bike.picture %>
-</p>
 
-<%= link_to 'Edit', edit_bike_path(@bike) %> |
-<%= link_to 'Back', bikes_path %>
+<%= link_to 'Edit', edit_roadbike_path(@bike) %> |
+<%= link_to 'Back', roadbikes_path %>

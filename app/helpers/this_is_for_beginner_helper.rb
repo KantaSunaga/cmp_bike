@@ -115,9 +115,6 @@ module ThisIsForBeginnerHelper
     end
 
     def find_picture(color, bike_id)
-      p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      p bike_id
-      p color
       if color == "0"
         color_recorde = Color.find_by(roadbike_id: bike_id)
       else
@@ -142,5 +139,9 @@ module ThisIsForBeginnerHelper
           color_recorde = Color.find_by(roadbike_id: bike_id, color: color)
           return color_recorde.official_color
       end
+    end
+    def which_sex(sex)
+      return "男性モデル" if sex == false
+      return "女性モデル"
     end
 end

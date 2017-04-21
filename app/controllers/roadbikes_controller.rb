@@ -19,6 +19,7 @@ class RoadbikesController < ApplicationController
 
   # GET /bikes/1/edit
   def edit
+    @makers = Maker.all
   end
 
   # POST /bikes
@@ -69,6 +70,10 @@ class RoadbikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:maker_id, :bike_series, :bike_name, :frame_type, :component, :rear_derailleur, :front_derailleur, :crank, :brake, :chain, :sprocket, :sti_lever, :bb, :bb, :wheel, :color, :saddle, :seat_pillar, :handle, :stem, :tire, :pedal, :valve, :accessory, :maker_url, :shop_url, :picture)
+      params.require(:roadbike).permit(:maker_id, :bike_series, :bike_name, :frame_type, :component,
+                                        :rear_derailleur, :front_derailleur, :crank, :brake, :chain,
+                                        :sprocket, :sti_lever, :bb, :wheel, :saddle, :seat_pillar,
+                                        :handle, :stem, :tire, :pedal, :valve, :accessory, :maker_url,
+                                        :shop_url, :sex,:brake_type)
     end
 end
