@@ -1654,6 +1654,99 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
                           # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Silque_S_6_Women'shash
+
+#a_Emonda_SL_5_shash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Emonda" ,
+                          # bike_name:"Émonda SL 5",
+                          # frame_name:"400 Series OCLV Carbon, IsoSpeed, E2 tapered head tube, BB90, disc balanced post mount, Power Transfer Construction, 142x12 Closed Convert dropout, hidden fender mounts, 3S chain keeper, DuoTrap compatible",
+                          # frame_type:1 ,
+                          # fork:"Domane carbon disc, E2 tapered steerer, 15mm thru-axle" ,
+                          # fork_type:"カーボン",
+                          # component:12,
+                          # rear_derailleur:"Shimano 105" ,
+                          # front_derailleur:"Shimano 105, braze-on",
+                          # cranc:"Shimano 105, 50/34 (compact)",
+                          # brake:"Shimano RS785 hydraulic disc, post mount",
+                          # chain:"Shimano 105",
+                          # sprocket:"Shimano 105, 11-32, 11 speed",
+                          # sti_lever:"Shimano RS505, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager alloy sealed bearing centerlock hubs; 15mm alloy axle front, 142x12 rear, Bontrager Tubeless Ready disc rims",
+                          # tire:"Bontrager R1 Hard-Case Lite, 700x25c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Affinity Comp, chromoly rails" ,
+                          # seat_pillar:"Bontrager carbon, 2-bolt head, 27.2mm, 8mm offset",
+                          # handle:"Bontrager Comp VR-S, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:299_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/domane/domane-s-5-disc/p/1441100-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [44,47,50,52,54,56,58,60] ,
+                          # weight_list: [  7.81,7.81,7.81,7.81,7.81,7.81,7.81,7.81,],
+                          # height_list:[[151,155],[153,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type:1
+                          # color_list:[["silver","blue"],["red","black"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1442000_2017_B_1_EMONDA_SL_5?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on",
+                          #              "https://trek.scene7.com/is/image/TrekBicycleProducts/1442000_2017_A_1_EMONDA_SL_5?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Quicksilver","Viper Red"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Emonda_SL_5_shash
+
+#a_Domane_S_5_Disc_shash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Domane" ,
+                          # bike_name:"Domane S 5 Disc",
+                          # frame_name:"Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast",
+                          # frame_type:1 ,
+                          # fork:"Émonda full carbon, carbon E2 tapered steerer" ,
+                          # fork_type:"カーボン",
+                          # component:12,
+                          # rear_derailleur:"Shimano 105" ,
+                          # front_derailleur:"Shimano 105, braze-on",
+                          # cranc:"Shimano 105, 50/34 (compact)",
+                          # brake:"Shimano 105",
+                          # chain:"Shimano 105",
+                          # sprocket:"Shimano 105, 11-28, 11 speed",
+                          # sti_lever:"Shimano 105, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Bontrager Race Tubeless Ready" ,
+                          # tire:"Bontrager R2 Hard-Case Lite, aramid bead, 700x25c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Ajna Comp" ,
+                          # seat_pillar:"Bontrager Ride Tuned carbon seatmast cap, 20mm offset",
+                          # handle:"Bontrager Comp VR-S, 31.8mm" ,
+                          # stem:"Bontrager Pro, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:299_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/%C3%A9monda/%C3%A9monda-sl-5/p/1442000-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [44,47,50,52,54,56,58,60] ,
+                          # weight_list: [ 9.3, 9.3, 9.3, 9.3, 9.3, 9.3, 9.3],
+                          # height_list:[[151,155],[153,160],[157,165],[162,170],[167,176],[173,181],[179,187],[184,192]],
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type:2
+                          # color_list:[["black","white"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1441100_2017_A_1_Domane_S_5_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Trek Black/Dnister Black"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Emonda_SL_5_shash
  #-------------------------------------------------------本当のデータ終了ーーーーーーーーーーーーーーーーーーーーーーーー
 
 

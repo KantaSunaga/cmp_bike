@@ -20,6 +20,7 @@ class RoadbikesController < ApplicationController
   # GET /bikes/1/edit
   def edit
     @makers = Maker.all
+    @roadbike = Roadbike.all
   end
 
   # POST /bikes

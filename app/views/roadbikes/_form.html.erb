@@ -10,9 +10,10 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
     <%= f.label :maker_id %>
-    <%= f.select :maker_id, options_from_collection_for_select(@makers, :id, :maker_name, :selected maker_id)%>
+    <%= f.select :maker_id, @makers.map{|t| [t.maker_name, t.id]}%>
   </div>
 
   <div class="field">
@@ -22,21 +23,17 @@
 
   <div class="field">
     <%= f.label :bike_name %>
-    <%= f.text_field :bike_name%>
+    <%= f.text_field :bike_name %>
   </div>
 
   <div class="field">
     <%= f.label :frame_type %>
-    <%= f.select :frame_type, options_for_select([["カーボン",1],["アルミ",2],["クロモリ",3]]) %>
+    <%= f.select :frame_type, @roadbike.map{|t| [chek_frame_type_from(t.frame_type), t.frame_type]}%>
   </div>
 
   <div class="field">
-    <dvi>メイン<%= f.label :component %></div>
-    <%= f.select :component, options_for_select([["---SHIMANO---",nil],["DURA-ACE", 10],["ULTEGRA", 11],["105",12],
-    ["TIAGRA",13],["SORA", 14],["CLARIS",15],["DURA-ACE DI2",16],["ULTEGRA DI2",17],["---CAMPAGNOLO---", nil],["SuperRecord EPS",18],
-    ["SuperRecord",19],["Record EPS",20],["Record",21],["Chorus EPS",22],["Chorus",23],["Athena",24],["Potenza",25],["Veloce",26],
-    ["---SRAM---",nil],["S-Series",1],["SRAM Apex",2],["SRAM Apex 1", 3],["SRAM Rival",4],["SRAM Rival 1",5],["SRAM Force", 6],
-    ["SRAM Force 1",7],["SRAM RED",8],["SRAM RED eTAP", 9]]) %>
+    <%= f.label :component %>
+    <%= f.select :component, @roadbike.map{|t| [chek_compornent_from(t.component), t.component]}%>
   </div>
 
   <div class="field">
@@ -157,12 +154,12 @@
 
   <div class="field">
     <%= f.label :sex%>
-    <%= f.select :sex, [["男性", false],["女性", true]]%>
+    <%= f.select :sex, @roadbike.map{|t| [which_sex(t.sex), t.sex]}%>
   </div>
 
   <div class="field">
     <%= f.label :brake_type%>
-    <%= f.select :brake_type, [["リムブレーキ", 1],["ディスクブレーキ", 2]]%>
+    <%= f.select :brake_type, @roadbike.map{|t| [find_brake_type(t.brake_type), t.brake_type]}%>
   </div>
 
   <div class="actions">
