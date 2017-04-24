@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Sizes</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
+      <th>bike_name</th>
       <th>Size</th>
-
-      <th>Min height</th>
-      <th>Max height</th>
-      <th>Weight</th>
+      <th>Min height(cm)</th>
+      <th>Max height(cm)</th>
+      <th>Weight(kg)</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +16,7 @@
   <tbody>
     <% @sizes.each do |size| %>
       <tr>
+        <td><%= get_bike_name(size.roadbike_id) %></td>
         <td><%= size.size %></td>
         <td><%= size.min_height %></td>
         <td><%= size.max_height %></td>

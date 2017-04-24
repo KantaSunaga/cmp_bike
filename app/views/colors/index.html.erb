@@ -2,15 +2,15 @@
 
 <h1>Colors</h1>
 
-<table>
+<table border="1">
   <thead>
     <tr>
-      <th>Color</th>
       <th>Roadebike</th>
-      <th>Picture</th>
       <td>official_color</td>
+      <th>Color</th>
       <td>sub_color</td>
       <td>sub_color2</td>
+      <th>Picture</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +18,12 @@
   <tbody>
     <% @colors.each do |color| %>
       <tr>
-        <td><%= color.color %></td>
-        <td><%= color.roadbike_id %></td>
-        <td><%= color.picture %></td>
+        <td><%= get_bike_name(color.roadbike_id)%></td>
         <td><%= color.official_color %></td>
+        <td><%= color.color %></td>
         <td><%= color.sub_color %></td>
         <td><%= color.sub_color2 %></td>
+        <td><%= color.picture %></td>
         <td><%= link_to 'Show', color %></td>
         <td><%= link_to 'Edit', edit_color_path(color) %></td>
         <td><%= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' } %></td>

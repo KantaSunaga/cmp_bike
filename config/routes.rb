@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/admin/index' => "admins#index"
+  root 'admins#index'
   devise_for :users
   post 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#cmp_result'
   get "/this_is_for_beginner/result"

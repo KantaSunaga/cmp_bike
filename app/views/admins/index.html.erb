@@ -3,3 +3,13 @@
 <h1>Admins</h1>
 
 <%=link_to "roadebikeへ" , roadbikes_path %>
+<%=link_to "colorへ" , colors_path %>
+<%=link_to "sizeへ" , sizes_path %>
+
+  <nav>
+            <% if user_signed_in? %>
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <% else %>
+                <%= link_to 'ログイン', new_user_session_path %>
+                <% end %>
+  </nav>
