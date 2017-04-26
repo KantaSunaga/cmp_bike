@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   # --------問い合わせフォーム系ーーーーーーーーーー
   get 'inquiry' => 'inquiry#index'
   post 'inquiry/confirm' => 'inquiry#confirm'
-  post 'inquiry/thanks' => 'inquiry#thanks'     
+  post 'inquiry/thanks' => 'inquiry#thanks'
+  get "inquiry/confirm" => redirect("/inquiry")
+  get "inquiry/thanks" => redirect("/inquiry")  
     # --------問い合わせフォーム系endーーーーーーーーーー
   resources :roadbikes
   resources :makers
