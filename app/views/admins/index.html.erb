@@ -5,11 +5,14 @@
 <%=link_to "roadebikeへ" , roadbikes_path %>
 <%=link_to "colorへ" , colors_path %>
 <%=link_to "sizeへ" , sizes_path %>
+<%=link_to "makerへ" , makers_path %>
+<%=link_to "productへ" , this_is_for_beginner_home_path %>
 
   <nav>
-            <% if user_signed_in? %>
-                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            <% else %>
-                <%= link_to 'ログイン', new_user_session_path %>
-                <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <%= link_to 'ユーザーを追加', new_user_registration_path %>
+    <% else %>
+      <%= link_to 'ログイン', new_user_session_path %>
+    <% end %>
   </nav>

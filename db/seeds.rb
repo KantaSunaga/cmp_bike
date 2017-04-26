@@ -274,7 +274,7 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
   #-----------------------------------------------------テストデータ終了ーーーーーーーーーーーーーーーーーーーーーーー
 
   #adminuserを作成ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+  User.create(email: 'sunagakannta6@gmail.com',   password: 'a1a2a3a4')
   #adinuser終了
   #---ーーーーーーーーーーーーーーーーーーー----------------------------------------------------以下本当のデーターーーーーーーーーーーーーーーーーーーーーーーー
 
@@ -1751,6 +1751,52 @@ all_bike_info_hash_list << defy_adovanced_sl_0_bike_info_hash
                           # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
                           # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
 #all_bike_info_hash_list << a_Emonda_SL_5_shash
+
+#a_Silque_S_6_Womens_hash = {maker_name:"TEREK",
+                          # year:2017,
+                          # bike_series:"Silque" ,
+                          # bike_name:"Silque S 6 Women's",
+                          # frame_name:"400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2 tapered head tube, BB90, hidden fender mounts, 3S chain keeper, DuoTrap compatible",
+                          # frame_type:1 ,
+                          # fork:"Trek carbon road, carbon E2 tapered steerer" ,
+                          # fork_type:"カーボン",
+                          # component:11,
+                          # rear_derailleur:"Shimano Ultegra" ,
+                          # front_derailleur:"Shimano Ultegra, braze-on",
+                          # cranc:"Shimano Ultegra, 50/34 (compact)",
+                          # brake:"Shimano 105",
+                          # chain:"Shimano 105",
+                          # sprocket:"Shimano Ultegra, 11-32, 11 speed",
+                          # sti_lever:"Shimano Ultegra, 11 speed",
+                          # bb:"BB90" ,
+                          # gear: 22,
+                          # wheel:"Alloy hubs; Bontrager Tubeless Ready rims" ,
+                          # tire:"Bontrager R1 Hard-Case Lite, 700x25c" ,
+                          # kc_or_cb:"情報が必要",
+                          # valve:"情報が必要" ,
+                          # saddle:"Bontrager Ajna Comp" ,
+                          # seat_pillar:"Bontrager carbon, 2-bolt head, 27.2mm, 8mm offset",
+                          # handle:"Bontrager Comp VR-S, 31.8mm" ,
+                          # stem:"Bontrager Elite, 31.8mm, 7 degree, w/computer & light mounts" ,
+                          # pedal:"情報が必要" ,
+                          # accessory:"情報が必要",
+                          #price:299_000,
+                          # maker_url:"https://www.trekbikes.com/jp/ja_JP/%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%A4%E3%82%AF/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%AD%E3%83%BC%E3%83%89/silque-womens/silque-s-6-womens/p/1443003-2017/" ,
+                          # shop_url:"情報が必要" ,
+                          # size_list: [44,47,50,52] ,
+                          # weight_list: [ 9.3, 9.3, 9.3, 9.3],
+                          # height_list:[[151,155],[153,160],[157,165],[162,170]]
+                          # sex:false,
+                          # road_bike_type: nil
+                          # brake_type:2
+                          # color_list:[["black","white","purple"]],
+                          # picture:["https://trek.scene7.com/is/image/TrekBicycleProducts/1441100_2017_A_1_Domane_S_5_Disc?wid=3000&hei=2454&fmt=jpg&qlt=50,1&op_usm=0,0,0,0&iccEmbed=0&cache=on,on"],
+                          #official_color:["Black Pearl/Crystal White"],
+                          # bike_comment: "軽いよ",
+                          # maker_comment: "ポーツバイクの本場といえばヨーロッパ。そのため数多くの有名メーカーがありますが、TREK(TREK)はアメリカウィスコンシン州に本社を置いているメーカーです。車体はとても頑丈で、まさにアメ車のそれのようです。国が定めた安全基準よりもさらに厳しいテストを自社でおこなっているメーカーです。
+                          # 初めて自転車を購入される方にとって長持ちする自転車は嬉しいですよね。しかもTREKはアフターサポートもしっかりしているため、万が一壊してしまったとしても安心。
+                          # 一つのバイクと長く付き合っていきたいとお考えの方はTREKがおすすめです！"}
+#all_bike_info_hash_list << a_Silque_S_6_Womens_hash
  #-------------------------------------------------------本当のデータ終了ーーーーーーーーーーーーーーーーーーーーーーーー
 
 

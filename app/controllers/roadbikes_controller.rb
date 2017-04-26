@@ -1,5 +1,6 @@
 class RoadbikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
 
   # GET /bikes
   # GET /bikes.json

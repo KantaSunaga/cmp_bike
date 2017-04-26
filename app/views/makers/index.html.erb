@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%=link_to "adminへ戻る", admin_index_path%>
 <h1>Makers</h1>
 
 <table>
@@ -7,6 +7,7 @@
     <tr>
       <th>Maker name</th>
       <th>Year</th>
+      <th>Maker_coment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= maker.maker_name %></td>
         <td><%= maker.year %></td>
+          <td><%= maker.maker_comment %></td>
         <td><%= link_to 'Show', maker %></td>
         <td><%= link_to 'Edit', edit_maker_path(maker) %></td>
         <td><%= link_to 'Destroy', maker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

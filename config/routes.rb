@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get '/admin/index' => "admins#index"
-  root 'admins#index'
   devise_for :users
   post 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#cmp_result'
   get "/this_is_for_beginner/result"
@@ -13,12 +12,11 @@ Rails.application.routes.draw do
   get 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#home'
 
   get 'this_is_for_intermediate_or_advanced/home'
-  # #Ajax
-  # get 'this_is_for_intermediate_or_advanced/get_bike_name'
-  # get 'this_is_for_intermediate_or_advanced/get_bike_name_1'
-  # get 'this_is_for_intermediate_or_advanced/get_bike_name_2'
-  # get 'this_is_for_intermediate_or_advanced/get_bike_name_3'
-  # #Ajax-end
+  # --------問い合わせフォーム系ーーーーーーーーーー
+  get 'inquiry' => 'inquiry#index'
+  post 'inquiry/confirm' => 'inquiry#confirm'
+  post 'inquiry/thanks' => 'inquiry#thanks'     
+    # --------問い合わせフォーム系endーーーーーーーーーー
   resources :roadbikes
   resources :makers
   resources :sizes
