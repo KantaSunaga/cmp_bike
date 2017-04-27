@@ -5,7 +5,6 @@ RSpec.describe Roadbike, type: :model do
   Maker.delete_all
   Color.delete_all
   all_bike_info_hash_list =[]
-
   ride3000_bike_info_hash = {maker_name:"MERIDA",
                              year:2017,
                              bike_series: "Ride",

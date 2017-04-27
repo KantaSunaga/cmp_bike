@@ -127,17 +127,17 @@ module ThisIsForBeginnerHelper
 
     def find_color(bike_id, color)
       if color == "0"
-        color =  Color.find_by(roadbike_id: bike_id)
-        return color.official_color
-        # color = []
-        # color_recorde = Color.where( roadbike_id: bike_id)
-        # color_recorde.each do |color_obj|
-        #   color << color_obj.official_color
-        #   end
-        # return color.join(",")
+        color_list = []
+        color_recorde = Color.where( roadbike_id: bike_id)
+        color_recorde.colors each do |color_obj|
+          color_list << color_obj.official_color
+        end
+        return color_list.join(",")
       else
-          color_recorde = Color.find_by(roadbike_id: bike_id, color: color)
-          return color_recorde.official_color
+        color_recorde = Color.find_by(roadbike_id: bike_id, color: color)
+        color_recorde = Color.find_by(roadbike_id: bike_id, sub_color: color) if  color_recorde.blank?
+        color_recorde = Color.find_by(roadbike_id: bike_id, sub_color2: color) if color_recorde.blank?
+        return color_recorde.official_color
       end
     end
     def which_sex(sex)
