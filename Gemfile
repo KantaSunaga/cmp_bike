@@ -43,6 +43,8 @@ group :development, :test do
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'  # デスクトップ通知を行う
   gem "factory_girl_rails"
+  gem "rails-controller-testing"
+  gem "simplecov"
 end
 
 group :development do

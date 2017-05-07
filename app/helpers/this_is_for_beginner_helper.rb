@@ -129,7 +129,7 @@ module ThisIsForBeginnerHelper
       if color == "0"
         color_list = []
         color_recorde = Color.where( roadbike_id: bike_id)
-        color_recorde.colors each do |color_obj|
+        color_recorde.each do |color_obj|
           color_list << color_obj.official_color
         end
         return color_list.join(",")

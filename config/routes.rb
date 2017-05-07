@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  #------------管理画面----------------
   get '/admin/index' => "admins#index"
+  get 'admin/csv' => 'admins#csv'
+  post 'admin/import_csv' => 'admins#import_csv'
+  #-----------管理画面end--------------
   devise_for :users
   post 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#cmp_result'
   get "/this_is_for_beginner/result"
@@ -17,7 +21,7 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiry#confirm'
   post 'inquiry/thanks' => 'inquiry#thanks'
   get "inquiry/confirm" => redirect("/inquiry")
-  get "inquiry/thanks" => redirect("/inquiry")  
+  get "inquiry/thanks" => redirect("/inquiry")
     # --------問い合わせフォーム系endーーーーーーーーーー
   resources :roadbikes
   resources :makers

@@ -35,8 +35,7 @@ class ThisIsForBeginnerController < ApplicationController
        :sex,
        :user_size,
        :id,
-       :brake_type,
-       :sub_color,
-       :sub_color2)
+       :brake_type
+       )
     end
 end

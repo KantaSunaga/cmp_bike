@@ -112,7 +112,7 @@ RSpec.describe Roadbike, type: :model do
                              wheel: "FULCRUM/RACING 3",
                              saddle: "オリジナル",
                              seat_pillar:"オリジナル",
-                             andle: "オリジナル",
+                             handle: "オリジナル",
                              stem: "オリジナル",
                              tire: "Panareser/ほげ",
                              pedal: "有",
@@ -162,7 +162,22 @@ RSpec.describe Roadbike, type: :model do
 
   describe "self.creating_maker_and_all_size_bike_need_argument_is" do
     it "サイズが、3個あった時、bikeテーブルにレコードが１つsizeコンントローラーには３つレコードがあること" do
-      expect(Roadbike.all.length).to eq 3
+      all_bike_info_hash_list.each do |bike_info_hash|
+
+     Roadbike.creating_maker_and_all_size_bike_need_argument_is(bike_info_hash[:maker_name], bike_info_hash[:year], bike_info_hash[:bike_series],
+                                                            bike_info_hash[:bike_name], bike_info_hash[:frame_type],bike_info_hash[:rear_derailleur],
+                                                            bike_info_hash[:front_derailleur],bike_info_hash[:cranc], bike_info_hash[:brake],
+                                                            bike_info_hash[:chain], bike_info_hash[:sprocket],bike_info_hash[:sti_lever],bike_info_hash[:bb],
+                                                            bike_info_hash[:wheel],bike_info_hash[:saddle],bike_info_hash[:seat_pillar],bike_info_hash[:handle],
+                                                            bike_info_hash[:stem], bike_info_hash[:tire], bike_info_hash[:pedal],bike_info_hash[:valve],
+                                                            bike_info_hash[:accessory],bike_info_hash[:maker_url],bike_info_hash[:shop_url],
+                                                            bike_info_hash[:size_list],bike_info_hash[:weight_list],bike_info_hash[:price], bike_info_hash[:gear],
+                                                            bike_info_hash[:fork],bike_info_hash[:frame_name],bike_info_hash[:fork_type], bike_info_hash[:kc_or_cb],
+                                                            bike_info_hash[:component],bike_info_hash[:height_list],bike_info_hash[:sex],bike_info_hash[:road_bike_type],
+                                                            bike_info_hash[:brake_type],bike_info_hash[:color_list], bike_info_hash[:picture_list],bike_info_hash[:official_color],
+                                                            bike_info_hash[:bike_comment],bike_info_hash[:maker_comment])
+    end
+      expect(Roadbike.all.length).to eq 6
     end
     it "すでにメーカーが存在していた場合" do
       expect(Roadbike.all.length).to eq 3
@@ -205,14 +220,26 @@ RSpec.describe Roadbike, type: :model do
     price_up = 10_00_000
     price_down = 10_000
     sex = "men"
-    color = nil
+    color = "0"
+    it "お金だけで絞れること"do
+      road_bike_type = nil
+      maker_info = nil
+      maker_id = nil
+      frame_type = 1
+      price_up = 10_00_000
+      price_down = 10_000
+      sex = nil
+      component_param = nil
+      brake_type = nil
+      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 1
+    end
     it "detetailが詳細条件のパラメーターが全てnilだった場合" do
       road_bike_type = nil
       maker_id = nil
       frame_type = nil
       component_param = nil
       brake_type = nil
-      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
+      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 3
     end
     it "detetailがroad_bike_type以外のパラメーターがnilだった場合" do
       road_bike_type = 1
@@ -220,7 +247,7 @@ RSpec.describe Roadbike, type: :model do
       frame_type = nil
       component_param = nil
       brake_type = nil
-      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
+      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 3
     end
     it "component_paramで絞れること" do
       road_bike_type = nil
@@ -245,7 +272,7 @@ RSpec.describe Roadbike, type: :model do
       frame_type = nil
       component_param = nil
       brake_type = 2
-      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 1
+      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
     end
     it "全てのdetailパラメーターが存在した場合" do
       road_bike_type = 1

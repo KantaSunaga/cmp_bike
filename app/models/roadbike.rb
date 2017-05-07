@@ -1,7 +1,84 @@
 class Roadbike < ApplicationRecord
+  require 'csv'
+  require 'kconv'
   belongs_to :maker
   has_many :sizes, dependent: :destroy
   has_many :colors, dependent: :destroy
+
+  def self.create_bike_from_csv(csv_file)
+    # extension = File.basename(csv_file)
+    # if extension.include?(".csv")
+    #   flash[:check_extension] = "拡張子csvのものを洗濯してください"
+    #   redirect_to :back
+    # end
+    # csv_info = csv_file.read
+    CSV.parse(Kconv.toutf8(csv_file)) do |row|
+      if row[0].to_i == 1
+        year_info = Year.find_by(year: row[1].to_i)
+        year_info = Year.create(year:ow[1].to_i) if year_info.blank?
+
+        maker_info = year_info.makers.find_by(maker_name: row[2])
+        maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[35]) if maker_info == nil
+
+        sex = false
+        sex = true if row[36].to_i == 2
+        bike_info = Roadbike.create( bike_series: row[3],
+                        bike_name: row[4],
+                        frame_type:row[5].to_i,
+                        rear_derailleur: row[6],
+                        front_derailleur:row[7],
+                        crank: row[8],
+                        brake: row[9],
+                        chain: row[10],
+                        price: row[25].to_i,
+                        sprocket: row[11],
+                        sti_lever: row[12],
+                        bb: row[13],
+                        wheel: row[14],
+                        saddle: row[15],
+                        seat_pillar: row[16],
+                        handle: row[17],
+                        stem: row[18],
+                        tire: row[19],
+                        pedal: row[20],
+                        valve: row[21],
+                        accessory: row[22],
+                        maker_url: row[23],
+                        shop_url: row[24],
+                        gear: row[26].to_i,
+                        fork: row[27],
+                        frame_name: row[28],
+                        fork_type: row[29],
+                        kc_or_cb: row[30],
+                        component: row[31].to_i,
+                        sex: sex,
+                        road_bike_type:row[32].to_i,
+                        brake_type: row[33].to_i,
+                        bike_comment: row[35]
+                        )
+        maker_info.roadbikes << bike_info
+      elsif row[0].to_i == 2
+        bike_info = Roadbike.last
+        color_info = Color.create(
+                                  color: row[1],
+                                  sub_color: row[2],
+                                  sub_color2: row[3],
+                                  official_color: row[4],
+                                  picture: row[5]
+                                  )
+        bike_info.colors << color_info
+      elsif row[0].to_i == 3
+        bike_info = Roadbike.last
+        size_info = Size.create(
+                                size: row[1].to_i,
+                                min_height: row[2].to_i,
+                                max_height: row[3].to_i,
+                                weight: row[4].to_i
+                                )
+        bike_info.sizes << size_info
+      end
+    end
+  end
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
