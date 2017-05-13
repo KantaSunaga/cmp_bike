@@ -1,15 +1,20 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ColorsHelper. For example:
-#
-# describe ColorsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe ColorsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "get_maker_id_from_bike" do
+    it "メーカーネームが取得できること" do
+      year_info = create :year
+      maker_info = create :maker,{year_id: year_info.id}
+      bike_info = create :roadbike,{maker_id: maker_info.id}
+      expect(helper.get_maker_id_from_bike(bike_info.maker_id)).to eq maker_info.maker_name
+    end
+  end
+  describe "get_bike_name" do
+    it "nameが取得できること" do
+      year_info = create :year
+      maker_info = create :maker,{year_id: year_info.id}
+      bike_info = create :roadbike,{maker_id: maker_info.id}
+      expect(helper.get_bike_name(bike_info.id)).to eq bike_info.bike_name
+    end
+  end
 end

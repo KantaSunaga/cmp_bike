@@ -12,8 +12,4 @@ class AdminsController < ApplicationController
   def import_csv
     Roadbike.create_bike_from_csv(params[:csv_file])
   end
-  private
-  def check_file_params
-    params.permit(:csv_file)
-  end
 end

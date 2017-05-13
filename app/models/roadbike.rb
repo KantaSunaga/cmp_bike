@@ -7,20 +7,20 @@ class Roadbike < ApplicationRecord
 
   def self.create_bike_from_csv(csv_file)
     CSV.foreach(csv_file.path, headers: false) do |row|
+      next if row[0].string? || row[35].string? || row[5].string? || row[6].string? || row[10].string? || row[15].string? || row[32].string? || row[34].string?
       if row[0].to_i == 1
         year_info = Year.find_by(year: row[1].to_i)
         year_info = Year.create(year:row[1].to_i) if year_info.blank?
 
         maker_info = year_info.makers.find_by(maker_name: row[2])
         maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[36]) if maker_info == nil
-
         sex = false
         sex = true if row[35].to_i == 2
 
         bike_info = Roadbike.create( bike_series: row[3],
                         bike_name: row[4],
-                        road_bike_type:row[5].to_i,
-                        frame_name:row[6].to_i,
+                        road_bike_type: row[5].to_i,
+                        frame_name: row[6].to_i,
                         frame_type: row[7],
                         fork: row[8],
                         fork_type: row[9],
