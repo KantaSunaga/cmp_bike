@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :color do
-    color "MyString"
-    roadebike_id ""
+    color "red"
+    roadbike_id 1
     picture "MyString"
+    official_color "テストカラー"
   end
 end

@@ -39,4 +39,41 @@ FactoryGirl.define do
      sex  false
      roade_bike_type  1
   end
+  factory :roadbike do
+    maker_id 1
+    bike_series "domane"
+    bike_name "domane 1"
+    frame_type 1
+    rear_derailleur "SHIMANO/105"
+    front_derailleur "SHIMANO/105"
+    crank "SHIMANO/105"
+    brake "SHIMANO/105"
+    chain "SHIMANO/105"
+    sprocket "SHIMANO/105"
+    sti_lever "SHIMANO/105"
+    bb "SHIMANO/105"
+    wheel "ZONDA"
+    saddle "テストサドル"
+    seat_pillar "テストピラー"
+    handle "テストハンドル"
+    stem "テストステム"
+    tire "テストタイヤ"
+    pedal "有"
+    accessory "なし"
+    maker_url "https://www.google.co.jp/search?q=csv+rails&oq=csv+rails&aqs=chrome..69i57j69i61j69i59l3j0.5571j1j7&sourceid=chrome&ie=UTF-8"
+    shop_url "http://www.sejuku.net/blog/15982"
+    picture "http://www.sejuku.net/blog/wp-content/uploads/2016/12/babashun_avatar_1480932922-100x100.jpg"
+    price 10000
+    gear 22
+    fork "テストフォーク"
+    frame_name "テストフレーム"
+    fork_type "カーボン"
+    kc_or_cb "クリンチャー"
+    component 1
+    bike_type 1
+    sex false
+    road_bike_type 1
+    brake_type 1
+    bike_comment "テストバイクコメント"
+  end
 end

@@ -10,9 +10,7 @@ class AdminsController < ApplicationController
   end
 
   def import_csv
-    p "________________________________________"
-    pp check_file_params
-    Roadbike.create_bike_from_csv(check_file_params)
+    Roadbike.create_bike_from_csv(params[:csv_file])
   end
   private
   def check_file_params

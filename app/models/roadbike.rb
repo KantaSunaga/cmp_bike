@@ -6,55 +6,50 @@ class Roadbike < ApplicationRecord
   has_many :colors, dependent: :destroy
 
   def self.create_bike_from_csv(csv_file)
-    # extension = File.basename(csv_file)
-    # if extension.include?(".csv")
-    #   flash[:check_extension] = "拡張子csvのものを洗濯してください"
-    #   redirect_to :back
-    # end
-    # csv_info = csv_file.read
-    CSV.parse(Kconv.toutf8(csv_file)) do |row|
+    CSV.foreach(csv_file.path, headers: false) do |row|
       if row[0].to_i == 1
         year_info = Year.find_by(year: row[1].to_i)
-        year_info = Year.create(year:ow[1].to_i) if year_info.blank?
+        year_info = Year.create(year:row[1].to_i) if year_info.blank?
 
         maker_info = year_info.makers.find_by(maker_name: row[2])
-        maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[35]) if maker_info == nil
+        maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[36]) if maker_info == nil
 
         sex = false
-        sex = true if row[36].to_i == 2
+        sex = true if row[35].to_i == 2
+
         bike_info = Roadbike.create( bike_series: row[3],
                         bike_name: row[4],
-                        frame_type:row[5].to_i,
-                        rear_derailleur: row[6],
-                        front_derailleur:row[7],
-                        crank: row[8],
-                        brake: row[9],
-                        chain: row[10],
-                        price: row[25].to_i,
-                        sprocket: row[11],
-                        sti_lever: row[12],
-                        bb: row[13],
-                        wheel: row[14],
-                        saddle: row[15],
-                        seat_pillar: row[16],
-                        handle: row[17],
-                        stem: row[18],
-                        tire: row[19],
-                        pedal: row[20],
-                        valve: row[21],
-                        accessory: row[22],
-                        maker_url: row[23],
-                        shop_url: row[24],
-                        gear: row[26].to_i,
-                        fork: row[27],
-                        frame_name: row[28],
-                        fork_type: row[29],
-                        kc_or_cb: row[30],
-                        component: row[31].to_i,
+                        road_bike_type:row[5].to_i,
+                        frame_name:row[6].to_i,
+                        frame_type: row[7],
+                        fork: row[8],
+                        fork_type: row[9],
+                        component: row[10].to_i,
+                        rear_derailleur: row[11],
+                        front_derailleur:row[12],
+                        crank: row[13],
+                        brake: row[14],
+                        brake_type: row[15].to_i,
+                        chain: row[16],
+                        sprocket: row[17],
+                        sti_lever: row[18],
+                        bb: row[19],
+                        tire: row[20],
+                        wheel: row[21],
+                        kc_or_cb: row[22],
+                        saddle: row[23],
+                        seat_pillar: row[24],
+                        handle: row[25],
+                        stem: row[26],
+                        valve: row[27],
+                        accessory: row[28],
+                        pedal: row[29],
+                        maker_url: row[30],
+                        shop_url: row[31],
+                        gear: row[32].to_i,
                         sex: sex,
-                        road_bike_type:row[32].to_i,
-                        brake_type: row[33].to_i,
-                        bike_comment: row[35]
+                        bike_comment: row[33],
+                        price: row[34].to_i,
                         )
         maker_info.roadbikes << bike_info
       elsif row[0].to_i == 2

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418235422) do
+ActiveRecord::Schema.define(version: 20170510011759) do
 
   create_table "colors", force: :cascade do |t|
     t.string   "color"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20170418235422) do
     t.integer  "size"
     t.integer  "min_height"
     t.integer  "max_height"
-    t.integer  "weight"
+    t.float    "weight"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "roadbike_id"

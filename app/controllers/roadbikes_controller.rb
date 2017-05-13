@@ -59,7 +59,7 @@ class RoadbikesController < ApplicationController
   def destroy
     @bike.destroy
     respond_to do |format|
-      format.html { redirect_to bikes_url, notice: 'Bike was successfully destroyed.' }
+      format.html { redirect_to roadbikes_path, notice: 'Bike was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
