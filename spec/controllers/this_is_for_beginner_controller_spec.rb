@@ -29,8 +29,8 @@ RSpec.describe ThisIsForBeginnerController, type: :controller do
   end
 
   describe "GET #result" do
-    Roadbike.delete_all
     before do
+      Roadbike.delete_all
       year_info = create :year
       maker_info = create :maker,{year_id: year_info.id}
       bike_info =create :roadbike,{maker_id: maker_info.id}

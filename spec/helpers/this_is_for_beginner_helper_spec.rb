@@ -26,16 +26,19 @@ RSpec.describe ThisIsForBeginnerHelper, type: :helper do
     end
   end
   describe "find_maker_name_from" do
-    year_info = Year.create(year:2017)
-    maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
-    # bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
+    # let(:year_info){create :year,{year: 2017}}
+    # let(:maker){create :maker,{maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ"}}
+    # let(:bike){create :bike,{maker_id: maker.id }}
     it "bikenameがhogeを取得すること" do
-      expect(find_maker_name_from(maker_info.id)).to eq maker_info
+      year_info = create :year,{year: 2017}
+      maker = create :maker,{maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ"}
+      bike = create :roadbike,{maker_id: maker.id }
+      expect(find_maker_name_from(bike.maker_id)).to eq maker
     end
   end
 
   describe "chek_bike_type_from(bike_type)" do
-    it "ike_type が 1の時" do
+    it "bike_type が 1の時" do
       bike_type = 1
       expect(chek_bike_type_from(bike_type)).to eq "ロードバイク"
     end
@@ -230,7 +233,7 @@ RSpec.describe ThisIsForBeginnerHelper, type: :helper do
       expect(find_picture("0", bike_info.id)).to eq  "あああ"
     end
   end
-  
+
   describe "find_color" do
     year_info = Year.create(year:2017)
     maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
