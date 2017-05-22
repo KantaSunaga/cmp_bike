@@ -1,6 +1,6 @@
 class RoadbikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
 
   # GET /bikes
   # GET /bikes.json
@@ -65,6 +65,9 @@ class RoadbikesController < ApplicationController
   end
 
   private
+  def checked_user?
+    redirect_to admin_login_path if session[:id].blank?
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_bike
       @bike = Roadbike.find(params[:id])

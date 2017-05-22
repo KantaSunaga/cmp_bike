@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mangements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mangements.each do |mangement| %>
+      <tr>
+        <td><%= mangement.user_name %></td>
+        <td><%= mangement.email %></td>
+        <td><%= mangement.password %></td>
+        <td><%= link_to 'Show', mangement %></td>
+        <td><%= link_to 'Edit', edit_mangement_path(mangement) %></td>
+        <td><%= link_to 'Destroy', mangement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mangement', new_mangement_path %>

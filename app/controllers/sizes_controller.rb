@@ -1,6 +1,6 @@
 class SizesController < ApplicationController
   before_action :set_size, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
   # GET /sizes
   # GET /sizes.json
   def index
@@ -62,6 +62,9 @@ class SizesController < ApplicationController
   end
 
   private
+  def checked_user?
+    redirect_to admin_login_path if session[:id].blank?
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_size
       @size = Size.find(params[:id])

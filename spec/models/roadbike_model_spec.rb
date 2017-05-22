@@ -302,12 +302,10 @@ RSpec.describe Roadbike, type: :model do
       maker_id = nil
       frame_type = nil
       component_param = nil
-      brake_type = nil
       color = "green"
       expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
     end
   end
-end
 
   describe "self.serch_bike_result_and_size(bike_arry, user_size)" do
     price_up = 10_00_000
@@ -346,3 +344,30 @@ end
           expect(Roadbike.which_sex?("man")).to eq false
          end
        end
+
+       describe "character?" do
+         it "文字が含まれていた場合、trueを吐くこと" do
+           array = ["1","2","3","4","5","6","た"]
+           expect(Roadbike.character?(array)).to eq true
+         end
+         it "文字が含まれていない場合、falseを吐くこと" do
+           array = ["1","2","3","4","5","6","7"]
+           expect(Roadbike.character?(array)).to eq false
+         end
+       end
+
+      describe "csvファイルのアップロード時" do
+        let(:csv) { "csv/test" }
+        it "レコードの追加に成功する" do
+          Roadbike.delete_all
+          road_count = Roadbike.all.count
+          color_count= Color.all.count
+          size_count = Size.all.count
+          file = fixture_file_upload("spec/fixtures/test.csv")
+          Roadbike.create_bike_from_csv(file)
+          expect(Roadbike.all.count).to eq road_count+1
+          expect(Color.all.count).to eq color_count+1
+          expect(Size.all.count).to eq size_count+1
+        end
+      end
+end

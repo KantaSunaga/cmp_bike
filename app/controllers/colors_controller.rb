@@ -1,6 +1,6 @@
 class ColorsController < ApplicationController
   before_action :set_color, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
 
   # GET /colors
   # GET /colors.json
@@ -64,6 +64,10 @@ class ColorsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def checked_user?
+      redirect_to admin_login_path if session[:id].blank?
+    end
+
     def set_color
       @color = Color.find(params[:id])
     end

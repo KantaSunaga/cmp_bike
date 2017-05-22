@@ -6,9 +6,14 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  config.include ActionDispatch::TestProcess
+  # config.include Devise::Test::ControllerHelpers, :type => :controller
+  # config.include ControllerMacros, :type => :controller
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

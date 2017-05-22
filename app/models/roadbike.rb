@@ -7,6 +7,27 @@ class Roadbike < ApplicationRecord
 
   def self.create_bike_from_csv(csv_file)
     CSV.foreach(csv_file.path, headers: false) do |row|
+
+      p row[0]
+      p row[0].to_i
+      next if Roadbike.character?([row[0]])
+      if row[0].to_i == 1
+        next if Roadbike.character?([row[5],row[6],row[10],row[15],row[32],row[34],row[35]])
+      elsif row[0].to_i == 3
+        next if Roadbike.character?([row[1],row[2],row[3],row[4]])
+      elsif row[0].to_i == 2
+        bike_info = Roadbike.last
+        color_info = Color.create(
+                                  color: row[1],
+                                  sub_color: row[2],
+                                  sub_color2: row[3],
+                                  official_color: row[4],
+                                  picture: row[5]
+                                  )
+        bike_info.colors << color_info
+      else
+        next
+      end
       if row[0].to_i == 1
         year_info = Year.find_by(year: row[1].to_i)
         year_info = Year.create(year:row[1].to_i) if year_info.blank?
@@ -52,27 +73,28 @@ class Roadbike < ApplicationRecord
                         price: row[34].to_i,
                         )
         maker_info.roadbikes << bike_info
-      elsif row[0].to_i == 2
-        bike_info = Roadbike.last
-        color_info = Color.create(
-                                  color: row[1],
-                                  sub_color: row[2],
-                                  sub_color2: row[3],
-                                  official_color: row[4],
-                                  picture: row[5]
-                                  )
-        bike_info.colors << color_info
       elsif row[0].to_i == 3
         bike_info = Roadbike.last
         size_info = Size.create(
                                 size: row[1].to_i,
                                 min_height: row[2].to_i,
                                 max_height: row[3].to_i,
-                                weight: row[4].to_i
+                                weight: row[4].to_f
                                 )
         bike_info.sizes << size_info
       end
     end
+  end
+
+  def self.character?(array)
+    array.each do |val|
+      begin
+       Integer(val)
+      rescue
+        return true
+      end
+    end
+    return false
   end
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
@@ -141,6 +163,8 @@ class Roadbike < ApplicationRecord
           end
           color_roupe_time += 1
         end
+
+
 
   end
   def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)

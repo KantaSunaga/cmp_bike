@@ -1,6 +1,6 @@
 class MakersController < ApplicationController
   before_action :set_maker, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
 
   # GET /makers
   # GET /makers.json
@@ -63,6 +63,11 @@ class MakersController < ApplicationController
   end
 
   private
+
+  def checked_user?
+    redirect_to admin_login_path if session[:id].blank?
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_maker
       @maker = Maker.find(params[:id])

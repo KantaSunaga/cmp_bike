@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   #------------管理画面----------------
-  get '/admin/index' => "admins#index"
+  get '/admin/login' => "admins#login"
+  get '/admin/forget_password_form' => "admins#forget_password_form"
+  post '/admin/make_tmp_password' => "admins#make_tmp_password"
+  post '/admin/check' => "admins#check"
+  get "/admin/index" => "admins#index"
+  delete '/admin/logout' => 'admins#logout'
   get 'admin/csv' => 'admins#csv'
   post 'admin/import_csv' => 'admins#import_csv'
   #-----------管理画面end--------------
-  devise_for :users
   post 'this_is_for_intermediate_or_advanced/home' => 'this_is_for_intermediate_or_advanced#cmp_result'
   get "/this_is_for_beginner/result"
   get "/this_is_for_beginner/home"
@@ -27,5 +31,6 @@ Rails.application.routes.draw do
   resources :makers
   resources :sizes
   resources :colors
+  resources :mangements
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
