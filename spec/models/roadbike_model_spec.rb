@@ -303,6 +303,7 @@ RSpec.describe Roadbike, type: :model do
       frame_type = nil
       component_param = nil
       color = "green"
+      brake_type = nil
       expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
     end
   end

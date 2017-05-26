@@ -1,6 +1,6 @@
-class AdminsController < ApplicationController
+class AdminsController <ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
-  before_action :checked_user?, only: [:index, :logout, :csv]
+  before_action :checked_user?, only: [:index, :logout, :csv,]
 
   def login
     @mangement = Mangement.new
@@ -8,15 +8,15 @@ class AdminsController < ApplicationController
 
   def check
     user = Mangement.user?(check_login_params)
-    if user.temporary_flag == true
+    if user == false
+      redirect_to admin_login_path
+    elsif user.temporary_flag == true
       session[:id] = user.id
       flash[:result] = "仮パスワードを変更してください"
       redirect_to "/mangements/#{user.id}/edit"
-    elsif user
-      session[:id] = user.id
-      redirect_to admin_index_path
     else
-       redirect_to admin_login_path
+       session[:id] = user.id
+       redirect_to admin_index_path
     end
   end
 
@@ -54,10 +54,6 @@ class AdminsController < ApplicationController
     def checked_user?
       redirect_to admin_login_path if session[:id].blank?
     end
-
-  def check_file_params
-    params.permit(:csv_file)
-  end
 
   def check_login_params
     params.require(:mangement).permit(:email, :password)

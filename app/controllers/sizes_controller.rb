@@ -25,40 +25,30 @@ class SizesController < ApplicationController
   # POST /sizes.json
   def create
     @size = Size.new(size_params)
-
-    respond_to do |format|
-      if @size.save
-        format.html { redirect_to @size, notice: 'Size was successfully created.' }
-        format.json { render :show, status: :created, location: @size }
-      else
-        format.html { render :new }
-        format.json { render json: @size.errors, status: :unprocessable_entity }
-      end
+    if @size.save
+      redirect_to @size, notice: 'Size was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /sizes/1
   # PATCH/PUT /sizes/1.json
   def update
-    respond_to do |format|
-      if @size.update(size_params)
-        format.html { redirect_to @size, notice: 'Size was successfully updated.' }
-        format.json { render :show, status: :ok, location: @size }
-      else
-        format.html { render :edit }
-        format.json { render json: @size.errors, status: :unprocessable_entity }
-      end
+    if @size.update(size_params)
+       redirect_to @size, notice: 'Size was successfully updated.'
+    else
+      render :edit
     end
   end
+
 
   # DELETE /sizes/1
   # DELETE /sizes/1.json
   def destroy
+    binding.pry
     @size.destroy
-    respond_to do |format|
-      format.html { redirect_to sizes_url, notice: 'Size was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to sizes_url, notice: 'Size was successfully destroyed.'
   end
 
   private

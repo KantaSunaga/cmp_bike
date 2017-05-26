@@ -7,16 +7,12 @@ class Roadbike < ApplicationRecord
 
   def self.create_bike_from_csv(csv_file)
     CSV.foreach(csv_file.path, headers: false) do |row|
-
-      p row[0]
-      p row[0].to_i
       next if Roadbike.character?([row[0]])
       if row[0].to_i == 1
-        next if Roadbike.character?([row[5],row[6],row[10],row[15],row[32],row[34],row[35]])
+        next if Roadbike.character?([row[5],row[7],row[10],row[15],row[32],row[34],row[35]])
       elsif row[0].to_i == 3
         next if Roadbike.character?([row[1],row[2],row[3],row[4]])
       elsif row[0].to_i == 2
-        bike_info = Roadbike.last
         color_info = Color.create(
                                   color: row[1],
                                   sub_color: row[2],
@@ -41,8 +37,8 @@ class Roadbike < ApplicationRecord
         bike_info = Roadbike.create( bike_series: row[3],
                         bike_name: row[4],
                         road_bike_type:row[5].to_i,
-                        frame_name:row[6].to_i,
-                        frame_type: row[7],
+                        frame_name:row[6],
+                        frame_type: row[7].to_i,
                         fork: row[8],
                         fork_type: row[9],
                         component: row[10].to_i,

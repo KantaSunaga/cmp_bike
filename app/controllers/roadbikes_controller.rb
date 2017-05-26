@@ -28,30 +28,21 @@ class RoadbikesController < ApplicationController
   # POST /bikes.json
   def create
     @bike = Roadbike.new(bike_params)
-
-    respond_to do |format|
       if @bike.save
-        format.html { redirect_to @bike, notice: 'Bike was successfully created.' }
-        format.json { render :show, status: :created, location: @bike }
+        redirect_to @bike, notice: 'Bike was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /bikes/1
   # PATCH/PUT /bikes/1.json
   def update
-    respond_to do |format|
       if @bike.update(bike_params)
-        format.html { redirect_to @bike, notice: 'Bike was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bike }
+        redirect_to @bike, notice: 'Bike was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /bikes/1
