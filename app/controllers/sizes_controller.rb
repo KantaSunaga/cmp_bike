@@ -46,7 +46,6 @@ class SizesController < ApplicationController
   # DELETE /sizes/1
   # DELETE /sizes/1.json
   def destroy
-    binding.pry
     @size.destroy
     redirect_to sizes_url, notice: 'Size was successfully destroyed.'
   end

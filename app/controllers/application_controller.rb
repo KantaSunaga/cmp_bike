@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery with: :exception
   unless Rails.env.development?
    rescue_from Exception,                        with: :_render_500
@@ -27,4 +28,6 @@ class ApplicationController < ActionController::Base
      render 'errors/500', status: :internal_server_error
    end
  end
+
+
 end

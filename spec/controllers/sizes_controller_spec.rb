@@ -54,16 +54,24 @@ RSpec.describe SizesController, type: :controller do
       expect(Size.all.count).to eq number + 1
     end
   end
-  xdescribe "destroy" do
+  describe "destroy" do
     it "消されること" do
       user = create :mangement
       year = create :year
       maker = create :maker,{year_id: year.id}
       bike = create :roadbike,{maker_id: maker.id}
       size = create :size,{roadbike_id: bike.id}
-      number = Size.all.count
-      delete :destroy,{id: size.id},session:{id: user.id}
-      expect(Size.all.count).to eq number - 1
+      delete :destroy,params:{id: size.id},session:{id: user.id}
+      expect(Size.find_by(id: size.id)).to eq nil
+    end
+      it "indexへ遷移すること" do
+      user = create :mangement
+      year = create :year
+      maker = create :maker,{year_id: year.id}
+      bike = create :roadbike,{maker_id: maker.id}
+      size = create :size,{roadbike_id: bike.id}
+      delete :destroy,params:{id: size.id},session:{id: user.id}
+      expect(response).to redirect_to  sizes_path
     end
   end
 

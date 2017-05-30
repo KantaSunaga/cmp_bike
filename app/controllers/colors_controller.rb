@@ -26,29 +26,21 @@ class ColorsController < ApplicationController
   # POST /colors.json
   def create
     @color = Color.new(color_params)
-
-    respond_to do |format|
       if @color.save
-        format.html { redirect_to @color, notice: 'Color was successfully created.' }
-        format.json { render :show, status: :created, location: @color }
+      redirect_to @color, notice: 'Color was successfully created.'
+
       else
-        format.html { render :new }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
+         render :new
       end
-    end
   end
 
   # PATCH/PUT /colors/1
   # PATCH/PUT /colors/1.json
   def update
-    respond_to do |format|
-      if @color.update(color_params)
-        format.html { redirect_to @color, notice: 'Color was successfully updated.' }
-        format.json { render :show, status: :ok, location: @color }
-      else
-        format.html { render :edit }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
-      end
+    if @color.update(color_params)
+      redirect_to @color, notice: 'Color was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -56,10 +48,7 @@ class ColorsController < ApplicationController
   # DELETE /colors/1.json
   def destroy
     @color.destroy
-    respond_to do |format|
-      format.html { redirect_to colors_url, notice: 'Color was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to colors_url, notice: 'Color was successfully destroyed.'
   end
 
   private

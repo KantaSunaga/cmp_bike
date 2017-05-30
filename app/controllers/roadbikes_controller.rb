@@ -49,10 +49,7 @@ class RoadbikesController < ApplicationController
   # DELETE /bikes/1.json
   def destroy
     @bike.destroy
-    respond_to do |format|
-      format.html { redirect_to roadbikes_path, notice: 'Bike was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     redirect_to roadbikes_path, notice: 'Bike was successfully destroyed.'
   end
 
   private

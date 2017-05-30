@@ -9,7 +9,6 @@ RSpec.describe ApplicationHelper, type: :helper do
     it "bike_maker_idが１だった場合" do
       year_info = Year.create(year:2017)
       maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
-      bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
       expect(helper.get_maker_id_from_bike(maker_info.id)).to eq "テスト"
     end
   end

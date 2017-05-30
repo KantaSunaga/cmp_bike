@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :mangement do
+    user_name "テストたろう"
     email "sunagakannta6@gmail.com"
     password "12345678910111"
   end
