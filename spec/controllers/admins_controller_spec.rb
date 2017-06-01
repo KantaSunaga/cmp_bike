@@ -26,11 +26,10 @@ RSpec.describe AdminsController, type: :controller do
         expect(response).to redirect_to "/mangements/#{tmp_user.id}/edit"
       end
     end
-    xcontext "登録されていないユーザーの場合" do
+    context "登録されていないユーザーの場合" do
       let(:user){create :mangement,{email: "sasakji@tatta.com"}}
       it "登録されていないユーザーがログインしようとした場合ログイン画面へ戻ること" do
-        user
-        subject
+        post :check,params:{mangement:{email:"aaaa@gmail.aldkh",password:"a;hrga;rsgu"}}
         expect(response).to redirect_to admin_login_path
       end
     end

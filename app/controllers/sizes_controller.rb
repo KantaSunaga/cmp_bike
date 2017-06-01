@@ -57,11 +57,12 @@ class SizesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_size
       @size = Size.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def size_params
 
-      params.require(:size).permit(:size, :min_height, :max_height, :weight)
+      params.require(:size).permit(:size, :min_height, :max_height, :weight,:roadbike_id)
     end
 end

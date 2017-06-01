@@ -37,10 +37,11 @@ RSpec.describe MangementsController, type: :controller do
       end
     end
     #saveの基準がsaveできたかできていないかが判断基準の場合どうやってelse二飛ばすのか
-    xcontext "失敗" do
+    context "失敗" do
       it "editへ戻ること" do
-        user = create :mangement,{user_name: "山本電気"}
-        session[:id] = user.id
+        user = create :mangement
+        post :create,params:{mangement:{user_name:"T中",email: "tata@tata.com",password:"1"}},session:{id:user.id}
+        expect(response).to render_template "new"
       end
     end
   end
@@ -55,10 +56,10 @@ RSpec.describe MangementsController, type: :controller do
     end
   end
 
-  xdescribe "update" do
+  describe "update" do
     it "updateされること" do
       user = create :mangement
-      put :update,params: {id: user.id ,user_name: "ほげ山ほげたろう",email:"sunagakannta@gmail.com",password:"ldldldldldldld"},session:{id: user.id}
+      put :update,params:{id: user.id ,mangement:{user_name: "ほげ山ほげたろう",email:"sunagakannta@gmail.com",password:"ldldldldldldld"}},session:{id: user.id}
       expect(Mangement.find(session[:id]).user_name).to eq "ほげ山ほげたろう"
     end
   end

@@ -6,23 +6,25 @@ class Roadbike < ApplicationRecord
   has_many :colors, dependent: :destroy
 
   def self.create_bike_from_csv(csv_file)
+    success_bike = 0
+    success_color = 0
+    success_size = 0
+    binding.pry
     CSV.foreach(csv_file.path, headers: false) do |row|
-      next if Roadbike.character?([row[0]])
+      error_row = 0
+      error_row += 1
+      error_message = "#{error_row}行目に不正な値があります"
+
+
+
+      return error_message if Roadbike.character?([row[0]])
       if row[0].to_i == 1
-        next if Roadbike.character?([row[5],row[7],row[10],row[15],row[32],row[34],row[35]])
+        return error_message if Roadbike.character?([row[5],row[7],row[10],row[15],row[32],row[34],row[35]])
       elsif row[0].to_i == 3
-        next if Roadbike.character?([row[1],row[2],row[3],row[4]])
+        return error_message if Roadbike.character?([row[1],row[2],row[3],row[4]])
       elsif row[0].to_i == 2
-        color_info = Color.create(
-                                  color: row[1],
-                                  sub_color: row[2],
-                                  sub_color2: row[3],
-                                  official_color: row[4],
-                                  picture: row[5]
-                                  )
-        bike_info.colors << color_info
       else
-        next
+        error_message
       end
       if row[0].to_i == 1
         year_info = Year.find_by(year: row[1].to_i)
@@ -69,6 +71,17 @@ class Roadbike < ApplicationRecord
                         price: row[34].to_i,
                         )
         maker_info.roadbikes << bike_info
+        success_bike += 1
+      elsif row[0].to_i == 2
+        color_info = Color.create(
+                                  color: row[1],
+                                  sub_color: row[2],
+                                  sub_color2: row[3],
+                                  official_color: row[4],
+                                  picture: row[5]
+                                  )
+        bike_info.colors << color_info
+        success_color += 1
       elsif row[0].to_i == 3
         bike_info = Roadbike.last
         size_info = Size.create(
@@ -78,8 +91,10 @@ class Roadbike < ApplicationRecord
                                 weight: row[4].to_f
                                 )
         bike_info.sizes << size_info
+        success_size += 1
       end
     end
+     success_nimber={bike: success_bike, color: success_color,wehight: success_size}
   end
 
   def self.character?(array)

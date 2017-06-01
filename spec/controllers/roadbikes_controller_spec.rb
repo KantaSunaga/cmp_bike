@@ -96,7 +96,7 @@ RSpec.describe RoadbikesController, type: :controller do
         get :edit,params:{id: roadbike.id}
       end
     end
-    xdescribe "create" do
+    describe "create" do
       let(:year){create :year}
       let(:maker){create :maker,{year_id: year.id}}
       let(:create_param){attributes_for(:roadbike,{maker_id:maker.id})}
@@ -106,25 +106,34 @@ RSpec.describe RoadbikesController, type: :controller do
         maker
         user_info
         number = Roadbike.all.count
-        post :create,params: create_param,session: {id: user_info.id}
+        post :create,params: {roadbike: create_param},session: {id: user_info.id}
         expect( Roadbike.all.count).to eq number + 1
       end
     end
-  xdescribe "upadate" do
+  describe "upadate" do
     let(:year){create :year}
     let(:maker){create :maker,{year_id: year.id}}
     let(:roadbike){create :roadbike,{maker_id: maker.id}}
     let(:user_info){create :mangement}
-    let(:bike_param){attributes_for(:roadbike,{bike_name: "佐々木さん"})}
+    let(:bike_param){attributes_for(:roadbike,{bike_name:"ヤマダ電機"})}
+    it "失敗パターン" do
+      year
+      maker
+      roadbike
+      user_info
+      put :update,params:{id: roadbike.id,roadbike: bike_param},session:{id:user_info.id}
+      expect(response).to render_template "edit"
+    end
     it "成功パターン" do
       year
       maker
       roadbike
       user_info
-      put :update,params:bike_param,session:{id:user_info.id}
-      expect(Radbike.find(roadbike.id).bike_name).to eq "佐々木さん"
+      put :update,params:{id:roadbike.id,roadbike:{bike_name:"ヤマダ電機"}},session:{id:user_info.id}
+      expect(Roadbike.find(roadbike.id).bike_name).to eq "ヤマダ電機"
     end
   end
+
   describe "destroy" do
     let(:year){create :year}
     let(:maker){create :maker,{year_id: year.id}}

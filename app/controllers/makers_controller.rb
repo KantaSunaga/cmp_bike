@@ -64,6 +64,6 @@ class MakersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maker_params
-      params.require(:maker).permit(:maker_name, :year_id)
+      params.require(:maker).permit(:maker_name, :year_id,:maker_comment)
     end
 end

@@ -85,27 +85,27 @@ RSpec.describe ColorsController, type: :controller do
         expect(response).to render_template "edit"
       end
     end
-    xdescribe "create" do
-      let(:need_params){attributes_for(:color,{roadebike_id: bike.id})}
+    describe "create" do
+      let(:need_params){attributes_for(:color,{roadbike_id: bike.id})}
         it "作られること" do
           user
           year
           maker
           bike
           number = Color.all.count
-          post :create,params: need_params,session:{id: user.id}
+          post :create,params:{color:{color: "ピンク",roadbike_id:bike.id,picture: "hoge"}},session:{id: user.id}
           expect(Color.all.count).to eq number + 1
         end
       end
-      xdescribe "update" do
+      describe "update" do
         it "更新されること" do
           user
           year
           maker
           bike
           color
-          put :update,params: attributes_for(:color,{color: "虹色"}),session:{id: user.id}
-          expect(User.find(user.id).color).to eq "虹色"
+          put :update,params:{id:color.id,color:{id: color.id, color: "ピンク"}},session:{id: user.id}
+          expect(Color.find(color.id).color).to eq "ピンク"
         end
       end
       describe "destroy" do
