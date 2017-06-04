@@ -9,17 +9,15 @@ class Roadbike < ApplicationRecord
     success_bike = 0
     success_color = 0
     success_size = 0
-    binding.pry
+    error_row = 0
     CSV.foreach(csv_file.path, headers: false) do |row|
-      error_row = 0
+
       error_row += 1
       error_message = "#{error_row}行目に不正な値があります"
 
-
-
       return error_message if Roadbike.character?([row[0]])
       if row[0].to_i == 1
-        return error_message if Roadbike.character?([row[5],row[7],row[10],row[15],row[32],row[34],row[35]])
+        return error_message if Roadbike.character?([row[5],row[7],row[9],row[10],row[15],row[22],row[27],row[29],row[32],row[34],row[35]])
       elsif row[0].to_i == 3
         return error_message if Roadbike.character?([row[1],row[2],row[3],row[4]])
       elsif row[0].to_i == 2
@@ -36,13 +34,15 @@ class Roadbike < ApplicationRecord
         sex = false
         sex = true if row[35].to_i == 2
 
+        pedal = false
+        pedal = true if row[29] == 1
         bike_info = Roadbike.create( bike_series: row[3],
                         bike_name: row[4],
                         road_bike_type:row[5].to_i,
                         frame_name:row[6],
                         frame_type: row[7].to_i,
                         fork: row[8],
-                        fork_type: row[9],
+                        fork_type: row[9].to_i,
                         component: row[10].to_i,
                         rear_derailleur: row[11],
                         front_derailleur:row[12],
@@ -55,14 +55,14 @@ class Roadbike < ApplicationRecord
                         bb: row[19],
                         tire: row[20],
                         wheel: row[21],
-                        kc_or_cb: row[22],
+                        tire_type: row[22].to_i,
                         saddle: row[23],
                         seat_pillar: row[24],
                         handle: row[25],
                         stem: row[26],
-                        valve: row[27],
+                        valve: row[27].to_i,
                         accessory: row[28],
-                        pedal: row[29],
+                        pedal: pedal,
                         maker_url: row[30],
                         shop_url: row[31],
                         gear: row[32].to_i,
@@ -73,6 +73,7 @@ class Roadbike < ApplicationRecord
         maker_info.roadbikes << bike_info
         success_bike += 1
       elsif row[0].to_i == 2
+        bike_info = Roadbike.last
         color_info = Color.create(
                                   color: row[1],
                                   sub_color: row[2],
@@ -98,19 +99,16 @@ class Roadbike < ApplicationRecord
   end
 
   def self.character?(array)
-    array.each do |val|
-      begin
-       Integer(val)
-      rescue
-        return true
-      end
+    begin
+      array.each{|val| Float(val)}
+      false
+    rescue
+      true
     end
-    return false
   end
-
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
-       size_list, weight_list, price, gear, fork, frame_name, fork_type, kc_or_cb, component, height_list, sex, road_bike_type, brake_type,color_list,
+       size_list, weight_list, price, gear, fork, frame_name, fork_type, tire_type, component, height_list, sex, road_bike_type, brake_type,color_list,
        picture_list,official_color,bike_comment,maker_comment)
 
        year_info = Year.find_by(year: year.to_i)
@@ -146,7 +144,7 @@ class Roadbike < ApplicationRecord
                                 fork: fork,
                                 frame_name: frame_name,
                                 fork_type: fork_type,
-                                kc_or_cb: kc_or_cb,
+                                tire_type: tire_type,
                                 component: component,
                                 sex:sex,
                                 road_bike_type:road_bike_type,

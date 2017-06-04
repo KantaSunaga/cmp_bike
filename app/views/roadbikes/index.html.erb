@@ -29,7 +29,6 @@
       <th>Pedal</th>
       <th>Valve</th>
       <th>Accessory</th>
-
       <th>Maker url</th>
       <th>Shop url</th>
       <th>price</th>
@@ -68,16 +67,16 @@
         <td><%= bike.handle %></td>
         <td><%= bike.stem %></td>
         <td><%= bike.tire %></td>
-        <td><%= bike.pedal %></td>
-        <td><%= bike.valve %></td>
+        <td><%= pedal?(bike.pedal)%></td>
+        <td><%= valve(bike.valve) %></td>
         <td><%= bike.accessory %></td>
         <td><%= bike.maker_url %></td>
         <td><%= bike.shop_url %></td>
         <td><%= bike.price %></td>
         <td><%= bike.gear %></td>
         <td><%= bike.fork %></td>
-        <td><%= bike.fork_type%></td>
-        <td><%= bike.kc_or_cb%></td>
+        <td><%= fork_type(bike.fork_type)%></td>
+        <td><%= tire_type(bike.tire_type)%></td>
         <td><%= which_sex(bike.sex)%></td>
         <td><%= find_brake_type(bike.brake_type)%></td>
         <td><%= link_to 'Show', bike %></td>

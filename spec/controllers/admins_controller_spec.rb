@@ -116,4 +116,18 @@ RSpec.describe AdminsController, type: :controller do
       end
     end
   end
+  xdescribe "import_csv" do
+    it "成功したら、import_csvに飛べていること" do
+      user = create :mangement
+      file = fixture_file_upload("spec/fixtures/test.csv")
+      post :import_csv,params:{mangement:{csv_file:file}},session:{id:user.id}
+      expect(response).to render_templat "import_csv"
+    end
+    it "失敗したら、editへ飛ぶこと" do
+      user = create :mangement
+      file = fixture_file_upload("spec/fixtures/test.csv")
+      post :import_csv,params:{mangement:{csv_file:file}},session:{id:user.id}
+      expect(response).to render_templat "csv"
+    end
+  end
 end

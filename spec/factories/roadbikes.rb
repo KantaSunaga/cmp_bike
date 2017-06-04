@@ -20,7 +20,7 @@ FactoryGirl.define do
      handle  "オリジナル"
      stem  "オリジナル"
      tire  "Panareser/ほげ"
-     pedal  "有"
+     pedal  true
      valve  "仏式"
      accessory  "鍵,リフレクター"
      maker_url  "http://www.merida.jp/lineup/road_bike/ride_3000.html"
@@ -32,8 +32,8 @@ FactoryGirl.define do
      gear  22
      fork  "FACT carbon fiber, full carbon monocoque, Zertz inserts"
      frame_name  "ABC,merida"
-     fork_type  "カーボン"
-     kc_or_cb "クリンチャー"
+     fork_type  1
+     tire_type 1
      component "105ミックス"
      height_list  [[160,170],[165,175],[170,185]]
      sex  false
@@ -58,7 +58,7 @@ FactoryGirl.define do
     handle "テストハンドル"
     stem "テストステム"
     tire "テストタイヤ"
-    pedal "有"
+    pedal true
     accessory "なし"
     maker_url "https://www.google.co.jp/search?q=csv+rails&oq=csv+rails&aqs=chrome..69i57j69i61j69i59l3j0.5571j1j7&sourceid=chrome&ie=UTF-8"
     shop_url "http://www.sejuku.net/blog/15982"
@@ -67,8 +67,8 @@ FactoryGirl.define do
     gear 22
     fork "テストフォーク"
     frame_name "テストフレーム"
-    fork_type "カーボン"
-    kc_or_cb "クリンチャー"
+    fork_type 1
+    tire_type 1
     component 1
     bike_type 1
     sex false

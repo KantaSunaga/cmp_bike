@@ -13,9 +13,13 @@ RSpec.describe SizesController, type: :controller do
   end
   describe "show" do
     it "showに遷移すること" do
+      year = create :year
+      maker=create :maker,{year_id: year.id}
+      roadbike = create :roadbike,{maker_id: maker.id}
+      size = create :size,{roadbike_id: roadbike.id}
       user = create :mangement
       session[:id] = user.id
-      get :show,params:{id: user.id}
+      get :show,params:{id: size.id},session:{id: user.id}
       expect(response).to render_template "show"
     end
   end
@@ -36,9 +40,15 @@ RSpec.describe SizesController, type: :controller do
   end
   describe "edit" do
     it "editに遷移すること" do
+      year = create :year
+      maker=create :maker,{year_id: year.id}
+      roadbike = create :roadbike,{maker_id: maker.id}
+      size = create :size,{roadbike_id: roadbike.id}
       user = create :mangement
       session[:id] = user.id
-      get :edit,params:{id: user.id}
+      user = create :mangement
+      session[:id] = user.id
+      get :edit,params:{id: size.id}
       expect(response).to render_template "edit"
     end
   end

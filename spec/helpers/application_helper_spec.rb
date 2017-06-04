@@ -20,4 +20,49 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(get_bike_name(bike_info.id)).to eq "hoge"
     end
   end
+
+  describe "pedal?" do
+    it "trueだったらありを返すこと" do
+        expect(pedal?(true)).to eq "あり"
+    end
+    it "falseだったらなしを返すこと" do
+        expect(pedal?(false)).to eq "なし"
+    end
+  end
+
+  describe "fork_type" do
+    it "1だったらカーボンを返すこと" do
+        expect(fork_type(1)).to eq "カーボン"
+    end
+    it "２だったらアルミを返すこと" do
+        expect(fork_type(2)).to eq "アルミ"
+    end
+    it "3だったらクロモリを返すこと" do
+        expect(fork_type(3)).to eq "クロモリ"
+    end
+  end
+
+  describe "tire_type" do
+    it "1だったらクリンチャーを返すこと" do
+        expect(tire_type(1)).to eq "クリンチャー"
+    end
+    it "２だったらチューブラーを返すこと" do
+        expect(tire_type(2)).to eq "チューブラー"
+    end
+    it "3だったらチューブレスを返すこと" do
+        expect(tire_type(3)).to eq "チューブレス"
+    end
+  end
+
+  describe "valve" do
+    it "1だったら仏式を返すこと" do
+        expect(valve(1)).to eq "仏式"
+    end
+    it "２だったら英式を返すこと" do
+        expect(valve(2)).to eq "英式"
+    end
+    it "3だったら米式を返すこと" do
+        expect(valve(3)).to eq "米式"
+    end
+  end
 end
