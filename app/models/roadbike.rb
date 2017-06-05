@@ -30,7 +30,6 @@ class Roadbike < ApplicationRecord
 
         maker_info = year_info.makers.find_by(maker_name: row[2])
         maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[36]) if maker_info == nil
-
         sex = false
         sex = true if row[35].to_i == 2
 
