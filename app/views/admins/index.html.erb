@@ -11,10 +11,7 @@
 
 
   <nav>
-    <% if user_signed_in? %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      <%= link_to 'ユーザーを追加', new_user_registration_path %>
-    <% else %>
-      <%= link_to 'ログイン', new_user_session_path %>
-    <% end %>
+      <%= link_to 'ログアウト', admin_logout_path, method: :delete %>
+      <%= link_to 'ユーザーを追加', new_mangement_path %>
+      <%= link_to 'ユーザー情報変更', "/mangements/#{@user.id}/edit" %>
   </nav>

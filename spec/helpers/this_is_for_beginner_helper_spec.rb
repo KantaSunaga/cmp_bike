@@ -26,16 +26,19 @@ RSpec.describe ThisIsForBeginnerHelper, type: :helper do
     end
   end
   describe "find_maker_name_from" do
-    year_info = Year.create(year:2017)
-    maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
-    # bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
+    # let(:year_info){create :year,{year: 2017}}
+    # let(:maker){create :maker,{maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ"}}
+    # let(:bike){create :bike,{maker_id: maker.id }}
     it "bikenameがhogeを取得すること" do
-      expect(find_maker_name_from(maker_info.id)).to eq maker_info
+      year_info = create :year,{year: 2017}
+      maker = create :maker,{maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ"}
+      bike = create :roadbike,{maker_id: maker.id }
+      expect(find_maker_name_from(bike.maker_id)).to eq maker
     end
   end
 
   describe "chek_bike_type_from(bike_type)" do
-    it "ike_type が 1の時" do
+    it "bike_type が 1の時" do
       bike_type = 1
       expect(chek_bike_type_from(bike_type)).to eq "ロードバイク"
     end
@@ -217,38 +220,56 @@ RSpec.describe ThisIsForBeginnerHelper, type: :helper do
   end
 
   describe "find_picture"do
-    year_info = Year.create(year:2017)
-    maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
-    bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
-   Color.delete_all
     it "カラーがredだった場合" do
+      year_info = Year.create(year:2017)
+      maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
+      bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
       Color.create(color: "red",picture: "gagaga", roadbike_id: bike_info.id)
-      expect(find_picture("red", bike_info.id)).to eq  "gagaga"
+      expect(find_picture("red", bike_info.id)).to eq "gagaga"
     end
     it "カラーが0だった場合" do
+      year_info = Year.create(year:2017)
+      maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
+      bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
       Color.create(color: "red",picture: "あああ", roadbike_id: bike_info.id)
-      expect(find_picture("0", bike_info.id)).to eq  "あああ"
+      expect(find_picture("0", bike_info.id)).to eq "あああ"
     end
   end
-  
-  describe "find_color" do
-    year_info = Year.create(year:2017)
-    maker_info = Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")
-    bike_info = Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)
-    Color.create(color: "あああ", roadbike_id: bike_info.id, official_color: "テストレッド")
 
+  describe "find_color" do
+
+      let(:year_info){Year.create(year:2017)}
+      let(:maker_info){Maker.create(maker_name: "テスト", year_id: year_info.id, maker_comment:"ホゲホゲ")}
+      let(:bike_info){Roadbike.create(bike_name: "hoge", maker_id: maker_info.id)}
+      let(:create_color){Color.create(color: "あああ", roadbike_id: bike_info.id, official_color: "テストレッド")}
     it "メインcolor があああの場合" do
+      year_info
+      maker_info
+      bike_info
+      create_color
       expect(find_color(bike_info.id, "あああ")).to eq  "テストレッド"
     end
     it "subcolor がいいいの場合" do
+      year_info
+      maker_info
+      bike_info
+      create_color
       Color.create(sub_color: "いいい", roadbike_id: bike_info.id, official_color: "テストブルー")
       expect(find_color(bike_info.id, "いいい")).to eq  "テストブルー"
     end
     it "sub_color2 がうううの場合" do
+      year_info
+      maker_info
+      bike_info
+      create_color
       Color.create(sub_color2: "ううう", roadbike_id: bike_info.id, official_color: "テストグリーン")
       expect(find_color(bike_info.id, "ううう")).to eq  "テストグリーン"
     end
     it "colorが0の場合" do
+      year_info
+      maker_info
+      bike_info
+      create_color
       Color.create(color: "ががが", roadbike_id: bike_info.id, official_color: "テストブラック")
       expect(find_color(bike_info.id, "0")).to eq  "テストレッド,テストブラック"
     end

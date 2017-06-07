@@ -1,6 +1,6 @@
 module ThisIsForBeginnerHelper
-  def find_maker_name_from(maker_id)
-    maker_info=Maker.find_by(id: maker_id)
+  def find_maker_name_from(bike_maker_id)
+    maker_info = Maker.find_by(id: bike_maker_id)
     return maker_info
   end
   def chek_bike_type_from(bike_type)

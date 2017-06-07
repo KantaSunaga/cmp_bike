@@ -1,0 +1,7 @@
+<%=flash[:result]%>
+<h1>Editing Mangement</h1>
+
+<%= render 'form', mangement: @mangement %>
+
+<%= link_to 'Show', @mangement %> |
+<%= link_to '管理画面へ戻る', admin_index_path %>

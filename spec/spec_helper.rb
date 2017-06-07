@@ -1,5 +1,6 @@
 require 'factory_girl'
 require 'simplecov'
+require 'rails_helper'
 
 SimpleCov.start 'rails'
 RSpec.configure do |config|
@@ -10,6 +11,8 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+  # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 

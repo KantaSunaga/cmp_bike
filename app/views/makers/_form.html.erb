@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :year %>
-    <%= f.number_field :year %>
+    <%= f.label :year_id %>
+    <%= f.select :year_id,@year.map{|t| [find_year(t.id), t.id]} %>
   </div>
 
   <div class="actions">

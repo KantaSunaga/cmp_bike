@@ -1,6 +1,6 @@
 class MakersController < ApplicationController
   before_action :set_maker, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
 
   # GET /makers
   # GET /makers.json
@@ -16,6 +16,7 @@ class MakersController < ApplicationController
   # GET /makers/new
   def new
     @maker = Maker.new
+    @year = Year.all
   end
 
   # GET /makers/1/edit
@@ -26,29 +27,20 @@ class MakersController < ApplicationController
   # POST /makers.json
   def create
     @maker = Maker.new(maker_params)
-
-    respond_to do |format|
-      if @maker.save
-        format.html { redirect_to @maker, notice: 'Maker was successfully created.' }
-        format.json { render :show, status: :created, location: @maker }
-      else
-        format.html { render :new }
-        format.json { render json: @maker.errors, status: :unprocessable_entity }
-      end
+    if @maker.save
+      redirect_to @maker, notice: 'Maker was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /makers/1
   # PATCH/PUT /makers/1.json
   def update
-    respond_to do |format|
-      if @maker.update(maker_params)
-        format.html { redirect_to @maker, notice: 'Maker was successfully updated.' }
-        format.json { render :show, status: :ok, location: @maker }
-      else
-        format.html { render :edit }
-        format.json { render json: @maker.errors, status: :unprocessable_entity }
-      end
+    if @maker.update(maker_params)
+      redirect_to @maker, notice: 'Maker was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -56,13 +48,15 @@ class MakersController < ApplicationController
   # DELETE /makers/1.json
   def destroy
     @maker.destroy
-    respond_to do |format|
-      format.html { redirect_to makers_url, notice: 'Maker was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to makers_url, notice: 'Maker was successfully destroyed.'
   end
 
   private
+
+  def checked_user?
+    redirect_to admin_login_path if session[:id].blank?
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_maker
       @maker = Maker.find(params[:id])
@@ -70,6 +64,6 @@ class MakersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maker_params
-      params.require(:maker).permit(:maker_name, :year)
+      params.require(:maker).permit(:maker_name, :year_id,:maker_comment)
     end
 end

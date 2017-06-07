@@ -51,7 +51,7 @@
         </tr>
       <tr>
         <td>フォーク素材</td>
-        <td><%= @bike.fork_type %></td>
+        <td><%= fork_type(@bike.fork_type)%></td>
       </tr>
       <td>コンポーネント</td>
         <td><%=chek_compornent_from @bike.component %></td>
@@ -98,15 +98,15 @@
       <tr>
         <tr>
           <td>タイヤタイプ</td>
-          <td><%= @bike.kc_or_cb %></td>
+          <td><%= tire_type(@bike.tire_type) %></td>
         </tr>
         <tr>
           <td>バルブ</td>
-          <td><%= @bike.valve%></td>
+          <td><%= valve(@bike.valve)%></td>
         </tr>
         <tr>
         <td>ペダル</td>
-        <td><%= @bike.pedal%></td>
+        <td><%= pedal?(@bike.pedal)%></td>
       </tr>
         <td>サドル</td>
         <td><%= @bike.saddle %></td>

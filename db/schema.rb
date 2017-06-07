@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510011759) do
+ActiveRecord::Schema.define(version: 20170604214337) do
 
   create_table "colors", force: :cascade do |t|
     t.string   "color"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20170510011759) do
     t.datetime "updated_at",    null: false
     t.integer  "year_id"
     t.text     "maker_comment"
+  end
+
+  create_table "mangements", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "temporary_flag", default: false, null: false
+    t.string   "email"
   end
 
   create_table "roadbikes", force: :cascade do |t|
@@ -51,8 +60,8 @@ ActiveRecord::Schema.define(version: 20170510011759) do
     t.string   "handle"
     t.string   "stem"
     t.string   "tire"
-    t.string   "pedal"
-    t.string   "valve"
+    t.boolean  "pedal"
+    t.integer  "valve"
     t.string   "accessory"
     t.string   "maker_url"
     t.string   "shop_url"
@@ -63,8 +72,8 @@ ActiveRecord::Schema.define(version: 20170510011759) do
     t.integer  "gear"
     t.string   "fork"
     t.string   "frame_name"
-    t.string   "fork_type"
-    t.string   "kc_or_cb"
+    t.integer  "fork_type"
+    t.integer  "tire_type"
     t.integer  "component"
     t.integer  "bike_type"
     t.boolean  "sex",              default: false, null: false

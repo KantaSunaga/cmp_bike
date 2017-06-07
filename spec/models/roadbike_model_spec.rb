@@ -4,6 +4,7 @@ RSpec.describe Roadbike, type: :model do
   Roadbike.delete_all
   Maker.delete_all
   Color.delete_all
+  Size.delete_all
   all_bike_info_hash_list =[]
   ride3000_bike_info_hash = {maker_name:"MERIDA",
                              year:2017,
@@ -35,7 +36,7 @@ RSpec.describe Roadbike, type: :model do
                              fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
                              frame_name: "merida ride sp",
                              fork_type: "カーボン",
-                             kc_or_cb: "クリンチャー",
+                             tire_type: "クリンチャー",
                              component: 12,
                              height_list:[[150,165],[155,170],[160,175]],
                              sex:false,
@@ -81,7 +82,7 @@ RSpec.describe Roadbike, type: :model do
                                           fork:"Advanced SL-Grade Composite，Full Composite OverDrive 2 Column",
                                           frame_name: "ジャイアントフレーム",
                                           fork_type: "ダイヤモンド",
-                                          kc_or_cb: "クリンチャー",
+                                          tire_type: "クリンチャー",
                                           component: 14,
                                           height_list:[[150,160],[155,165],[160,170]],
                                           sex:false,
@@ -127,7 +128,7 @@ RSpec.describe Roadbike, type: :model do
                              fork: "FACT carbon fiber, full carbon monocoque, Zertz inserts",
                              frame_name: "caadd 12 sp",
                              fork_type: "カーボン",
-                             kc_or_cb: "クリンチャー",
+                             tire_type: "クリンチャー",
                              component: 10,
                              height_list:[[150,165],[155,170],[160,175]],
                              sex:true,
@@ -153,7 +154,7 @@ RSpec.describe Roadbike, type: :model do
                                                           bike_info_hash[:stem], bike_info_hash[:tire], bike_info_hash[:pedal],bike_info_hash[:valve],
                                                           bike_info_hash[:accessory],bike_info_hash[:maker_url],bike_info_hash[:shop_url],
                                                           bike_info_hash[:size_list],bike_info_hash[:weight_list],bike_info_hash[:price], bike_info_hash[:gear],
-                                                          bike_info_hash[:fork],bike_info_hash[:frame_name],bike_info_hash[:fork_type], bike_info_hash[:kc_or_cb],
+                                                          bike_info_hash[:fork],bike_info_hash[:frame_name],bike_info_hash[:fork_type], bike_info_hash[:tire_type],
                                                           bike_info_hash[:component],bike_info_hash[:height_list],bike_info_hash[:sex],bike_info_hash[:road_bike_type],
                                                           bike_info_hash[:brake_type],bike_info_hash[:color_list], bike_info_hash[:picture_list],bike_info_hash[:official_color],
                                                           bike_info_hash[:bike_comment],bike_info_hash[:maker_comment])
@@ -172,7 +173,7 @@ RSpec.describe Roadbike, type: :model do
                                                             bike_info_hash[:stem], bike_info_hash[:tire], bike_info_hash[:pedal],bike_info_hash[:valve],
                                                             bike_info_hash[:accessory],bike_info_hash[:maker_url],bike_info_hash[:shop_url],
                                                             bike_info_hash[:size_list],bike_info_hash[:weight_list],bike_info_hash[:price], bike_info_hash[:gear],
-                                                            bike_info_hash[:fork],bike_info_hash[:frame_name],bike_info_hash[:fork_type], bike_info_hash[:kc_or_cb],
+                                                            bike_info_hash[:fork],bike_info_hash[:frame_name],bike_info_hash[:fork_type], bike_info_hash[:tire_type],
                                                             bike_info_hash[:component],bike_info_hash[:height_list],bike_info_hash[:sex],bike_info_hash[:road_bike_type],
                                                             bike_info_hash[:brake_type],bike_info_hash[:color_list], bike_info_hash[:picture_list],bike_info_hash[:official_color],
                                                             bike_info_hash[:bike_comment],bike_info_hash[:maker_comment])
@@ -302,12 +303,11 @@ RSpec.describe Roadbike, type: :model do
       maker_id = nil
       frame_type = nil
       component_param = nil
-      brake_type = nil
       color = "green"
+      brake_type = nil
       expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
     end
   end
-end
 
   describe "self.serch_bike_result_and_size(bike_arry, user_size)" do
     price_up = 10_00_000
@@ -346,3 +346,34 @@ end
           expect(Roadbike.which_sex?("man")).to eq false
          end
        end
+
+       describe "character?" do
+         it "文字が含まれていた場合、trueを吐くこと" do
+           array = ["た"]
+           expect(Roadbike.character?(array)).to eq true
+         end
+         it "少数が含まれていない場合、falseを吐くこと" do
+           array = ["4.15"]
+           expect(Roadbike.character?(array)).to eq false
+         end
+         it "が含まれていない場合、falseを吐くこと" do
+           array = ["4"]
+           expect(Roadbike.character?(array)).to eq false
+         end
+       end
+
+      describe "csvファイルのアップロード時" do
+        let(:csv) { "csv/test" }
+        it "レコードの追加に成功する" do
+          Roadbike.delete_all
+          road_count = Roadbike.all.count
+          color_count= Color.all.count
+          size_count = Size.all.count
+          file = fixture_file_upload("spec/fixtures/test.csv")
+          p Roadbike.create_bike_from_csv(file)
+          expect(Roadbike.all.count).to eq road_count+1
+          expect(Color.all.count).to eq color_count+1
+          expect(Size.all.count).to eq size_count+1
+        end
+      end
+end

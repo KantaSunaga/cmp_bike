@@ -1,6 +1,6 @@
 class ColorsController < ApplicationController
   before_action :set_color, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
 
   # GET /colors
   # GET /colors.json
@@ -25,30 +25,22 @@ class ColorsController < ApplicationController
   # POST /colors
   # POST /colors.json
   def create
+    p color_params
     @color = Color.new(color_params)
-
-    respond_to do |format|
-      if @color.save
-        format.html { redirect_to @color, notice: 'Color was successfully created.' }
-        format.json { render :show, status: :created, location: @color }
-      else
-        format.html { render :new }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
-      end
+    if @color.save
+      redirect_to @color, notice: 'Color was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /colors/1
   # PATCH/PUT /colors/1.json
   def update
-    respond_to do |format|
-      if @color.update(color_params)
-        format.html { redirect_to @color, notice: 'Color was successfully updated.' }
-        format.json { render :show, status: :ok, location: @color }
-      else
-        format.html { render :edit }
-        format.json { render json: @color.errors, status: :unprocessable_entity }
-      end
+    if @color.update(color_params)
+      redirect_to @color, notice: 'Color was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -56,20 +48,21 @@ class ColorsController < ApplicationController
   # DELETE /colors/1.json
   def destroy
     @color.destroy
-    respond_to do |format|
-      format.html { redirect_to colors_url, notice: 'Color was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to colors_url, notice: 'Color was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def checked_user?
+      redirect_to admin_login_path if session[:id].blank?
+    end
+
     def set_color
       @color = Color.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def color_params
-      params.require(:color).permit(:color, :roadebike_id, :picture)
+      params.require(:color).permit(:color, :roadbike_id, :picture,:sub_color,:sub_color2)
     end
 end

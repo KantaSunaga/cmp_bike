@@ -1,12 +1,7 @@
 module ControllerMacros
-  def login_admin(admin)
-    @request.env["devise.mapping"] = Devise.mappings[:admin]
-    sign_in admin
-  end
-
-  def login_user(user)
-    controller.stub(:authenticate_user!).and_return true
+  def login_user(user=nil)
     @request.env["devise.mapping"] = Devise.mappings[:user]
+    user ||= FactoryGirl.create(:user)
     sign_in user
   end
 end

@@ -1,6 +1,6 @@
 class RoadbikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :index, :cretate, :update]
+  before_action :checked_user?
 
   # GET /bikes
   # GET /bikes.json
@@ -28,43 +28,34 @@ class RoadbikesController < ApplicationController
   # POST /bikes.json
   def create
     @bike = Roadbike.new(bike_params)
-
-    respond_to do |format|
       if @bike.save
-        format.html { redirect_to @bike, notice: 'Bike was successfully created.' }
-        format.json { render :show, status: :created, location: @bike }
+        redirect_to @bike, notice: 'Bike was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /bikes/1
   # PATCH/PUT /bikes/1.json
   def update
-    respond_to do |format|
       if @bike.update(bike_params)
-        format.html { redirect_to @bike, notice: 'Bike was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bike }
+        redirect_to @bike, notice: 'Bike was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @bike.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /bikes/1
   # DELETE /bikes/1.json
   def destroy
     @bike.destroy
-    respond_to do |format|
-      format.html { redirect_to roadbikes_path, notice: 'Bike was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     redirect_to roadbikes_path, notice: 'Bike was successfully destroyed.'
   end
 
   private
+  def checked_user?
+    redirect_to admin_login_path if session[:id].blank?
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_bike
       @bike = Roadbike.find(params[:id])
