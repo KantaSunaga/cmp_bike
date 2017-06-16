@@ -338,7 +338,7 @@ RSpec.describe Roadbike, type: :model do
         component_param = nil
         brake_type = nil
         bike_arry = Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color)
-        expect(Roadbike.serch_bike_result_and_size(bike_arry, user_size)).to eq nil
+        expect(Roadbike.serch_bike_result_and_size(bike_arry, user_size)).to eq []
       end
     end
       describe "which_sex?" do
@@ -348,7 +348,7 @@ RSpec.describe Roadbike, type: :model do
        end
 
        describe "character?" do
-         it "文字が含まれていた場合、trueを吐くこと" do
+         it "文字が含まれていた場合、その番号を吐くこと" do
            array = ["た"]
            expect(Roadbike.character?(array)).to eq true
          end
@@ -356,8 +356,12 @@ RSpec.describe Roadbike, type: :model do
            array = ["4.15"]
            expect(Roadbike.character?(array)).to eq false
          end
-         it "が含まれていない場合、falseを吐くこと" do
+         it "数字が含まれていない場合、falseを吐くこと" do
            array = ["4"]
+           expect(Roadbike.character?(array)).to eq false
+         end
+         it "複数の数字でも、falseを吐くこと" do
+           array = ["3", "50", "150", "170", "7.85"]
            expect(Roadbike.character?(array)).to eq false
          end
        end
@@ -374,6 +378,25 @@ RSpec.describe Roadbike, type: :model do
           expect(Roadbike.all.count).to eq road_count+1
           expect(Color.all.count).to eq color_count+1
           expect(Size.all.count).to eq size_count+1
+        end
+      end
+
+      xdescribe "check_csv_date(array)" do
+        it "０番目がもじの時、4を返すこと" do
+          array = ["a","1","2","3","4","5","6","7","8","9","10"]
+          expect(Roadbike.check_csv_date(array)).to eq 4
+        end
+        it "1番目がもじの時、6を返すこと" do
+          array = ["1","1.3","2","3","4","5","6","7","8","9","10"]
+          expect(Roadbike.check_csv_date(array)).to eq 6
+        end
+        it "2番目がもじの時、8を返すこと" do
+          array = ["1","2","a","3","4","5","6","7","8","9","10"]
+          expect(Roadbike.check_csv_date(array)).to eq 8
+        end
+        it "3番目がもじの時、8を返すこと" do
+          array = ["1","2","a","3","4","5","6","7","8","9","10"]
+          expect(Roadbike.check_csv_date(array)).to eq 8
         end
       end
 end

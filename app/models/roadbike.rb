@@ -9,24 +9,23 @@ class Roadbike < ApplicationRecord
     success_bike = 0
     success_color = 0
     success_size = 0
-    error_row = 0
+    error_line = 0
     CSV.foreach(csv_file.path, headers: false) do |row|
 
-      error_row += 1
-      error_message = "#{error_row}行目に不正な値があります"
-
-      return error_message if Roadbike.character?([row[0]])
-      if row[0].to_i == 1
-        return error_message if Roadbike.character?([row[5],row[7],row[9],row[10],row[15],row[22],row[27],row[29],row[32],row[34],row[35]])
-      elsif row[0].to_i == 3
-        return error_message if Roadbike.character?([row[1],row[2],row[3],row[4]])
-      elsif row[0].to_i == 2
-      else
-        error_message
+      error_line += 1
+      error_message = "#{error_line}行目のに不正な値があります"
+#                                                      csvの番号確認
+      return error_message if Roadbike.character?([row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])
+      row_num = 45
+      while row_num <= 54
+        row_num += 1
+        next if row[row_num] == nil
+        size_array = row[row_num].delete("'").split(",")
+        return error_message if Roadbike.character?(size_array)
       end
+
     end
       CSV.foreach(csv_file.path, headers: false) do |row|
-      if row[0].to_i == 1
         year_info = Year.find_by(year: row[1].to_i)
         year_info = Year.create(year:row[1].to_i) if year_info.blank?
 
@@ -73,28 +72,31 @@ class Roadbike < ApplicationRecord
                         )
         maker_info.roadbikes << bike_info
         success_bike += 1
-      elsif row[0].to_i == 2
-        bike_info = Roadbike.last
-        color_info = Color.create(
-                                  color: row[1],
-                                  sub_color: row[2],
-                                  sub_color2: row[3],
-                                  official_color: row[4],
-                                  picture: row[5]
-                                  )
-        bike_info.colors << color_info
-        success_color += 1
-      elsif row[0].to_i == 3
-        bike_info = Roadbike.last
-        size_info = Size.create(
-                                size: row[1].to_i,
-                                min_height: row[2].to_i,
-                                max_height: row[3].to_i,
-                                weight: row[4].to_f
-                                )
-        bike_info.sizes << size_info
-        success_size += 1
-      end
+
+        roop_time = 35
+        while roop_time <= 55
+          roop_time += 1
+          info = row[roop_time]
+          next if info == nil
+          if roop_time.between?(36,45)
+            color_info = Color.create(
+                                     color: info[0],
+                                     sub_color: info[1],
+                                     sub_color2: info[2],
+                                     official_color: info[3],
+                                     picture: info[4]
+                                     )
+            bike_info.colors << color_info
+            success_color += 1
+          elsif roop_time.between?(46,55)
+            size_info = Size.create(size: info[1].to_i,
+                                    min_height: info[2].to_i,
+                                    max_height: info[3].to_i,
+                                    weight: info[4].to_f)
+            bike_info.sizes << size_info
+            success_size += 1
+          end
+        end
     end
      success_nimber={bike: success_bike, color: success_color,wehight: success_size}
   end
@@ -107,6 +109,18 @@ class Roadbike < ApplicationRecord
       true
     end
   end
+# [row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]]
+  def self.check_csv_date(items)
+    roop_time = 0
+     cel_map = [4,6,8,9,14,21,26,28,31,33,34]
+      items.each do |item,id|
+        正規表現にする
+
+        roop_time += 1
+      end
+      nil
+  end
+
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
        crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,
        size_list, weight_list, price, gear, fork, frame_name, fork_type, tire_type, component, height_list, sex, road_bike_type, brake_type,color_list,
@@ -227,12 +241,11 @@ class Roadbike < ApplicationRecord
 
       bike_arry.each do |bike|
         bike_and_size = {bike_obj: bike}
+
         size_list = bike.sizes.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..250)
-        if size_list[0] != nil
+        if size_list[0].present?
           bike_and_size[:size] = size_list
-        result_bike_and_size << bike_and_size#[{bike=>{bike_obj},size=>{size_obj}
-        else
-         return nil
+        result_bike_and_size << bike_and_size#[{bike=>{bike_obj},size=>{size_obj}]
         end
       end
       return result_bike_and_size

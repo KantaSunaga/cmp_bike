@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-06-06T22:50:34+09:00">2017-06-06T22:50:34+09:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-06-17T06:05:30+09:00">2017-06-17T06:05:30+09:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">32.84%</span></span>
+    (<span class="covered_percent"><span class="red">32.28%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.64
+         0.63
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>25</b> files in total.
-    <b>743</b> relevant lines. 
+    <b>756</b> relevant lines. 
     <span class="green"><b>244</b> lines covered</span> and
-    <span class="red"><b>499</b> lines missed </span>
+    <span class="red"><b>512</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -273,10 +273,10 @@
       <tr>
         <td class="strong"><a href="#a6221a962cc56bb746bfa521808d7150e1e42ac9" class="src_link" title="app/models/roadbike.rb">app/models/roadbike.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>246</td>
-        <td>246</td>
+        <td>259</td>
+        <td>259</td>
         <td>0</td>
-        <td>246</td>
+        <td>259</td>
         <td>0.0</td>
       </tr>
       
@@ -493,7 +493,7 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">3.27%</span></span>
+    (<span class="covered_percent"><span class="red">3.13%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -504,9 +504,9 @@
   <a name="Models"></a>
   <div>
     <b>8</b> files in total.
-    <b>275</b> relevant lines. 
+    <b>288</b> relevant lines. 
     <span class="green"><b>9</b> lines covered</span> and
-    <span class="red"><b>266</b> lines missed </span>
+    <span class="red"><b>279</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -575,10 +575,10 @@
       <tr>
         <td class="strong"><a href="#a6221a962cc56bb746bfa521808d7150e1e42ac9" class="src_link" title="app/models/roadbike.rb">app/models/roadbike.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>246</td>
-        <td>246</td>
+        <td>259</td>
+        <td>259</td>
         <td>0</td>
-        <td>246</td>
+        <td>259</td>
         <td>0.0</td>
       </tr>
       
@@ -5930,9 +5930,9 @@
     <h3>app/models/roadbike.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>246</b> relevant lines. 
+      <b>259</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>246</b> lines missed.</span>
+      <span class="red"><b>259</b> lines missed.</span>
     </div>
   </div>
   
@@ -6008,7 +6008,7 @@
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">    error_row = 0</code>
+          <code class="ruby">    error_line = 0</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
@@ -6026,73 +6026,73 @@
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">      error_row += 1</code>
+          <code class="ruby">      error_line += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="16">
           
           
-          <code class="ruby">      error_message = &quot;#{error_row}行目に不正な値があります&quot;</code>
+          <code class="ruby">      error_message = &quot;#{error_line}行目のに不正な値があります&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#                                                      csvの番号確認</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="18">
           
           
-          <code class="ruby">      return error_message if Roadbike.character?([row[0]])</code>
+          <code class="ruby">      return error_message if Roadbike.character?([row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">      if row[0].to_i == 1</code>
+          <code class="ruby">      row_num = 45</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
           
           
-          <code class="ruby">        return error_message if Roadbike.character?([row[5],row[7],row[9],row[10],row[15],row[22],row[27],row[29],row[32],row[34],row[35]])</code>
+          <code class="ruby">      while row_num &lt;= 54</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">      elsif row[0].to_i == 3</code>
+          <code class="ruby">        row_num += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">        return error_message if Roadbike.character?([row[1],row[2],row[3],row[4]])</code>
+          <code class="ruby">        next if row[row_num] == nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">      elsif row[0].to_i == 2</code>
+          <code class="ruby">        size_array = row[row_num].delete(&quot;&#39;&quot;).split(&quot;,&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">        return error_message if Roadbike.character?(size_array)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">        error_message</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="27">
@@ -6110,985 +6110,985 @@
         <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">      if row[0].to_i == 1</code>
+          <code class="ruby">        year_info = Year.find_by(year: row[1].to_i)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">        year_info = Year.find_by(year: row[1].to_i)</code>
+          <code class="ruby">        year_info = Year.create(year:row[1].to_i) if year_info.blank?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">        year_info = Year.create(year:row[1].to_i) if year_info.blank?</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="32">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        maker_info = year_info.makers.find_by(maker_name: row[2])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="33">
           
           
-          <code class="ruby">        maker_info = year_info.makers.find_by(maker_name: row[2])</code>
+          <code class="ruby">        maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[36]) if maker_info == nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="34">
           
           
-          <code class="ruby">        maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[36]) if maker_info == nil</code>
+          <code class="ruby">        sex = false</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="35">
           
           
-          <code class="ruby">        sex = false</code>
+          <code class="ruby">        sex = true if row[35].to_i == 2</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="36">
           
           
-          <code class="ruby">        sex = true if row[35].to_i == 2</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="37">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        pedal = false</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="38">
           
           
-          <code class="ruby">        pedal = false</code>
+          <code class="ruby">        pedal = true if row[29] == 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">        pedal = true if row[29] == 1</code>
+          <code class="ruby">        bike_info = Roadbike.create( bike_series: row[3],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="40">
           
           
-          <code class="ruby">        bike_info = Roadbike.create( bike_series: row[3],</code>
+          <code class="ruby">                        bike_name: row[4],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="41">
           
           
-          <code class="ruby">                        bike_name: row[4],</code>
+          <code class="ruby">                        road_bike_type:row[5].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="42">
           
           
-          <code class="ruby">                        road_bike_type:row[5].to_i,</code>
+          <code class="ruby">                        frame_name:row[6],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="43">
           
           
-          <code class="ruby">                        frame_name:row[6],</code>
+          <code class="ruby">                        frame_type: row[7].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">                        frame_type: row[7].to_i,</code>
+          <code class="ruby">                        fork: row[8],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">                        fork: row[8],</code>
+          <code class="ruby">                        fork_type: row[9].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">                        fork_type: row[9].to_i,</code>
+          <code class="ruby">                        component: row[10].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">                        component: row[10].to_i,</code>
+          <code class="ruby">                        rear_derailleur: row[11],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">                        rear_derailleur: row[11],</code>
+          <code class="ruby">                        front_derailleur:row[12],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">                        front_derailleur:row[12],</code>
+          <code class="ruby">                        crank: row[13],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">                        crank: row[13],</code>
+          <code class="ruby">                        brake: row[14],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">                        brake: row[14],</code>
+          <code class="ruby">                        brake_type: row[15].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="52">
           
           
-          <code class="ruby">                        brake_type: row[15].to_i,</code>
+          <code class="ruby">                        chain: row[16],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="53">
           
           
-          <code class="ruby">                        chain: row[16],</code>
+          <code class="ruby">                        sprocket: row[17],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="54">
           
           
-          <code class="ruby">                        sprocket: row[17],</code>
+          <code class="ruby">                        sti_lever: row[18],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="55">
           
           
-          <code class="ruby">                        sti_lever: row[18],</code>
+          <code class="ruby">                        bb: row[19],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">                        bb: row[19],</code>
+          <code class="ruby">                        tire: row[20],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">                        tire: row[20],</code>
+          <code class="ruby">                        wheel: row[21],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">                        wheel: row[21],</code>
+          <code class="ruby">                        tire_type: row[22].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">                        tire_type: row[22].to_i,</code>
+          <code class="ruby">                        saddle: row[23],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="60">
           
           
-          <code class="ruby">                        saddle: row[23],</code>
+          <code class="ruby">                        seat_pillar: row[24],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">                        seat_pillar: row[24],</code>
+          <code class="ruby">                        handle: row[25],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="62">
           
           
-          <code class="ruby">                        handle: row[25],</code>
+          <code class="ruby">                        stem: row[26],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="63">
           
           
-          <code class="ruby">                        stem: row[26],</code>
+          <code class="ruby">                        valve: row[27].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="64">
           
           
-          <code class="ruby">                        valve: row[27].to_i,</code>
+          <code class="ruby">                        accessory: row[28],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="65">
           
           
-          <code class="ruby">                        accessory: row[28],</code>
+          <code class="ruby">                        pedal: pedal,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="66">
           
           
-          <code class="ruby">                        pedal: pedal,</code>
+          <code class="ruby">                        maker_url: row[30],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="67">
           
           
-          <code class="ruby">                        maker_url: row[30],</code>
+          <code class="ruby">                        shop_url: row[31],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="68">
           
           
-          <code class="ruby">                        shop_url: row[31],</code>
+          <code class="ruby">                        gear: row[32].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">                        gear: row[32].to_i,</code>
+          <code class="ruby">                        sex: sex,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">                        sex: sex,</code>
+          <code class="ruby">                        bike_comment: row[33],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="71">
           
           
-          <code class="ruby">                        bike_comment: row[33],</code>
+          <code class="ruby">                        price: row[34].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="72">
           
           
-          <code class="ruby">                        price: row[34].to_i,</code>
+          <code class="ruby">                        )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="73">
           
           
-          <code class="ruby">                        )</code>
+          <code class="ruby">        maker_info.roadbikes &lt;&lt; bike_info</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="74">
           
           
-          <code class="ruby">        maker_info.roadbikes &lt;&lt; bike_info</code>
+          <code class="ruby">        success_bike += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="75">
           
           
-          <code class="ruby">        success_bike += 1</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="76">
           
           
-          <code class="ruby">      elsif row[0].to_i == 2</code>
+          <code class="ruby">        roop_time = 35</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="77">
           
           
-          <code class="ruby">        bike_info = Roadbike.last</code>
+          <code class="ruby">        while roop_time &lt;= 55</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="78">
           
           
-          <code class="ruby">        color_info = Color.create(</code>
+          <code class="ruby">          roop_time += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="79">
           
           
-          <code class="ruby">                                  color: row[1],</code>
+          <code class="ruby">          info = row[roop_time]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="80">
           
           
-          <code class="ruby">                                  sub_color: row[2],</code>
+          <code class="ruby">          next if info == nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="81">
           
           
-          <code class="ruby">                                  sub_color2: row[3],</code>
+          <code class="ruby">          if roop_time.between?(36,45)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="82">
           
           
-          <code class="ruby">                                  official_color: row[4],</code>
+          <code class="ruby">            color_info = Color.create(</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="83">
           
           
-          <code class="ruby">                                  picture: row[5]</code>
+          <code class="ruby">                                     color: info[0],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="84">
           
           
-          <code class="ruby">                                  )</code>
+          <code class="ruby">                                     sub_color: info[1],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="85">
           
           
-          <code class="ruby">        bike_info.colors &lt;&lt; color_info</code>
+          <code class="ruby">                                     sub_color2: info[2],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="86">
           
           
-          <code class="ruby">        success_color += 1</code>
+          <code class="ruby">                                     official_color: info[3],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="87">
           
           
-          <code class="ruby">      elsif row[0].to_i == 3</code>
+          <code class="ruby">                                     picture: info[4]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="88">
           
           
-          <code class="ruby">        bike_info = Roadbike.last</code>
+          <code class="ruby">                                     )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="89">
           
           
-          <code class="ruby">        size_info = Size.create(</code>
+          <code class="ruby">            bike_info.colors &lt;&lt; color_info</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="90">
           
           
-          <code class="ruby">                                size: row[1].to_i,</code>
+          <code class="ruby">            success_color += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="91">
           
           
-          <code class="ruby">                                min_height: row[2].to_i,</code>
+          <code class="ruby">          elsif roop_time.between?(46,55)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="92">
           
           
-          <code class="ruby">                                max_height: row[3].to_i,</code>
+          <code class="ruby">            size_info = Size.create(size: info[1].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="93">
           
           
-          <code class="ruby">                                weight: row[4].to_f</code>
+          <code class="ruby">                                    min_height: info[2].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="94">
           
           
-          <code class="ruby">                                )</code>
+          <code class="ruby">                                    max_height: info[3].to_i,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="95">
           
           
-          <code class="ruby">        bike_info.sizes &lt;&lt; size_info</code>
+          <code class="ruby">                                    weight: info[4].to_f)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="96">
           
           
-          <code class="ruby">        success_size += 1</code>
+          <code class="ruby">            bike_info.sizes &lt;&lt; size_info</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="97">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">            success_size += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="98">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">          end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="99">
           
           
-          <code class="ruby">     success_nimber={bike: success_bike, color: success_color,wehight: success_size}</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="100">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="101">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     success_nimber={bike: success_bike, color: success_color,wehight: success_size}</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="102">
           
           
-          <code class="ruby">  def self.character?(array)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="103">
           
           
-          <code class="ruby">    begin</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="104">
           
           
-          <code class="ruby">      array.each{|val| Float(val)}</code>
+          <code class="ruby">  def self.character?(array)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="105">
           
           
-          <code class="ruby">      false</code>
+          <code class="ruby">    begin</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="106">
           
           
-          <code class="ruby">    rescue</code>
+          <code class="ruby">      array.each{|val| Float(val)}</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="107">
           
           
-          <code class="ruby">      true</code>
+          <code class="ruby">      false</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="108">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    rescue</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="109">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      true</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="110">
           
           
-          <code class="ruby">  def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="111">
           
           
-          <code class="ruby">       crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="112">
           
           
-          <code class="ruby">       size_list, weight_list, price, gear, fork, frame_name, fork_type, tire_type, component, height_list, sex, road_bike_type, brake_type,color_list,</code>
+          <code class="ruby"># [row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="113">
           
           
-          <code class="ruby">       picture_list,official_color,bike_comment,maker_comment)</code>
+          <code class="ruby">  def self.check_csv_date(items)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="114">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    roop_time = 0</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="115">
           
           
-          <code class="ruby">       year_info = Year.find_by(year: year.to_i)</code>
+          <code class="ruby">     cel_map = [4,6,8,9,14,21,26,28,31,33,34]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="116">
           
           
-          <code class="ruby">       year_info = Year.create(year: year.to_i) if year_info.blank?</code>
+          <code class="ruby">      items.each do |item,id|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="117">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        正規表現にする</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="118">
           
           
-          <code class="ruby">       maker_info = year_info.makers.find_by(maker_name: maker_name)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="119">
           
           
-          <code class="ruby">       maker_info = year_info.makers.create(maker_name: maker_name, maker_comment: maker_comment) if maker_info == nil</code>
+          <code class="ruby">        roop_time += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="120">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="121">
           
           
-          <code class="ruby">        bike_info = Roadbike.create( bike_series: bike_series,</code>
+          <code class="ruby">      nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="122">
           
           
-          <code class="ruby">                                bike_name: bike_name,</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="123">
           
           
-          <code class="ruby">                                frame_type:frame_type,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="124">
           
           
-          <code class="ruby">                                rear_derailleur: rear_derailleur,</code>
+          <code class="ruby">  def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="125">
           
           
-          <code class="ruby">                                front_derailleur:front_derailleur,</code>
+          <code class="ruby">       crank, brake, chain, sprocket, sti_lever, bb, wheel,saddle, seat_pillar, handle, stem, tire, pedal, valve, accessory,maker_url, shop_url,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="126">
           
           
-          <code class="ruby">                                crank: crank,</code>
+          <code class="ruby">       size_list, weight_list, price, gear, fork, frame_name, fork_type, tire_type, component, height_list, sex, road_bike_type, brake_type,color_list,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="127">
           
           
-          <code class="ruby">                                brake: brake,</code>
+          <code class="ruby">       picture_list,official_color,bike_comment,maker_comment)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="128">
           
           
-          <code class="ruby">                                chain: chain,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="129">
           
           
-          <code class="ruby">                                price: price,</code>
+          <code class="ruby">       year_info = Year.find_by(year: year.to_i)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="130">
           
           
-          <code class="ruby">                                sprocket: sprocket,</code>
+          <code class="ruby">       year_info = Year.create(year: year.to_i) if year_info.blank?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="131">
           
           
-          <code class="ruby">                                sti_lever: sti_lever,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="132">
           
           
-          <code class="ruby">                                bb: bb,</code>
+          <code class="ruby">       maker_info = year_info.makers.find_by(maker_name: maker_name)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="133">
           
           
-          <code class="ruby">                                wheel: wheel,</code>
+          <code class="ruby">       maker_info = year_info.makers.create(maker_name: maker_name, maker_comment: maker_comment) if maker_info == nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="134">
           
           
-          <code class="ruby">                                saddle: saddle,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="135">
           
           
-          <code class="ruby">                                seat_pillar: seat_pillar,</code>
+          <code class="ruby">        bike_info = Roadbike.create( bike_series: bike_series,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="136">
           
           
-          <code class="ruby">                                handle: handle,</code>
+          <code class="ruby">                                bike_name: bike_name,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="137">
           
           
-          <code class="ruby">                                stem: stem,</code>
+          <code class="ruby">                                frame_type:frame_type,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="138">
           
           
-          <code class="ruby">                                tire: tire,</code>
+          <code class="ruby">                                rear_derailleur: rear_derailleur,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="139">
           
           
-          <code class="ruby">                                pedal: pedal,</code>
+          <code class="ruby">                                front_derailleur:front_derailleur,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="140">
           
           
-          <code class="ruby">                                valve: pedal,</code>
+          <code class="ruby">                                crank: crank,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="141">
           
           
-          <code class="ruby">                                accessory: accessory,</code>
+          <code class="ruby">                                brake: brake,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="142">
           
           
-          <code class="ruby">                                maker_url: maker_url,</code>
+          <code class="ruby">                                chain: chain,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="143">
           
           
-          <code class="ruby">                                shop_url: shop_url,</code>
+          <code class="ruby">                                price: price,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="144">
           
           
-          <code class="ruby">                                gear: gear,</code>
+          <code class="ruby">                                sprocket: sprocket,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="145">
           
           
-          <code class="ruby">                                fork: fork,</code>
+          <code class="ruby">                                sti_lever: sti_lever,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="146">
           
           
-          <code class="ruby">                                frame_name: frame_name,</code>
+          <code class="ruby">                                bb: bb,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="147">
           
           
-          <code class="ruby">                                fork_type: fork_type,</code>
+          <code class="ruby">                                wheel: wheel,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="148">
           
           
-          <code class="ruby">                                tire_type: tire_type,</code>
+          <code class="ruby">                                saddle: saddle,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="149">
           
           
-          <code class="ruby">                                component: component,</code>
+          <code class="ruby">                                seat_pillar: seat_pillar,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="150">
           
           
-          <code class="ruby">                                sex:sex,</code>
+          <code class="ruby">                                handle: handle,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="151">
           
           
-          <code class="ruby">                                road_bike_type:road_bike_type,</code>
+          <code class="ruby">                                stem: stem,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="152">
           
           
-          <code class="ruby">                                brake_type: brake_type,</code>
+          <code class="ruby">                                tire: tire,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="153">
           
           
-          <code class="ruby">                                bike_comment: bike_comment</code>
+          <code class="ruby">                                pedal: pedal,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="154">
           
           
-          <code class="ruby">                                )</code>
+          <code class="ruby">                                valve: pedal,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="155">
           
           
-          <code class="ruby">        maker_info.roadbikes &lt;&lt; bike_info</code>
+          <code class="ruby">                                accessory: accessory,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="156">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                maker_url: maker_url,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="157">
           
           
-          <code class="ruby">        size_roupe_end_time = size_list.length</code>
+          <code class="ruby">                                shop_url: shop_url,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="158">
           
           
-          <code class="ruby">        size_roupe_time = 0</code>
+          <code class="ruby">                                gear: gear,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="159">
           
           
-          <code class="ruby">        while size_roupe_time &lt; size_roupe_end_time do</code>
+          <code class="ruby">                                fork: fork,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="160">
           
           
-          <code class="ruby">          bike_info.sizes.create(size: size_list[size_roupe_time], min_height: height_list[size_roupe_time][0],</code>
+          <code class="ruby">                                frame_name: frame_name,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="161">
           
           
-          <code class="ruby">                            max_height: height_list[size_roupe_time][1], weight: weight_list[size_roupe_time])</code>
+          <code class="ruby">                                fork_type: fork_type,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="162">
           
           
-          <code class="ruby">          size_roupe_time += 1</code>
+          <code class="ruby">                                tire_type: tire_type,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="163">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">                                component: component,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="164">
           
           
-          <code class="ruby">        color_roupe_end_time = color_list.length</code>
+          <code class="ruby">                                sex:sex,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="165">
           
           
-          <code class="ruby">        color_roupe_time = 0</code>
+          <code class="ruby">                                road_bike_type:road_bike_type,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="166">
           
           
-          <code class="ruby">        while color_roupe_time &lt; color_roupe_end_time do</code>
+          <code class="ruby">                                brake_type: brake_type,</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="167">
           
           
-          <code class="ruby">          if color_list[color_roupe_time][1] != nil &amp;&amp; color_list[color_roupe_time][1] != &quot;&quot;</code>
+          <code class="ruby">                                bike_comment: bike_comment</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="168">
           
           
-          <code class="ruby">            bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time],</code>
+          <code class="ruby">                                )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="169">
           
           
-          <code class="ruby">                                    sub_color: color_list[color_roupe_time][1], official_color: official_color[color_roupe_time],</code>
+          <code class="ruby">        maker_info.roadbikes &lt;&lt; bike_info</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="170">
           
           
-          <code class="ruby">                                    sub_color2:color_list[color_roupe_time][2] )</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="171">
           
           
-          <code class="ruby">          else</code>
+          <code class="ruby">        size_roupe_end_time = size_list.length</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="172">
           
           
-          <code class="ruby">            bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time])</code>
+          <code class="ruby">        size_roupe_time = 0</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="173">
           
           
-          <code class="ruby">          end</code>
+          <code class="ruby">        while size_roupe_time &lt; size_roupe_end_time do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="174">
           
           
-          <code class="ruby">          color_roupe_time += 1</code>
+          <code class="ruby">          bike_info.sizes.create(size: size_list[size_roupe_time], min_height: height_list[size_roupe_time][0],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="175">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">                            max_height: height_list[size_roupe_time][1], weight: weight_list[size_roupe_time])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="176">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          size_roupe_time += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="177">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="178">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        color_roupe_end_time = color_list.length</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="179">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        color_roupe_time = 0</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="180">
           
           
-          <code class="ruby">  def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)</code>
+          <code class="ruby">        while color_roupe_time &lt; color_roupe_end_time do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="181">
           
           
-          <code class="ruby">     cheking_params = [bike_id,bike_id_1,bike_id_2,bike_id_3]</code>
+          <code class="ruby">          if color_list[color_roupe_time][1] != nil &amp;&amp; color_list[color_roupe_time][1] != &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="182">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="183">
           
           
-          <code class="ruby">     checked_bike_id_params = []</code>
+          <code class="ruby">                                    sub_color: color_list[color_roupe_time][1], official_color: official_color[color_roupe_time],</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="184">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                    sub_color2:color_list[color_roupe_time][2] )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="185">
           
           
-          <code class="ruby">      cheking_params.each do |params|</code>
+          <code class="ruby">          else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="186">
           
           
-          <code class="ruby">       if params == 1</code>
+          <code class="ruby">            bike_info.colors.create(color: color_list[color_roupe_time][0],picture: picture_list[color_roupe_time])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="187">
           
           
-          <code class="ruby">         next</code>
+          <code class="ruby">          end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="188">
           
           
-          <code class="ruby">       else</code>
+          <code class="ruby">          color_roupe_time += 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="189">
           
           
-          <code class="ruby">         checked_bike_id_params &lt;&lt; params</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="190">
           
           
-          <code class="ruby">       end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="191">
           
           
-          <code class="ruby">     end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="192">
           
           
-          <code class="ruby">   checked_bike_id_params</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="193">
@@ -7100,283 +7100,283 @@
         <li class="missed" data-hits="0" data-linenumber="194">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  def self.check_params(bike_id,bike_id_1,bike_id_2,bike_id_3)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="195">
           
           
-          <code class="ruby">  def self.get_bike_info_from(params_array)</code>
+          <code class="ruby">     cheking_params = [bike_id,bike_id_1,bike_id_2,bike_id_3]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="196">
           
           
-          <code class="ruby">    result_get_bike_info_from = []</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="197">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     checked_bike_id_params = []</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="198">
           
           
-          <code class="ruby">    params_array.each do |bike_id|</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="199">
           
           
-          <code class="ruby">      result_each = Roadbike.find_by(id: bike_id)</code>
+          <code class="ruby">      cheking_params.each do |params|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="200">
           
           
-          <code class="ruby">      result_get_bike_info_from &lt;&lt; result_each</code>
+          <code class="ruby">       if params == 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="201">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">         next</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="202">
           
           
-          <code class="ruby">    return result_get_bike_info_from</code>
+          <code class="ruby">       else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="203">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">         checked_bike_id_params &lt;&lt; params</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="204">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">       end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="205">
           
           
-          <code class="ruby">  def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type,color)</code>
+          <code class="ruby">     end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="206">
           
           
-          <code class="ruby">    sex_info = false if sex == &quot;men&quot;</code>
+          <code class="ruby">   checked_bike_id_params</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="207">
           
           
-          <code class="ruby">    if color != &quot;0&quot;</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="208">
           
           
-          <code class="ruby">     bike = Roadbike.joins(:colors).where(colors: {color: color}).or(Roadbike.joins(:colors).where(colors: {sub_color2: color})).or(Roadbike.joins(:colors).where(colors: {sub_color: color})).distinct</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="209">
           
           
-          <code class="ruby">     bike = bike.where(price: price_down.to_i..price_up.to_i)</code>
+          <code class="ruby">  def self.get_bike_info_from(params_array)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="210">
           
           
-          <code class="ruby">   else</code>
+          <code class="ruby">    result_get_bike_info_from = []</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="211">
           
           
-          <code class="ruby">      bike = Roadbike.where(price: price_down.to_i..price_up.to_i)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="212">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    params_array.each do |bike_id|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="213">
           
           
-          <code class="ruby">    if bike != nil</code>
+          <code class="ruby">      result_each = Roadbike.find_by(id: bike_id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="214">
           
           
-          <code class="ruby">        bike = bike.where(sex: sex_info) if sex_info == false</code>
+          <code class="ruby">      result_get_bike_info_from &lt;&lt; result_each</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="215">
           
           
-          <code class="ruby">        bike = bike.where(component: component_param.to_i) if component_param != nil &amp;&amp; component_param != &quot;&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="216">
           
           
-          <code class="ruby">        bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil &amp;&amp; road_bike_type != &quot;&quot;</code>
+          <code class="ruby">    return result_get_bike_info_from</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="217">
           
           
-          <code class="ruby">        bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil &amp;&amp; maker_id != &quot;&quot;</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="218">
           
           
-          <code class="ruby">        bike = bike.where(frame_type: frame_type.to_i) if frame_type != nil &amp;&amp; frame_type != &quot;&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="219">
           
           
-          <code class="ruby">        bike = bike.where(brake_type: brake_type.to_i) if brake_type != nil &amp;&amp; brake_type != &quot;&quot;</code>
+          <code class="ruby">  def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type,color)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="220">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    sex_info = false if sex == &quot;men&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="221">
           
           
-          <code class="ruby">    bike</code>
+          <code class="ruby">    if color != &quot;0&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="222">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">     bike = Roadbike.joins(:colors).where(colors: {color: color}).or(Roadbike.joins(:colors).where(colors: {sub_color2: color})).or(Roadbike.joins(:colors).where(colors: {sub_color: color})).distinct</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="223">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     bike = bike.where(price: price_down.to_i..price_up.to_i)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="224">
           
           
-          <code class="ruby">  def self.serch_bike_result_and_size(bike_arry, user_size)</code>
+          <code class="ruby">   else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="225">
           
           
-          <code class="ruby">    if bike_arry != nil</code>
+          <code class="ruby">      bike = Roadbike.where(price: price_down.to_i..price_up.to_i)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="226">
           
           
-          <code class="ruby">      result_bike_and_size = []</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="227">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    if bike != nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="228">
           
           
-          <code class="ruby">      bike_arry.each do |bike|</code>
+          <code class="ruby">        bike = bike.where(sex: sex_info) if sex_info == false</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="229">
           
           
-          <code class="ruby">        bike_and_size = {bike_obj: bike}</code>
+          <code class="ruby">        bike = bike.where(component: component_param.to_i) if component_param != nil &amp;&amp; component_param != &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="230">
           
           
-          <code class="ruby">        size_list = bike.sizes.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..250)</code>
+          <code class="ruby">        bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil &amp;&amp; road_bike_type != &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="231">
           
           
-          <code class="ruby">        if size_list[0] != nil</code>
+          <code class="ruby">        bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil &amp;&amp; maker_id != &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="232">
           
           
-          <code class="ruby">          bike_and_size[:size] = size_list</code>
+          <code class="ruby">        bike = bike.where(frame_type: frame_type.to_i) if frame_type != nil &amp;&amp; frame_type != &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="233">
           
           
-          <code class="ruby">        result_bike_and_size &lt;&lt; bike_and_size#[{bike=&gt;{bike_obj},size=&gt;{size_obj}</code>
+          <code class="ruby">        bike = bike.where(brake_type: brake_type.to_i) if brake_type != nil &amp;&amp; brake_type != &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="234">
           
           
-          <code class="ruby">        else</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="235">
           
           
-          <code class="ruby">         return nil</code>
+          <code class="ruby">    bike</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="236">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="237">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="238">
           
           
-          <code class="ruby">      return result_bike_and_size</code>
+          <code class="ruby">  def self.serch_bike_result_and_size(bike_arry, user_size)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="239">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    if bike_arry != nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="240">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      result_bike_and_size = []</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="241">
@@ -7388,28 +7388,106 @@
         <li class="missed" data-hits="0" data-linenumber="242">
           
           
-          <code class="ruby">  def self.which_sex?(sex_param)</code>
+          <code class="ruby">      bike_arry.each do |bike|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="243">
           
           
-          <code class="ruby">    return true if sex_param == &quot;women&quot;</code>
+          <code class="ruby">        bike_and_size = {bike_obj: bike}</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="244">
           
           
-          <code class="ruby">    false</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="245">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        size_list = bike.sizes.where(min_height: 100..user_size.to_i, max_height: user_size.to_i..250)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="246">
+          
+          
+          <code class="ruby">        if size_list[0].present?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="247">
+          
+          
+          <code class="ruby">          bike_and_size[:size] = size_list</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="248">
+          
+          
+          <code class="ruby">        result_bike_and_size &lt;&lt; bike_and_size#[{bike=&gt;{bike_obj},size=&gt;{size_obj}]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="249">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="250">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="251">
+          
+          
+          <code class="ruby">      return result_bike_and_size</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="252">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="253">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="254">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="255">
+          
+          
+          <code class="ruby">  def self.which_sex?(sex_param)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="256">
+          
+          
+          <code class="ruby">    return true if sex_param == &quot;women&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="257">
+          
+          
+          <code class="ruby">    false</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="258">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="259">
           
           
           <code class="ruby">end</code>
