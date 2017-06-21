@@ -13,17 +13,25 @@ class Roadbike < ApplicationRecord
     CSV.foreach(csv_file.path, headers: false) do |row|
 
       error_line += 1
-      error_message = "#{error_line}行目のに不正な値があります"
+      error_message = {line: error_line,row: 0}
 #                                                      csvの番号確認
-      return error_message if Roadbike.character?([row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])
-      row_num = 45
-      while row_num <= 54
-        row_num += 1
-        next if row[row_num] == nil
-        size_array = row[row_num].delete("'").split(",")
-        return error_message if Roadbike.character?(size_array)
+      errow_row = Roadbike.check_csv_date([row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])
+      if errow_row != nil
+        return errow_row={line: error_line,row: errow_row}
       end
+      row_num = 36
+      loop{
+          begin
+            size_array = row[row_num].delete("'").split(",")
+          rescue
+            break
+          end
 
+          if size_array[0] == "size"
+            return error_message = {line: error_line,row: row_num} if Roadbike.character?([size_array[1],size_array[2],size_array[3],size_array[4]])
+          end
+          row_num+=1
+         }
     end
       CSV.foreach(csv_file.path, headers: false) do |row|
         year_info = Year.find_by(year: row[1].to_i)
@@ -73,32 +81,41 @@ class Roadbike < ApplicationRecord
         maker_info.roadbikes << bike_info
         success_bike += 1
 
-        roop_time = 35
-        while roop_time <= 55
-          roop_time += 1
-          info = row[roop_time]
-          next if info == nil
-          if roop_time.between?(36,45)
+        roop_time = 36
+        loop{
+          begin
+            array = row[roop_time].delete("'").split(",")
+          rescue
+            break
+          end
+
+          if array[0] == "color"
             color_info = Color.create(
-                                     color: info[0],
-                                     sub_color: info[1],
-                                     sub_color2: info[2],
-                                     official_color: info[3],
-                                     picture: info[4]
+                                     color: array[1],
+                                     sub_color: array[2],
+                                     sub_color2: array[3],
+                                     official_color: array[4],
+                                     picture: array[5]
                                      )
             bike_info.colors << color_info
             success_color += 1
-          elsif roop_time.between?(46,55)
-            size_info = Size.create(size: info[1].to_i,
-                                    min_height: info[2].to_i,
-                                    max_height: info[3].to_i,
-                                    weight: info[4].to_f)
+          elsif array[0] == "size"
+            size_info = Size.create(size: array[1].to_i,
+                                    min_height: array[2].to_i,
+                                    max_height: array[3].to_i,
+                                    weight: array[4].to_f
+                                    )
             bike_info.sizes << size_info
             success_size += 1
+          else
+            break
           end
-        end
+          roop_time += 1
+        }
+    # 現状のcsvのmaxが37,カラーのスタートが３６から
     end
-     success_nimber={bike: success_bike, color: success_color,wehight: success_size}
+    return success_number = {bike: success_bike, color: success_color, size: success_size}
+
   end
 
   def self.character?(array)
@@ -112,13 +129,12 @@ class Roadbike < ApplicationRecord
 # [row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]]
   def self.check_csv_date(items)
     roop_time = 0
-     cel_map = [4,6,8,9,14,21,26,28,31,33,34]
-      items.each do |item,id|
-        正規表現にする
-
-        roop_time += 1
+    cel_map = [4,6,8,9,14,21,26,28,31,33,34]
+    items.each do |item|
+      return cel_map[roop_time] if Roadbike.character?([item])
+      roop_time += 1
       end
-      nil
+    nil
   end
 
   def self.creating_maker_and_all_size_bike_need_argument_is(maker_name, year, bike_series, bike_name, frame_type, rear_derailleur, front_derailleur,
