@@ -1,7 +1,7 @@
 tmp/*
-.DS_Store
-.log
-.sqlite3
+DS_Store.exe
+*.log
+*.sqlite3
 package/**/*.sqlite3
 config/database.yml
 config/environments/development.rb

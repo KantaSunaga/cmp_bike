@@ -49,8 +49,8 @@ class AdminsController <ApplicationController
 
   def import_csv
     result = Roadbike.create_bike_from_csv(params[:csv_file])
-    if result == Hash
-      flash[:failed] = "#{resilt[:line]}行目の#{result[:low]}番目に不正な値があります。"
+    if result.count == 2
+      flash[:failed] = "#{result[:line]}行目の#{result[:row]}番目に不正な値があります。"
       render :csv
     else
       flash[:bike] = "自転車が#{result[:bike]}件追加されました"

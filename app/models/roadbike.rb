@@ -10,14 +10,14 @@ class Roadbike < ApplicationRecord
     success_color = 0
     success_size = 0
     error_line = 0
+    errow_row = 0
     CSV.foreach(csv_file.path, headers: false) do |row|
-
       error_line += 1
-      error_message = {line: error_line,row: 0}
 #                                                      csvの番号確認
       errow_row = Roadbike.check_csv_date([row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])
       if errow_row != nil
-        return errow_row={line: error_line,row: errow_row}
+
+        return error_message = {line: error_line,row: errow_row}
       end
       row_num = 36
       loop{
@@ -34,49 +34,49 @@ class Roadbike < ApplicationRecord
          }
     end
       CSV.foreach(csv_file.path, headers: false) do |row|
-        year_info = Year.find_by(year: row[1].to_i)
-        year_info = Year.create(year:row[1].to_i) if year_info.blank?
+        year_info = Year.find_by(year: row[0].to_i)
+        year_info = Year.create(year:row[0].to_i) if year_info.blank?
 
-        maker_info = year_info.makers.find_by(maker_name: row[2])
-        maker_info = year_info.makers.create(maker_name: row[2], maker_comment: row[36]) if maker_info == nil
+        maker_info = year_info.makers.find_by(maker_name: row[1])
+        maker_info = year_info.makers.create(maker_name: row[1], maker_comment: row[36]) if maker_info == nil
         sex = false
         sex = true if row[35].to_i == 2
 
         pedal = false
         pedal = true if row[29] == 1
-        bike_info = Roadbike.create( bike_series: row[3],
-                        bike_name: row[4],
-                        road_bike_type:row[5].to_i,
-                        frame_name:row[6],
-                        frame_type: row[7].to_i,
-                        fork: row[8],
-                        fork_type: row[9].to_i,
-                        component: row[10].to_i,
-                        rear_derailleur: row[11],
-                        front_derailleur:row[12],
-                        crank: row[13],
-                        brake: row[14],
-                        brake_type: row[15].to_i,
-                        chain: row[16],
-                        sprocket: row[17],
-                        sti_lever: row[18],
-                        bb: row[19],
-                        tire: row[20],
-                        wheel: row[21],
-                        tire_type: row[22].to_i,
-                        saddle: row[23],
-                        seat_pillar: row[24],
-                        handle: row[25],
-                        stem: row[26],
-                        valve: row[27].to_i,
-                        accessory: row[28],
+        bike_info = Roadbike.create( bike_series: row[2],
+                        bike_name: row[3],
+                        road_bike_type:row[4].to_i,
+                        frame_name:row[5],
+                        frame_type: row[6].to_i,
+                        fork: row[7],
+                        fork_type: row[8].to_i,
+                        component: row[9].to_i,
+                        rear_derailleur: row[10],
+                        front_derailleur:row[11],
+                        crank: row[12],
+                        brake: row[13],
+                        brake_type: row[14].to_i,
+                        chain: row[15],
+                        sprocket: row[16],
+                        sti_lever: row[17],
+                        bb: row[18],
+                        tire: row[19],
+                        wheel: row[20],
+                        tire_type: row[21].to_i,
+                        saddle: row[22],
+                        seat_pillar: row[23],
+                        handle: row[24],
+                        stem: row[25],
+                        valve: row[26].to_i,
+                        accessory: row[27],
                         pedal: pedal,
-                        maker_url: row[30],
-                        shop_url: row[31],
-                        gear: row[32].to_i,
+                        maker_url: row[29],
+                        shop_url: row[30],
+                        gear: row[31].to_i,
                         sex: sex,
-                        bike_comment: row[33],
-                        price: row[34].to_i,
+                        bike_comment: row[32],
+                        price: row[33].to_i,
                         )
         maker_info.roadbikes << bike_info
         success_bike += 1
