@@ -14,7 +14,7 @@ class Roadbike < ApplicationRecord
     CSV.foreach(csv_file.path, headers: false) do |row|
       error_line += 1
 #                                                      csvの番号確認
-      errow_row = Roadbike.check_csv_date([row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])
+      errow_row = Roadbike.check_csv_date([row[0],row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]])
       if errow_row != nil
 
         return error_message = {line: error_line,row: errow_row}
@@ -38,7 +38,7 @@ class Roadbike < ApplicationRecord
         year_info = Year.create(year:row[0].to_i) if year_info.blank?
 
         maker_info = year_info.makers.find_by(maker_name: row[1])
-        maker_info = year_info.makers.create(maker_name: row[1], maker_comment: row[36]) if maker_info == nil
+        maker_info = year_info.makers.create(maker_name: row[1], maker_comment: row[35]) if maker_info == nil
         sex = false
         sex = true if row[35].to_i == 2
 
@@ -129,7 +129,7 @@ class Roadbike < ApplicationRecord
 # [row[4],row[6],row[8],row[9],row[14],row[21],row[26],row[28],row[31],row[33],row[34]]
   def self.check_csv_date(items)
     roop_time = 0
-    cel_map = [4,6,8,9,14,21,26,28,31,33,34]
+    cel_map = [0,4,6,8,9,14,21,26,28,31,33,34]
     items.each do |item|
       return cel_map[roop_time] if Roadbike.character?([item])
       roop_time += 1

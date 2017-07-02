@@ -16,6 +16,13 @@ class RoadbikesController < ApplicationController
   # GET /bikes/new
   def new
     @bike = Roadbike.new
+    @makers = Maker.all
+    @component = [["S-Series",1],["SRAM Apex" , 2],["SRAM Apex 1" , 3],["SRAM Rival" ,4],["SRAM Rival 1" , 5],["SRAM Force" , 6],
+                  ["SRAM Force 1" , 7],["SRAM RED" ,8],["SRAM RED eTAP" , 9],["DURA-ACE" , 10],["ULTEGRA" , 11],["105" , 12],
+                  ["TIAGRA" , 13],["SORA" , 14],["CLARIS ", 15],["DURA-ACE DI2" , 16],["ULTEGRA DI2" , 17],
+                  ["SuperRecord EPS" , 18],["SuperRecord" ,  19],["Record EPS" , 20],["Record" , 21 ],["Chorus EPS" , 22],
+                  ["Chorus" , 23],["Athena" , 24],["Potenza"  , 25],["Veloce" , 26]
+                ]
   end
 
   # GET /bikes/1/edit
@@ -27,12 +34,20 @@ class RoadbikesController < ApplicationController
   # POST /bikes
   # POST /bikes.json
   def create
+
+    pedal= false
+    pedal = true if bike_params[:pedal] == 2
+
+    sex = false
+    sex = true if params[:sex] == 2
+
     @bike = Roadbike.new(bike_params)
-      if @bike.save
-        redirect_to @bike, notice: 'Bike was successfully created.'
-      else
-        render :new
-      end
+    if @bike.save
+      @bike.update(sex: sex, pedal: pedal )
+      redirect_to @bike, notice: 'Bike was successfully created.'
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /bikes/1

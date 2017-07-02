@@ -18,12 +18,27 @@
 
   <div class="field">
     <%= f.label :roadbike_id %>
-    <%= f.text_field :roadbike_id %>
+    <%= f.select :roadbike_id, @roadbikes.map{|bike|[bike.bike_name,bike.id]} %>
   </div>
 
   <div class="field">
     <%= f.label :picture %>
     <%= f.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sub_color %>
+    <%= f.text_field :sub_color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sub_color2 %>
+    <%= f.text_field :sub_color2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :official_color %>
+    <%= f.text_field :official_color %>
   </div>
 
   <div class="actions">

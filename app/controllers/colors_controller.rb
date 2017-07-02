@@ -16,6 +16,7 @@ class ColorsController < ApplicationController
   # GET /colors/new
   def new
     @color = Color.new
+    @roadbikes = Roadbike.all
   end
 
   # GET /colors/1/edit
@@ -25,7 +26,6 @@ class ColorsController < ApplicationController
   # POST /colors
   # POST /colors.json
   def create
-    p color_params
     @color = Color.new(color_params)
     if @color.save
       redirect_to @color, notice: 'Color was successfully created.'
@@ -63,6 +63,6 @@ class ColorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def color_params
-      params.require(:color).permit(:color, :roadbike_id, :picture,:sub_color,:sub_color2)
+      params.require(:color).permit(:color, :roadbike_id, :picture,:sub_color,:sub_color2,:official_color)
     end
 end

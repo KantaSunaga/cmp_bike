@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= f.label :frame_type %>
-    <%= f.select :frame_type, @roadbike.map{|t| [chek_frame_type_from(t.frame_type), t.frame_type]}%>
+    <%= f.select :frame_type, [["カーボン",1],["アルミ",2],["クロモリ",3]]%>
   </div>
 
   <div class="field">
     <%= f.label :component %>
-    <%= f.select :component, @roadbike.map{|t| [chek_compornent_from(t.component), t.component]}%>
+    <%= f.select :component, @component.map{|t| [t.first,t.last]}%>
   </div>
 
   <div class="field">
@@ -112,7 +112,7 @@
 
   <div class="field">
     <%= f.label :pedal %>
-    <%= f.text_field :pedal %>
+    <%= f.select :pedal, [["あり",2],["なし",1]] %>
   </div>
 
   <div class="field">
@@ -154,12 +154,12 @@
 
   <div class="field">
     <%= f.label :sex%>
-    <%= f.select :sex, @roadbike.map{|t| [which_sex(t.sex), t.sex]}%>
+    <%= f.select :sex, [["男性",1],["女性",2]]%>
   </div>
 
   <div class="field">
     <%= f.label :brake_type%>
-    <%= f.select :brake_type, @roadbike.map{|t| [find_brake_type(t.brake_type), t.brake_type]}%>
+    <%= f.select :brake_type, [["リムブレーキ",1],["ディスクブレーキ",2]]%>
   </div>
 
   <div class="actions">

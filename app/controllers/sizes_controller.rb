@@ -15,6 +15,7 @@ class SizesController < ApplicationController
   # GET /sizes/new
   def new
     @size = Size.new
+    @roadbikes = Roadbike.all
   end
 
   # GET /sizes/1/edit

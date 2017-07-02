@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :roadbike_id %>
-    <%= f.number_field :roadbike_id %>
+    <%= f.select :roadbike_id, @roadbikes.map{|bike|[bike.bike_name,bike.id]} %>
   </div>
 
   <div class="field">

@@ -13,3 +13,6 @@ coverage/.resultset.json
 coverage/.resultset.json.lock
 coverage/index.html
 log/test.log
+spec/fixtures/test_cad.csv
+spec/fixtures/test_giant.csv
+spec/fixtures/test_merida.csv
