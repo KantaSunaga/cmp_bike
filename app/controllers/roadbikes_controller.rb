@@ -29,6 +29,12 @@ class RoadbikesController < ApplicationController
   def edit
     @makers = Maker.all
     @roadbike = Roadbike.all
+    @component = [["S-Series",1],["SRAM Apex" , 2],["SRAM Apex 1" , 3],["SRAM Rival" ,4],["SRAM Rival 1" , 5],["SRAM Force" , 6],
+                  ["SRAM Force 1" , 7],["SRAM RED" ,8],["SRAM RED eTAP" , 9],["DURA-ACE" , 10],["ULTEGRA" , 11],["105" , 12],
+                  ["TIAGRA" , 13],["SORA" , 14],["CLARIS ", 15],["DURA-ACE DI2" , 16],["ULTEGRA DI2" , 17],
+                  ["SuperRecord EPS" , 18],["SuperRecord" ,  19],["Record EPS" , 20],["Record" , 21 ],["Chorus EPS" , 22],
+                  ["Chorus" , 23],["Athena" , 24],["Potenza"  , 25],["Veloce" , 26]
+                ]
   end
 
   # POST /bikes

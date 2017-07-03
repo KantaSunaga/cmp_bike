@@ -21,6 +21,7 @@ class MakersController < ApplicationController
 
   # GET /makers/1/edit
   def edit
+    @year = Year.all
   end
 
   # POST /makers

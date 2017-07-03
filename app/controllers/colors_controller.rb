@@ -21,6 +21,7 @@ class ColorsController < ApplicationController
 
   # GET /colors/1/edit
   def edit
+    @roadbikes = Roadbike.all
   end
 
   # POST /colors
