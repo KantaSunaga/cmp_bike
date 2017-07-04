@@ -1,6 +1,7 @@
 class RoadbikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
   before_action :checked_user?
+  before_action :set_component, only: [:edit, :new]
 
   # GET /bikes
   # GET /bikes.json
@@ -17,24 +18,12 @@ class RoadbikesController < ApplicationController
   def new
     @bike = Roadbike.new
     @makers = Maker.all
-    @component = [["S-Series",1],["SRAM Apex" , 2],["SRAM Apex 1" , 3],["SRAM Rival" ,4],["SRAM Rival 1" , 5],["SRAM Force" , 6],
-                  ["SRAM Force 1" , 7],["SRAM RED" ,8],["SRAM RED eTAP" , 9],["DURA-ACE" , 10],["ULTEGRA" , 11],["105" , 12],
-                  ["TIAGRA" , 13],["SORA" , 14],["CLARIS ", 15],["DURA-ACE DI2" , 16],["ULTEGRA DI2" , 17],
-                  ["SuperRecord EPS" , 18],["SuperRecord" ,  19],["Record EPS" , 20],["Record" , 21 ],["Chorus EPS" , 22],
-                  ["Chorus" , 23],["Athena" , 24],["Potenza"  , 25],["Veloce" , 26]
-                ]
   end
 
   # GET /bikes/1/edit
   def edit
     @makers = Maker.all
     @roadbike = Roadbike.all
-    @component = [["S-Series",1],["SRAM Apex" , 2],["SRAM Apex 1" , 3],["SRAM Rival" ,4],["SRAM Rival 1" , 5],["SRAM Force" , 6],
-                  ["SRAM Force 1" , 7],["SRAM RED" ,8],["SRAM RED eTAP" , 9],["DURA-ACE" , 10],["ULTEGRA" , 11],["105" , 12],
-                  ["TIAGRA" , 13],["SORA" , 14],["CLARIS ", 15],["DURA-ACE DI2" , 16],["ULTEGRA DI2" , 17],
-                  ["SuperRecord EPS" , 18],["SuperRecord" ,  19],["Record EPS" , 20],["Record" , 21 ],["Chorus EPS" , 22],
-                  ["Chorus" , 23],["Athena" , 24],["Potenza"  , 25],["Veloce" , 26]
-                ]
   end
 
   # POST /bikes
@@ -74,6 +63,14 @@ class RoadbikesController < ApplicationController
   end
 
   private
+  def set_component
+    @component = [["S-Series",1],["SRAM Apex" , 2],["SRAM Apex 1" , 3],["SRAM Rival" ,4],["SRAM Rival 1" , 5],["SRAM Force" , 6],
+                  ["SRAM Force 1" , 7],["SRAM RED" ,8],["SRAM RED eTAP" , 9],["DURA-ACE" , 10],["ULTEGRA" , 11],["105" , 12],
+                  ["TIAGRA" , 13],["SORA" , 14],["CLARIS ", 15],["DURA-ACE DI2" , 16],["ULTEGRA DI2" , 17],
+                  ["SuperRecord EPS" , 18],["SuperRecord" ,  19],["Record EPS" , 20],["Record" , 21 ],["Chorus EPS" , 22],
+                  ["Chorus" , 23],["Athena" , 24],["Potenza"  , 25],["Veloce" , 26]
+                 ]
+  end
   def checked_user?
     redirect_to admin_login_path if session[:id].blank?
   end

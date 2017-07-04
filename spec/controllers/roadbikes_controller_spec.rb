@@ -54,6 +54,8 @@ RSpec.describe RoadbikesController, type: :controller do
       it "@bikeがあること" do
         subject
         expect(assigns(:bike).present?).to eq true
+        expect(assigns(:component).present?).to eq true
+        expect(assigns(:makers)).to eq Maker.all
       end
       it "newに遷移すること" do
         subject
@@ -79,6 +81,7 @@ RSpec.describe RoadbikesController, type: :controller do
         expect(assigns(:makers).count).to eq Maker.all.count
         expect(assigns(:roadbike).count).to eq Roadbike.all.count
         expect(assigns(:bike).present?).to eq true
+        expect(assigns(:component).present?).to eq true
       end
       it "画面遷移すること" do
         year

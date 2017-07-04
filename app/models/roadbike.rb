@@ -6,6 +6,15 @@ class Roadbike < ApplicationRecord
   has_many :colors, dependent: :destroy
 
   def self.create_bike_from_csv(csv_file)
+    begin
+      file_type = File.extname(csv_file.original_filename)
+    rescue
+      return result = ["拡張子がcsvのファイルを選択してください"]
+    end
+#拡張子がcsvではないもしくは、選択されていない時、csvへ飛ばしたい
+    if file_type.blank? || file_type != ".csv"
+      return result = ["拡張子がcsvのファイルを選択してください"]
+    end
     success_bike = 0
     success_color = 0
     success_size = 0

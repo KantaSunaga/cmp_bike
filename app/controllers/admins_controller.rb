@@ -49,8 +49,12 @@ class AdminsController <ApplicationController
 
   def import_csv
     result = Roadbike.create_bike_from_csv(params[:csv_file])
+    p result
     if result.count == 2
       flash[:failed] = "#{result[:line]}行目の#{result[:row]}番目に不正な値があります。"
+      render :csv
+    elsif result[0] == "拡張子がcsvのファイルを選択してください"
+      flash[:failed] = result[0]
       render :csv
     else
       flash[:bike] = "自転車が#{result[:bike]}件追加されました"
