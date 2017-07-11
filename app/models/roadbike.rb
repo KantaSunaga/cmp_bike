@@ -11,7 +11,7 @@ class Roadbike < ApplicationRecord
     rescue
       return result = ["拡張子がcsvのファイルを選択してください"]
     end
-#拡張子がcsvではないもしくは、選択されていない時、csvへ飛ばしたい
+
     if file_type.blank? || file_type != ".csv"
       return result = ["拡張子がcsvのファイルを選択してください"]
     end
@@ -251,6 +251,7 @@ class Roadbike < ApplicationRecord
     end
     if bike != nil
         bike = bike.where(sex: sex_info) if sex_info == false
+        bike = bike.where(frame_type: frame_type) if frame_type != nil && frame_type != ""
         bike = bike.where(component: component_param.to_i) if component_param != nil && component_param != ""
         bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""
         bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil && maker_id != ""

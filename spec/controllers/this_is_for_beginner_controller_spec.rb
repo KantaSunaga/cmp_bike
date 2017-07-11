@@ -48,6 +48,10 @@ RSpec.describe ThisIsForBeginnerController, type: :controller do
      subject
      expect(assigns(:color)).to eq "red"
    end
+   it "@lenghtが正しいこと" do
+     subject
+     expect(assigns(:length)).to eq assigns(:bike).length
+   end
   #------------------------------------------------------
  end
 

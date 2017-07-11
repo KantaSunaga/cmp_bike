@@ -7,8 +7,9 @@ class ThisIsForBeginnerController < ApplicationController
 
   def result
     result = Roadbike.serch_mach_bike(check_params_from_home[:price_up], check_params_from_home[:price_down], check_params_from_home[:sex],
-                              check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],check_params_from_home[:detail_frame],
-                              check_params_from_home[:detail_component],check_params_from_home[:brake_type],check_params_from_home[:color])
+                                      check_params_from_home[:detail_bike_type], check_params_from_home[:detail_maker],check_params_from_home[:detail_frame],
+                                      check_params_from_home[:detail_component],check_params_from_home[:brake_type],check_params_from_home[:color]
+                                     )
     @bike = Roadbike.serch_bike_result_and_size(result, check_params_from_home[:user_size].to_i)
     @color = check_params_from_home[:color]
     @length = @bike.length if @bike != nil
@@ -22,7 +23,7 @@ class ThisIsForBeginnerController < ApplicationController
    @color.each do |color|
      official << color.official_color
    end
-   @official_color =official.join(",")
+   @official_color = official.join(",")
   end
 
   private

@@ -307,6 +307,19 @@ RSpec.describe Roadbike, type: :model do
       brake_type = nil
       expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color).length).to eq 2
     end
+
+    it "フレームタイプで絞れること" do
+      price_up = 10_00_000
+      price_down = 10_000
+      road_bike_type = nil
+      maker_id = nil
+      frame_type = 2
+      component_param = nil
+      brake_type = nil
+      expect(Roadbike.serch_mach_bike(price_up, price_down,sex,road_bike_type,maker_id,frame_type,component_param,brake_type,color,).length).to eq 1
+      #フレームタイプで絞ればい問題specが回らないのは、expectにフレームタイプがないから
+
+    end
   end
 
   describe "self.serch_bike_result_and_size(bike_arry, user_size)" do
@@ -375,29 +388,33 @@ RSpec.describe Roadbike, type: :model do
           size_count = Size.all.count
           file = fixture_file_upload("spec/fixtures/test.csv")
           result = Roadbike.create_bike_from_csv(file)
-           p result
           expect(Roadbike.all.count).to eq road_count+1
           expect(Color.all.count).to eq color_count+1
           expect(Size.all.count).to eq size_count+1
         end
+        it "csv以外のファイルが飛んできたら、弾くこと" do
+          file = fixture_file_upload("spec/fixtures/test_bk.rb")
+          result = Roadbike.create_bike_from_csv(file)
+          expect(result).to eq ["拡張子がcsvのファイルを選択してください"]
+        end
       end
 
       describe "check_csv_date(array)" do
-        it "０番目がもじの時、4を返すこと" do
+        it "０番目がもじの時、0を返すこと" do
           array = ["a","1","2","3","4","5","6","7","8","9","10"]
+          expect(Roadbike.check_csv_date(array)).to eq 0
+        end
+        it "1番目がもじの時、4を返すこと" do
+          array = ["1","a","2","3","4","5","6","7","8","9","10"]
           expect(Roadbike.check_csv_date(array)).to eq 4
         end
-        it "1番目がもじの時、6を返すこと" do
-          array = ["1","a","2","3","4","5","6","7","8","9","10"]
-          expect(Roadbike.check_csv_date(array)).to eq 6
-        end
-        it "2番目がもじの時、8を返すこと" do
+        it "2番目がもじの時、6を返すこと" do
           array = ["1","2","a","3","4","5","6","7","8","9","10"]
-          expect(Roadbike.check_csv_date(array)).to eq 8
+          expect(Roadbike.check_csv_date(array)).to eq 6
         end
         it "3番目がもじの時、8を返すこと" do
           array = ["1","2","3","a","4","5","6","7","8","9","10"]
-          expect(Roadbike.check_csv_date(array)).to eq 9
+          expect(Roadbike.check_csv_date(array)).to eq 8
         end
       end
 end
