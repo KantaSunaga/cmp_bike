@@ -14,8 +14,6 @@ class InquiryController < ApplicationController
 
  def thanks
    @inquiry = Inquiry.new(inquiry_params)
-   p "llllllllllllllllllllll"
-   p @inquiry
    InquiryMailer.received_email(@inquiry).deliver_now
  end
  private

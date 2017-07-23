@@ -66,22 +66,22 @@ RSpec.describe ThisIsForBeginnerController, type: :controller do
    end
    it "@bikeが存在していること" do
      bike = Roadbike.last
-      expect(get :detail ,id: bike.id )
+      expect(get :detail ,params:{id: bike.id})
      expect(assigns(:bike)).to eq bike
    end
    it "@sizeが存在していること" do
      bike = Roadbike.last
-      expect(get :detail ,id: bike.id )
+      expect(get :detail ,params:{id: bike.id} )
      expect(assigns(:size)).to eq bike.sizes
    end
    it "@colorが存在していること" do
      bike = Roadbike.last
-      expect(get :detail ,id: bike.id )
+      expect(get :detail ,params:{id: bike.id} )
      expect(assigns(:color)).to eq bike.colors
    end
    it "@official_colorが存在していること" do
      bike = Roadbike.last
-      expect(get :detail ,id: bike.id )
+      expect(get :detail ,params:{id: bike.id} )
       official = []
       Color.where(roadbike_id: bike.id).each do |color|
         official << color.official_color

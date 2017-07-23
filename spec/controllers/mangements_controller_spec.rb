@@ -5,7 +5,7 @@ RSpec.describe MangementsController, type: :controller do
     it "showのテンプレートを呼ぶこと" do
       user = create :mangement
       session[:id] = user.id
-      get :show,{id: user.id}
+      get :show,params:{id: user.id}
       expect(response).to render_template "show"
     end
   end
@@ -51,7 +51,7 @@ RSpec.describe MangementsController, type: :controller do
       session[:id] = user.id
       user2 = create :mangement,{user_name: "user3",email: "tata@tata.com",password:"12345678910"}
       number = Mangement.all.count
-      delete :destroy,{id: user2.id}
+      delete :destroy,params:{id: user2.id}
       expect(Mangement.all.count).to eq number - 1
     end
   end

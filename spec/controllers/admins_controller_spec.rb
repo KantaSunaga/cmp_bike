@@ -11,7 +11,7 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "check" do
-    subject{post :check, mangement: attributes_for(:mangement)}
+    subject{post :check,params:{ mangement: attributes_for(:mangement)}}
     context "登録されているユーザーの場合" do
       let(:corect_user){create :mangement,{user_name: "テストたろう",temporary_flag: false}}
       let(:tmp_user){create :mangement,{user_name: "テストたろう",temporary_flag: true}}
@@ -70,14 +70,14 @@ RSpec.describe AdminsController, type: :controller do
       it "存在しないメールアドレスが、再発行を求めた場合" do
         user = create :mangement,{email: "aaa@aaa.om"}
         session[:id] = user.id
-        post :make_tmp_password,mangement: attributes_for(:mangement)
+        post :make_tmp_password,params:{mangement: attributes_for(:mangement)}
         expect(Mangement.last.email).to eq user.email
         expect(response).to redirect_to admin_login_path
       end
       it "セッションが影響しないこと" do
         user = create :mangement,{email: "aaa@aaa.om"}
         session[:id] = user.id
-        post :make_tmp_password,mangement: attributes_for(:mangement)
+        post :make_tmp_password,params:{mangement: attributes_for(:mangement)}
         expect(Mangement.last.email).to eq user.email
         expect(response).to redirect_to admin_login_path
       end
@@ -86,13 +86,13 @@ RSpec.describe AdminsController, type: :controller do
       it "存在するメールアドレスが、再発行を求めた場合" do
         user = create :mangement
         session[:id] = user.id
-        post :make_tmp_password,mangement: attributes_for(:mangement)
+        post :make_tmp_password,params:{mangement: attributes_for(:mangement)}
         expect(Mangement.find_by(email: user.email).password.length).to eq 10
         expect(response).to redirect_to admin_login_path
       end
       it "セッションがない場合" do
           user = create :mangement
-          post :make_tmp_password,mangement: attributes_for(:mangement)
+          post :make_tmp_password,params:{mangement: attributes_for(:mangement)}
           expect(Mangement.find_by(email: user.email).password.length).to eq 10
           expect(response).to redirect_to admin_login_path
       end

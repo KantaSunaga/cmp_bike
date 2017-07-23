@@ -14,7 +14,7 @@ RSpec.describe InquiryController, type: :controller do
     inquiry_params = {"email" => "sunagakannta6@gmail.com",
                       "name" => "テスとたろう",
                       "message" => "テスト"}
-    subject{post :confirm, inquiry: inquiry_params}
+    subject{post :confirm, params:{inquiry: inquiry_params}}
     it "@inquiryが作られていること"do
       subject
       expect(assigns(:inquiry).email).to eq inquiry_params["email"]
@@ -28,14 +28,14 @@ RSpec.describe InquiryController, type: :controller do
       inquiry_params = {"email" => "a",
                         "name" => nil,
                         "message" => "a"}
-      post :confirm, inquiry: inquiry_params
+      post :confirm, params:{inquiry: inquiry_params}
       expect(response).to render_template "index"
     end
     it "inquiry.nameが存在しなかったら、indexにrenderすること" do
       inquiry_params = {"email" => "a",
                         "name" => nil,
                         "message" => "a"}
-      post :confirm, inquiry: inquiry_params
+      post :confirm, params:{inquiry: inquiry_params}
       expect(response).to render_template "index"
     end
   end
@@ -45,13 +45,13 @@ RSpec.describe InquiryController, type: :controller do
                       "name" => "テスとたろう",
                       "message" => "テスト"}
     it "@inquiryが作られていること" do
-      post :thanks,inquiry: inquiry_params
+      post :thanks,params:{inquiry: inquiry_params}
       mail_tmp = assigns(:inquiry)
       expect(mail_tmp.name).to eq inquiry_params["name"]
     end
     it "メールが送信されていること" do
       mail = ActionMailer::Base.deliveries.count
-      post :thanks,inquiry: inquiry_params
+      post :thanks,params:{inquiry: inquiry_params}
       expect(ActionMailer::Base.deliveries.count).to eq mail + 1
     end
   end
