@@ -29,14 +29,13 @@ RSpec.describe MangementsController, type: :controller do
   describe "create" do
     context "成功" do
       it "保存されること" do
-        user = create :mangement,{user_name: "山本電気"}
-        session[:id] = user.id
-        number = Mangement.all.count
-        post :create,mangement: attributes_for(:mangement)
+        user = create :mangement
+        number = Mangement.count
+        post :create,params:{mangement: {user_name:"T中",email: "tata@tata.com",password:"12345678910"}},session:{id: user.id}
         expect(Mangement.all.count).to eq number + 1
       end
     end
-    #saveの基準がsaveできたかできていないかが判断基準の場合どうやってelse二飛ばすのか
+
     context "失敗" do
       it "editへ戻ること" do
         user = create :mangement
@@ -47,9 +46,10 @@ RSpec.describe MangementsController, type: :controller do
   end
   describe "destoroy" do
     it "レコードが消えていること" do
+      Mangement.delete_all
       user = create :mangement
       session[:id] = user.id
-      user2 = create :mangement,{user_name: "user3"}
+      user2 = create :mangement,{user_name: "user3",email: "tata@tata.com",password:"12345678910"}
       number = Mangement.all.count
       delete :destroy,{id: user2.id}
       expect(Mangement.all.count).to eq number - 1

@@ -390,7 +390,7 @@ RSpec.describe Roadbike, type: :model do
           result = Roadbike.create_bike_from_csv(file)
           expect(Roadbike.all.count).to eq road_count+1
           expect(Color.all.count).to eq color_count+1
-          expect(Size.all.count).to eq size_count+1
+          expect(Size.all.count).to eq size_count+4
         end
         it "csv以外のファイルが飛んできたら、弾くこと" do
           file = fixture_file_upload("spec/fixtures/test_bk.rb")

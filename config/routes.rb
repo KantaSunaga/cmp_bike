@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'this_is_for_beginner#home'
   #------------管理画面----------------
   get '/admin/login' => "admins#login"
   get '/admin/forget_password_form' => "admins#forget_password_form"

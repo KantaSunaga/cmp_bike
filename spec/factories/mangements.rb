@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :mangement do
     user_name "テストたろう"
-    email "sunagakannta6@gmail.com"
+    email "hoge@gmail.com"
     password "12345678910111"
   end
   factory :mangement1, class: Mangement do

@@ -18,3 +18,4 @@ spec/fixtures/test_giant.csv
 spec/fixtures/test_merida.csv
 config/secrets.yml
 public/assets/
+config/environments/production.rb

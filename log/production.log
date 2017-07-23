@@ -13055,3 +13055,62 @@ E, [2017-07-18T09:52:50.101074 #28725] ERROR -- : [80f89e35-649f-4df8-8537-12ece
 I, [2017-07-18T09:52:50.107776 #28725]  INFO -- : [80f89e35-649f-4df8-8537-12ece90028d5]   Rendering errors/500.html.erb within layouts/application
 I, [2017-07-18T09:52:50.108906 #28725]  INFO -- : [80f89e35-649f-4df8-8537-12ece90028d5]   Rendered errors/500.html.erb within layouts/application (0.9ms)
 I, [2017-07-18T09:52:50.111036 #28725]  INFO -- : [80f89e35-649f-4df8-8537-12ece90028d5] Completed 500 Internal Server Error in 339ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+I, [2017-07-18T10:03:50.182002 #28985]  INFO -- : [df0b3b94-32ba-4c8d-9f5b-23c52ceebac3] Started GET "/this_is_for_beginner/home" for 127.0.0.1 at 2017-07-18 10:03:50 +0900
+I, [2017-07-18T10:03:50.198816 #28985]  INFO -- : [df0b3b94-32ba-4c8d-9f5b-23c52ceebac3] Processing by ThisIsForBeginnerController#home as HTML
+I, [2017-07-18T10:03:50.270949 #28985]  INFO -- : [df0b3b94-32ba-4c8d-9f5b-23c52ceebac3]   Rendering this_is_for_beginner/home.html.erb within layouts/application
+D, [2017-07-18T10:03:50.286538 #28985] DEBUG -- : [df0b3b94-32ba-4c8d-9f5b-23c52ceebac3]   [1m[36mMaker Load (0.5ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+I, [2017-07-18T10:03:50.296113 #28985]  INFO -- : [df0b3b94-32ba-4c8d-9f5b-23c52ceebac3]   Rendered this_is_for_beginner/home.html.erb within layouts/application (25.0ms)
+I, [2017-07-18T10:03:50.730599 #28985]  INFO -- : [df0b3b94-32ba-4c8d-9f5b-23c52ceebac3] Completed 200 OK in 531ms (Views: 461.8ms | ActiveRecord: 3.1ms)
+I, [2017-07-18T10:03:52.446697 #28985]  INFO -- : [2dd79065-77d6-42cb-b741-7468f7348754] Started GET "/inquiry" for 127.0.0.1 at 2017-07-18 10:03:52 +0900
+I, [2017-07-18T10:03:52.451254 #28985]  INFO -- : [2dd79065-77d6-42cb-b741-7468f7348754] Processing by InquiryController#index as HTML
+I, [2017-07-18T10:03:52.456498 #28985]  INFO -- : [2dd79065-77d6-42cb-b741-7468f7348754]   Rendering inquiry/index.html.erb within layouts/application
+I, [2017-07-18T10:03:52.461030 #28985]  INFO -- : [2dd79065-77d6-42cb-b741-7468f7348754]   Rendered inquiry/index.html.erb within layouts/application (4.3ms)
+I, [2017-07-18T10:03:52.465770 #28985]  INFO -- : [2dd79065-77d6-42cb-b741-7468f7348754] Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+I, [2017-07-18T10:04:00.336230 #28985]  INFO -- : [1e87ba18-c0ef-4e3f-9ceb-6eb167bae598] Started POST "/inquiry/confirm" for 127.0.0.1 at 2017-07-18 10:04:00 +0900
+I, [2017-07-18T10:04:00.337666 #28985]  INFO -- : [1e87ba18-c0ef-4e3f-9ceb-6eb167bae598] Processing by InquiryController#confirm as HTML
+I, [2017-07-18T10:04:00.337755 #28985]  INFO -- : [1e87ba18-c0ef-4e3f-9ceb-6eb167bae598]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"6tfaa4K5d17pkZPuCuwJ+Kzkccnljp8bT+/DHLhZpdYit3kb1ukcS97uWM7JpWtXfbwrIO7x/zB3UZ9gRDEIFA==", "inquiry"=>{"name"=>"wkuybv", "email"=>"sunagakannta6@gmail.com", "message"=>"akghlr"}, "commit"=>"確認"}
+I, [2017-07-18T10:04:00.341301 #28985]  INFO -- : [1e87ba18-c0ef-4e3f-9ceb-6eb167bae598]   Rendering inquiry/confirm.html.erb within layouts/application
+I, [2017-07-18T10:04:00.345347 #28985]  INFO -- : [1e87ba18-c0ef-4e3f-9ceb-6eb167bae598]   Rendered inquiry/confirm.html.erb within layouts/application (3.9ms)
+I, [2017-07-18T10:04:00.350180 #28985]  INFO -- : [1e87ba18-c0ef-4e3f-9ceb-6eb167bae598] Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+I, [2017-07-18T10:04:01.703932 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d] Started POST "/inquiry/thanks" for 127.0.0.1 at 2017-07-18 10:04:01 +0900
+I, [2017-07-18T10:04:01.706093 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d] Processing by InquiryController#thanks as HTML
+I, [2017-07-18T10:04:01.706222 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"DrCgbYkZjMapT1PS1YSVUnyVcTEuLdDncfdCjFPQYh/G0AMd3Unn054wmPIWzff9rc0r2CVSsMxJSR7wr7jP3Q==", "inquiry"=>{"name"=>"wkuybv", "email"=>"sunagakannta6@gmail.com", "message"=>"akghlr"}, "commit"=>"送信"}
+I, [2017-07-18T10:04:01.730280 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d]   Rendering inquiry_mailer/received_email.text.erb
+I, [2017-07-18T10:04:01.732602 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d]   Rendered inquiry_mailer/received_email.text.erb (2.1ms)
+D, [2017-07-18T10:04:01.948283 #28985] DEBUG -- : [356ed16a-8202-49b3-ab74-7110d6b1328d] InquiryMailer#received_email: processed outbound mail in 235.2ms
+I, [2017-07-18T10:04:06.724328 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d] Sent mail to sunagakannta6@gmail.com (4775.8ms)
+D, [2017-07-18T10:04:06.724444 #28985] DEBUG -- : [356ed16a-8202-49b3-ab74-7110d6b1328d] Date: Tue, 18 Jul 2017 10:04:01 +0900
+From: sunagakannta6@gmail.com
+To: sunagakannta6@gmail.com
+Message-ID: <596d5e81e9627_71393fcb79a4bd145473d@sunagakanta-no-MacBook-Air.local.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B=E3=82=92=E6=89=BF=E3=82=8A=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+5L6d6aC85YaF5a65Cj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT0KTmFtZTogd2t1eWJ2CkVtYWlsOiBzdW5hZ2FrYW5udGE2
+QGdtYWlsLmNvbQpNZXNzYWdlOgpha2dobHIKPT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PQoK77yT5Za25qWt5pel5Lul5YaF
+44Gr6L+U5L+h44GM5p2l44Gq44GL44Gj44Gf5aC05ZCI44GK5omL5pWw44Gn
+44GZ44GM44CB44KC44GG5LiA5bqmCuS/ruato+S+nemgvOOBruaWueOBi+OC
+ieOAgeeUs+iri+OBl+OBpuOBhOOBn+OBoOOBkeOBvuOBmeOCiOOBhuOBiumh
+mOOBhOeUs+OBl+S4iuOBkuOBvuOBmeOAggo=
+
+I, [2017-07-18T10:04:06.729708 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d]   Rendering inquiry/thanks.html.erb within layouts/application
+I, [2017-07-18T10:04:06.731160 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d]   Rendered inquiry/thanks.html.erb within layouts/application (1.2ms)
+I, [2017-07-18T10:04:06.733528 #28985]  INFO -- : [356ed16a-8202-49b3-ab74-7110d6b1328d] Completed 200 OK in 5027ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+I, [2017-07-18T15:28:56.048829 #28985]  INFO -- : [cd4e0635-ee15-43ba-941a-8cc63a2ec79e] Started GET "/inquiry/thanks" for 127.0.0.1 at 2017-07-18 15:28:56 +0900
+I, [2017-07-18T15:28:56.076638 #28985]  INFO -- : [d1e9f13e-d5d9-4170-84e4-2f84e60551e8] Started GET "/inquiry" for 127.0.0.1 at 2017-07-18 15:28:56 +0900
+I, [2017-07-18T15:28:56.090325 #28985]  INFO -- : [d1e9f13e-d5d9-4170-84e4-2f84e60551e8] Processing by InquiryController#index as HTML
+I, [2017-07-18T15:28:56.109576 #28985]  INFO -- : [d1e9f13e-d5d9-4170-84e4-2f84e60551e8]   Rendering inquiry/index.html.erb within layouts/application
+I, [2017-07-18T15:28:56.118820 #28985]  INFO -- : [d1e9f13e-d5d9-4170-84e4-2f84e60551e8]   Rendered inquiry/index.html.erb within layouts/application (8.8ms)
+I, [2017-07-18T15:28:56.139005 #28985]  INFO -- : [d1e9f13e-d5d9-4170-84e4-2f84e60551e8] Completed 200 OK in 48ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+I, [2017-07-18T15:28:59.697225 #28985]  INFO -- : [6d300116-c500-4154-8a7a-48c4984d07a0] Started GET "/inquiry/confirm" for 127.0.0.1 at 2017-07-18 15:28:59 +0900
+I, [2017-07-18T15:29:02.659335 #28985]  INFO -- : [ebc15902-ce8f-444c-86c6-8b0aad93501c] Started GET "/this_is_for_beginner/home" for 127.0.0.1 at 2017-07-18 15:29:02 +0900
+I, [2017-07-18T15:29:02.660931 #28985]  INFO -- : [ebc15902-ce8f-444c-86c6-8b0aad93501c] Processing by ThisIsForBeginnerController#home as HTML
+I, [2017-07-18T15:29:02.670718 #28985]  INFO -- : [ebc15902-ce8f-444c-86c6-8b0aad93501c]   Rendering this_is_for_beginner/home.html.erb within layouts/application
+D, [2017-07-18T15:29:02.684394 #28985] DEBUG -- : [ebc15902-ce8f-444c-86c6-8b0aad93501c]   [1m[36mMaker Load (2.7ms)[0m  [1m[34mSELECT "makers".* FROM "makers"[0m
+I, [2017-07-18T15:29:02.689863 #28985]  INFO -- : [ebc15902-ce8f-444c-86c6-8b0aad93501c]   Rendered this_is_for_beginner/home.html.erb within layouts/application (19.0ms)
+I, [2017-07-18T15:29:02.692142 #28985]  INFO -- : [ebc15902-ce8f-444c-86c6-8b0aad93501c] Completed 200 OK in 31ms (Views: 18.9ms | ActiveRecord: 2.7ms)
