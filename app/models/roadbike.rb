@@ -241,30 +241,30 @@ class Roadbike < ApplicationRecord
     return result_get_bike_info_from
   end
 
-  def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type,color)
-    sex_info = false if sex == "men"
+  def self.serch_mach_bike(price_up, price_down, sex, road_bike_type, maker_id, frame_type,component_param,brake_type,color,year)
     if color != "0"
-     bike = Roadbike.joins(:colors).where(colors: {color: color}).or(Roadbike.joins(:colors).where(colors: {sub_color2: color})).or(Roadbike.joins(:colors).where(colors: {sub_color: color})).distinct
-     bike = bike.where(price: price_down.to_i..price_up.to_i)
-   else
-      bike = Roadbike.where(price: price_down.to_i..price_up.to_i)
-    end
-    if bike != nil
-        bike = bike.where(sex: sex_info) if sex_info == false
-        bike = bike.where(frame_type: frame_type) if frame_type != nil && frame_type != ""
-        bike = bike.where(component: component_param.to_i) if component_param != nil && component_param != ""
-        bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type != nil && road_bike_type != ""
-        bike = bike.where(maker_id: maker_id.to_i) if maker_id != nil && maker_id != ""
-        bike = bike.where(frame_type: frame_type.to_i) if frame_type != nil && frame_type != ""
-        bike = bike.where(brake_type: brake_type.to_i) if brake_type != nil && brake_type != ""
-    end
-    bike
+      bike = Roadbike.joins(:colors).where(colors: {color: color}).or(Roadbike.joins(:colors).where(colors: {sub_color2: color})).or(Roadbike.joins(:colors).where(colors: {sub_color: color})).distinct
+      bike = bike.where(price: price_down.to_i..price_up.to_i)
+    else
+       bike = Roadbike.where(price: price_down.to_i..price_up.to_i)
+     end
+     if bike != nil
+         sex_info = false if sex == "men"
+         bike = bike.where(sex: sex_info) if sex_info == false
+         bike = bike.where(frame_type: frame_type) if frame_type.present?
+         bike = bike.where(component: component_param.to_i) if component_param.present?
+         bike = bike.where(road_bike_type: road_bike_type.to_i) if road_bike_type.present?
+         bike = bike.where(maker_id: maker_id.to_i) if maker_id.present?
+         bike = bike.where(frame_type: frame_type.to_i) if frame_type.present?
+         bike = bike.where(brake_type: brake_type.to_i) if brake_type.present?
+     end
+     return bike if year == "old"
+     bike = Roadbike.latest_model?(bike)
   end
 
   def self.serch_bike_result_and_size(bike_arry, user_size)
     if bike_arry != nil
       result_bike_and_size = []
-
       bike_arry.each do |bike|
         bike_and_size = {bike_obj: bike}
 
@@ -281,5 +281,15 @@ class Roadbike < ApplicationRecord
   def self.which_sex?(sex_param)
     return true if sex_param == "women"
     false
+  end
+
+
+  def self.latest_model?(bike)
+    retval = []
+    bike.each do |b|
+      if b.maker.year.id == Year.last.id
+        retval << b
+      end
+    end
   end
 end
