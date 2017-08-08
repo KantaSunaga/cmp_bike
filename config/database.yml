@@ -25,6 +25,10 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  username: admin
+  password: a1a2a3a4cmpbikepostgresql
+  host: localhost
+  database: cmp_bike
 # default: &default
 #   adapter: mysql2
 #   pool: 5
